@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://br74ubls6ovy3"]
+
+[ext_resource type="Texture2D" uid="uid://d1ne8hi4rsd46" path="res://assets/backblue.png" id="1_f4lms"]
+[ext_resource type="Texture2D" uid="uid://bhdiu5db3tbq2" path="res://assets/middleblue.png" id="2_5ge4k"]
+[ext_resource type="Texture2D" uid="uid://cktu0nawmpjoh" path="res://assets/front blue (1).png" id="3_t1drl"]
+[ext_resource type="Texture2D" uid="uid://dvnb3r4kk5t6r" path="res://assets/boat.png" id="3_unkh7"]
+[ext_resource type="Texture2D" uid="uid://curbdxaf7jf86" path="res://assets/clouds.png" id="4_unkh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sra7"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjsnc"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpmfe"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.27321973, 0.7530179, 0.5696102, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Node2D" type="Node2D" unique_id=2123407205]
+
+[node name="parallaxbg" type="Node2D" parent="." unique_id=1553879903]
+
+[node name="MiddleBlue" type="Parallax2D" parent="parallaxbg" unique_id=1809346217]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1152, 0)
+
+[node name="Backblue" type="Sprite2D" parent="parallaxbg/MiddleBlue" unique_id=747749546]
+position = Vector2(575.7922, 610.5)
+scale = Vector2(0.5, 0.49999994)
+texture = ExtResource("2_5ge4k")
+centered = false
+
+[node name="BackBlue" type="Parallax2D" parent="parallaxbg" unique_id=41326461]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+
+[node name="Backblue" type="Sprite2D" parent="parallaxbg/BackBlue" unique_id=507957898]
+position = Vector2(575.7922, 610.5)
+scale = Vector2(0.5, 0.49999994)
+texture = ExtResource("1_f4lms")
+centered = false
+
+[node name="Boat" type="Sprite2D" parent="parallaxbg" unique_id=1911661098]
+position = Vector2(821, 562)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_unkh7")
+
+[node name="FrontBlue" type="Parallax2D" parent="parallaxbg" unique_id=118761442]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+
+[node name="Backblue" type="Sprite2D" parent="parallaxbg/FrontBlue" unique_id=398979313]
+position = Vector2(575.7922, 610.5)
+scale = Vector2(0.5, 0.49999994)
+texture = ExtResource("3_t1drl")
+centered = false
+
+[node name="Cloude2d" type="Parallax2D" parent="parallaxbg" unique_id=703282160]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1152, 0)
+
+[node name="Backblue" type="Sprite2D" parent="parallaxbg/Cloude2d" unique_id=805676331]
+position = Vector2(747, 289)
+scale = Vector2(0.5, 0.49999994)
+texture = ExtResource("4_unkh7")
+centered = false
+
+[node name="Loading" type="Node2D" parent="." unique_id=1755795209]
+
+[node name="Panel" type="Panel" parent="Loading" unique_id=684071238]
+offset_left = -88.0
+offset_top = -56.0
+offset_right = 1280.0
+offset_bottom = 721.0
+
+[node name="Panel2" type="Panel" parent="Loading" unique_id=765922399]
+offset_left = 230.0
+offset_top = 285.0
+offset_right = 476.0
+offset_bottom = 588.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5sra7")
+
+[node name="Panel3" type="Panel" parent="Loading" unique_id=433073707]
+offset_left = 552.0
+offset_top = 288.0
+offset_right = 798.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5sra7")
+
+[node name="Panel4" type="Panel" parent="Loading" unique_id=421084558]
+offset_left = 864.0
+offset_top = 288.0
+offset_right = 1110.0
+offset_bottom = 591.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5sra7")
+
+[node name="Buttons" type="Node2D" parent="Loading" unique_id=531720375]
+
+[node name="New" type="Button" parent="Loading/Buttons" unique_id=1055824616]
+offset_left = 277.0
+offset_top = 432.0
+offset_right = 432.0
+offset_bottom = 484.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "NEW GAME"
+
+[node name="Load" type="Button" parent="Loading/Buttons" unique_id=1341461421]
+offset_left = 277.0
+offset_top = 504.0
+offset_right = 432.0
+offset_bottom = 556.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "LOAD GAME"
+
+[node name="New2" type="Button" parent="Loading/Buttons" unique_id=133640920]
+offset_left = 600.0
+offset_top = 440.0
+offset_right = 755.0
+offset_bottom = 492.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "NEW GAME"
+
+[node name="Load2" type="Button" parent="Loading/Buttons" unique_id=1489577691]
+offset_left = 600.0
+offset_top = 512.0
+offset_right = 755.0
+offset_bottom = 564.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "LOAD GAME"
+
+[node name="New3" type="Button" parent="Loading/Buttons" unique_id=1332492066]
+offset_left = 912.0
+offset_top = 440.0
+offset_right = 1067.0
+offset_bottom = 492.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "NEW GAME"
+
+[node name="Load3" type="Button" parent="Loading/Buttons" unique_id=1852397256]
+offset_left = 912.0
+offset_top = 520.0
+offset_right = 1067.0
+offset_bottom = 572.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+toggle_mode = true
+text = "LOAD GAME"
+
+[node name="Prefferences" type="Button" parent="Loading/Buttons" unique_id=1622919171]
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 200.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+text = "PREFFERENCES"
+
+[node name="Guide" type="Button" parent="Loading/Buttons" unique_id=1436311473]
+offset_left = 32.0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 264.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+text = "GUIDE"
+
+[node name="TextureRect" type="TextureRect" parent="Loading" unique_id=586232907]
+offset_left = 256.0
+offset_top = 304.0
+offset_right = 448.0
+offset_bottom = 416.0
+
+[node name="TextureRect2" type="TextureRect" parent="Loading" unique_id=1469392430]
+offset_left = 584.0
+offset_top = 312.0
+offset_right = 776.0
+offset_bottom = 424.0
+
+[node name="TextureRect3" type="TextureRect" parent="Loading" unique_id=1708944976]
+offset_left = 896.0
+offset_top = 312.0
+offset_right = 1088.0
+offset_bottom = 424.0
