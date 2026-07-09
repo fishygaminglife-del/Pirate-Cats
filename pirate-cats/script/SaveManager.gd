@@ -5,6 +5,22 @@ var current_slot = 0
 var scene = 1
 var coins = 0
 
+
+func save_game(slot: int) -> void:
+	var path = SAVE_FOLDER + "save_%d.json" % slot
+
+	var data = {
+		"saved_at": Time.get_datetime_string_from_system(),
+		"scene": scene
+	}
+
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+
+	await RenderingServer.frame_post_draw
+	save_screenshot(slot)
+	
 func delete_save(slot: int):
 	var save_path = SAVE_FOLDER + "save_%d.json" % slot
 	var screenshot_path = "user://save_%d.png" % slot
@@ -23,20 +39,6 @@ func _on_close_requested():
 
 	get_tree().quit()
 
-func save_game(slot: int) -> void:
-	var path = SAVE_FOLDER + "save_%d.json" % slot
-
-	var data = {
-		"saved_at": Time.get_datetime_string_from_system(),
-		"scene": scene
-	}
-
-	var file = FileAccess.open(path, FileAccess.WRITE)
-	file.store_string(JSON.stringify(data))
-	file.close()
-
-	await RenderingServer.frame_post_draw
-	save_screenshot(slot)
 
 func load_game(slot: int):
 	var path = SAVE_FOLDER + "save_%d.json" % slot
@@ -82,3 +84,4 @@ func load_thumbnail(slot: int) -> Texture2D:
 
 	var image = Image.load_from_file(path)
 	return ImageTexture.create_from_image(image)
+ 

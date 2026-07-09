@@ -5,11 +5,97 @@
 [ext_resource type="Texture2D" uid="uid://curbdxaf7jf86" path="res://assets/clouds.png" id="2_c0c2u"]
 [ext_resource type="Texture2D" uid="uid://bhdiu5db3tbq2" path="res://assets/middleblue.png" id="3_pjvru"]
 [ext_resource type="Texture2D" uid="uid://d1ne8hi4rsd46" path="res://assets/backblue.png" id="4_eqgp1"]
+[ext_resource type="Texture2D" uid="uid://db323u36livna" path="res://assets/catscloud.png" id="4_ifos2"]
 [ext_resource type="Texture2D" uid="uid://bwv6v8yq3f70t" path="res://assets/boat.png" id="5_ifos2"]
 [ext_resource type="Texture2D" uid="uid://cktu0nawmpjoh" path="res://assets/front blue (1).png" id="6_xq2r4"]
+[ext_resource type="Texture2D" uid="uid://csenrcpqgvg1" path="res://assets/catshow.png" id="8_pjvru"]
 
 [sub_resource type="Animation" id="Animation_riyh1"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parallaxbg/Boat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("parallaxbg/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(840.8889, 525)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("parallaxbg/Mid:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("parallaxbg/Back:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("parallaxbg/Front:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Catshow:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("parallaxbg/Cloude2d:scroll_offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, -136)]
+}
 
 [sub_resource type="Animation" id="Animation_2e2bh"]
 resource_name = "boat craddle"
@@ -29,7 +115,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("parallaxbg/Camera2D/Boat:rotation")
+tracks/1/path = NodePath("parallaxbg/Boat:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +127,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("parallaxbg/Camera2D/Boat:position")
+tracks/2/path = NodePath("parallaxbg/Boat:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -50,11 +136,112 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(-2, 50), Vector2(19.06665, 68), Vector2(15.697758, 45.999977), Vector2(15.217762, 61.999947), Vector2(29.582262, 49.999947), Vector2(31.804451, 61.999958), Vector2(13.982124, 34.000053), Vector2(-2, 50)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("parallaxbg/Boat:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-288, 525), Vector2(840.8889, 525)]
+}
+
+[sub_resource type="Animation" id="Animation_xq2r4"]
+resource_name = "showcats"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parallaxbg/Boat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("parallaxbg/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.0533, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(840.8889, 525), Vector2(840.8889, -147), Vector2(840.8889, 582)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("parallaxbg/Mid:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("parallaxbg/Back:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("parallaxbg/Front:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Catshow:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("parallaxbg/Cloude2d:scroll_offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.02),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13, -136), Vector2(30, -179)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fpcd"]
 _data = {
 &"RESET": SubResource("Animation_riyh1"),
-&"boat craddle": SubResource("Animation_2e2bh")
+&"boat craddle": SubResource("Animation_2e2bh"),
+&"showcats": SubResource("Animation_xq2r4")
 }
 
 [node name="Node2D" type="Node2D" unique_id=332542109]
@@ -62,6 +249,17 @@ script = ExtResource("1_c0c2u")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1742924480]
 position = Vector2(501, 517)
+scale = Vector2(3.859375, 0.53549385)
+texture = ExtResource("1_1ymlp")
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=1085748962]
+position = Vector2(501, 170)
+scale = Vector2(3.859375, 0.53549385)
+texture = ExtResource("1_1ymlp")
+flip_v = true
+
+[node name="Bg3" type="Sprite2D" parent="." unique_id=249297316]
+position = Vector2(501, -177)
 scale = Vector2(3.859375, 0.53549385)
 texture = ExtResource("1_1ymlp")
 
@@ -78,6 +276,17 @@ position = Vector2(593, 289)
 scale = Vector2(0.5, 0.49999994)
 texture = ExtResource("2_c0c2u")
 centered = false
+
+[node name="Cloude2d2" type="Parallax2D" parent="parallaxbg" unique_id=861553152]
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(-1271, -292)
+repeat_size = Vector2(1152, 0)
+repeat_times = 2
+
+[node name="Catscloud" type="Sprite2D" parent="parallaxbg/Cloude2d2" unique_id=1591837801]
+position = Vector2(1087, 100)
+scale = Vector2(0.5805083, 0.5805083)
+texture = ExtResource("4_ifos2")
 
 [node name="Back" type="Parallax2D" parent="parallaxbg" unique_id=1560224030]
 scale = Vector2(0.5, 0.5)
@@ -103,14 +312,21 @@ position = Vector2(456, 1386)
 texture = ExtResource("4_eqgp1")
 centered = false
 
+[node name="Boat" type="Sprite2D" parent="parallaxbg" unique_id=1432534839]
+position = Vector2(-290, 575)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_ifos2")
+
 [node name="Camera2D" type="Camera2D" parent="parallaxbg" unique_id=1861970315]
-position = Vector2(-288, 525)
+position = Vector2(840.8889, 525)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
 
-[node name="Boat" type="Sprite2D" parent="parallaxbg/Camera2D" unique_id=1432534839]
-position = Vector2(-2, 50)
-texture = ExtResource("5_ifos2")
+[node name="Button" type="Button" parent="parallaxbg/Camera2D" unique_id=631269876]
+offset_left = 570.0
+offset_top = -326.0
+offset_right = 578.0
+offset_bottom = -318.0
 
 [node name="Front" type="Parallax2D" parent="parallaxbg" unique_id=415243839]
 scale = Vector2(0.5, 0.5)
@@ -126,3 +342,11 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=878352042]
 libraries/ = SubResource("AnimationLibrary_5fpcd")
+
+[node name="Catshow" type="Sprite2D" parent="." unique_id=1735153117]
+visible = false
+position = Vector2(841.8548, 604.3125)
+scale = Vector2(0.39804977, 0.39804974)
+texture = ExtResource("8_pjvru")
+
+[connection signal="pressed" from="parallaxbg/Camera2D/Button" to="." method="_on_button_pressed"]
