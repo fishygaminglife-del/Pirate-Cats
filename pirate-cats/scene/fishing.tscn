@@ -6,3 +6,23 @@
 position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
+
+[node name="Button" type="Button" parent="." unique_id=143069040]
+visible = false
+offset_left = 293.0
+offset_top = 185.0
+offset_right = 871.0
+offset_bottom = 511.0
+
+[node name="bobber" type="ColorRect" parent="." unique_id=425023039]
+offset_left = 1013.0
+offset_top = 262.0
+offset_right = 1053.0
+offset_bottom = 302.0
+color = Color(1, 0.09019608, 0.3529412, 1)
+
+[node name="fish" type="ColorRect" parent="." unique_id=767431247]
+offset_left = 960.0
+offset_top = 390.0
+offset_right = 1033.0
+offset_bottom = 408.0

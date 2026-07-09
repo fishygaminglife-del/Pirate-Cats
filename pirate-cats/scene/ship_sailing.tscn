@@ -8,94 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://db323u36livna" path="res://assets/catscloud.png" id="4_ifos2"]
 [ext_resource type="Texture2D" uid="uid://bwv6v8yq3f70t" path="res://assets/boat.png" id="5_ifos2"]
 [ext_resource type="Texture2D" uid="uid://cktu0nawmpjoh" path="res://assets/front blue (1).png" id="6_xq2r4"]
-[ext_resource type="Texture2D" uid="uid://csenrcpqgvg1" path="res://assets/catshow.png" id="8_pjvru"]
+[ext_resource type="Texture2D" uid="uid://bcqnv5lqra7vt" path="res://assets/catshow.png" id="8_pjvru"]
+[ext_resource type="Texture2D" uid="uid://in8dasb1lynv" path="res://assets/lcuky cat (1).png" id="10_ifos2"]
 
 [sub_resource type="Animation" id="Animation_riyh1"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("parallaxbg/Boat:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("parallaxbg/Camera2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(840.8889, 525)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("parallaxbg/Mid:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("parallaxbg/Back:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("parallaxbg/Front:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Catshow:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("parallaxbg/Cloude2d:scroll_offset")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-13, -136)]
-}
 
 [sub_resource type="Animation" id="Animation_2e2bh"]
 resource_name = "boat craddle"
@@ -236,6 +153,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(-13, -136), Vector2(30, -179)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LcukyCat(1):visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fpcd"]
 _data = {
@@ -248,18 +177,18 @@ _data = {
 script = ExtResource("1_c0c2u")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1742924480]
-position = Vector2(501, 517)
+position = Vector2(493, 526.5)
 scale = Vector2(3.859375, 0.53549385)
 texture = ExtResource("1_1ymlp")
 
 [node name="Bg2" type="Sprite2D" parent="." unique_id=1085748962]
-position = Vector2(501, 170)
+position = Vector2(501, 180)
 scale = Vector2(3.859375, 0.53549385)
 texture = ExtResource("1_1ymlp")
 flip_v = true
 
 [node name="Bg3" type="Sprite2D" parent="." unique_id=249297316]
-position = Vector2(501, -177)
+position = Vector2(501, -167)
 scale = Vector2(3.859375, 0.53549385)
 texture = ExtResource("1_1ymlp")
 
@@ -314,7 +243,7 @@ centered = false
 
 [node name="Boat" type="Sprite2D" parent="parallaxbg" unique_id=1432534839]
 position = Vector2(-290, 575)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.26081735, 0.26081732)
 texture = ExtResource("5_ifos2")
 
 [node name="Camera2D" type="Camera2D" parent="parallaxbg" unique_id=1861970315]
@@ -345,8 +274,14 @@ libraries/ = SubResource("AnimationLibrary_5fpcd")
 
 [node name="Catshow" type="Sprite2D" parent="." unique_id=1735153117]
 visible = false
-position = Vector2(841.8548, 604.3125)
-scale = Vector2(0.39804977, 0.39804974)
+position = Vector2(841, 604)
+scale = Vector2(0.28087604, 0.28087604)
 texture = ExtResource("8_pjvru")
+
+[node name="LcukyCat(1)" type="Sprite2D" parent="." unique_id=361457369]
+visible = false
+position = Vector2(842, 485.50003)
+scale = Vector2(0.14677404, 0.14677402)
+texture = ExtResource("10_ifos2")
 
 [connection signal="pressed" from="parallaxbg/Camera2D/Button" to="." method="_on_button_pressed"]
