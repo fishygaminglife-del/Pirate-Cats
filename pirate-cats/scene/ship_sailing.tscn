@@ -224,7 +224,7 @@ _data = {
 &"showcats": SubResource("Animation_xq2r4")
 }
 
-[node name="Node2D" type="Node2D" unique_id=332542109]
+[node name="Node2D2" type="Node2D" unique_id=332542109]
 script = ExtResource("1_c0c2u")
 
 [node name="Bg" type="Sprite2D" parent="." unique_id=1742924480]
@@ -344,6 +344,10 @@ offset_top = 555.0
 offset_right = 933.0
 offset_bottom = 605.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_qvx0c")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = ExtResource("11_5fpcd")

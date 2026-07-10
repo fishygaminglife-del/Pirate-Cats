@@ -77,10 +77,11 @@ stretch_mode = 4
 layout_mode = 0
 offset_left = 188.18182
 offset_top = 235.45459
-offset_right = 229.36365
-offset_bottom = 278.54553
+offset_right = 233.63635
+offset_bottom = 280.90918
 theme_override_styles/normal = SubResource("StyleBoxFlat_fjsnc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dpmfe")
+expand_icon = true
 
 [node name="Load1" type="Button" parent="Loading/Save1" unique_id=1341461421]
 layout_mode = 0
