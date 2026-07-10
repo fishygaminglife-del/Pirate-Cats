@@ -83,6 +83,11 @@ func _physics_process(delta: float) -> void:
 	
 	if fishing == true and fight_style == "stream" and (fish == 1 or fish == 2 or fish == 3):
 		$Outside/Slider.position.x -= 60 * delta	
+		$Outside/Slider.position.x = clamp(
+		$Outside/Slider.position.x,
+		$StaticBody2D/CollisionShape2D.position.x + 45,
+		$StaticBody2D/CollisionShape2D2.position.x - 45
+	)
 	elif fishing == true and fight_style == "stream" and (fish == 4 or fish == 5):
 		$Outside/Slider.position.x -= 50 * delta	
 	elif fishing == true and fight_style == "stream" and fish == 6:
@@ -216,30 +221,28 @@ func _on_wait_reel_timeout() -> void:
 func _on_s_lider_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lineedge"):
 
+		$Button.disabled = true
+		$TimeOutOfTank.stop()
 		if slider_tween and slider_tween.is_valid():
 			slider_tween.kill()
-		$InsMove.stop()
-
-		if insslider_tween:
+		if insslider_tween and insslider_tween.is_valid():
 			insslider_tween.kill()
-		fishing = false
-		bobber = false
-		$fishbub2.visible = false
-		$bobber.visible = false
-		$fishbub.visible = false
-		$Outside.visible = false
-		fish_type = 3
+		$InsMove.stop()
 		$WaitReel.stop()
 		fishing = false
 		bobber = false
+		print("fish lost")
+		await get_tree().create_timer(0.5).timeout
+		$Outside.visible = false
+		$fishbub.visible = false
+		$fishbub2.visible =false
+		$bobber.visible = false
+		$Button.disabled = false
+		fish_type = 3
+		$WaitReel.stop()
 		
 		print("in edge")
 
-
-	#inside one
-
-
-	
 
 func inside_slide():
 	if insslider_tween:
@@ -276,15 +279,20 @@ func _on_inside_slider_area_exited(area: Area2D) -> void:
 
 
 func _on_time_out_of_tank_timeout() -> void:
+	$Button.disabled = true
+	$TimeOutOfTank.stop()
 	if slider_tween and slider_tween.is_valid():
 		slider_tween.kill()
 	if insslider_tween and insslider_tween.is_valid():
 		insslider_tween.kill()
 	$InsMove.stop()
 	$WaitReel.stop()
-	$Button.disabled = true
 	fishing = false
 	bobber = false
 	print("fish lost")
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
+	$Outside.visible = false
+	$fishbub.visible = false
+	$fishbub2.visible =false
+	$bobber.visible = false
 	$Button.disabled = false

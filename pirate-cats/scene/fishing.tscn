@@ -274,7 +274,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
 [node name="WaitReel" type="Timer" parent="." unique_id=1826671054]
 
 [node name="TimeOutOfTank" type="Timer" parent="." unique_id=1315127960]
-wait_time = 1.2999999999999998
+wait_time = 2.0
 
 [node name="InsMove" type="Timer" parent="." unique_id=1764474044]
 
