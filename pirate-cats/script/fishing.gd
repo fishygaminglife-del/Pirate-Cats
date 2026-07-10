@@ -15,17 +15,11 @@ var insslider_tween: Tween
 var time_insmove
 func _ready() -> void:
 	$Outside.visible = false
-	print($StaticBody2D/CollisionShape2D.position.x)
-	print($StaticBody2D/CollisionShape2D2.position.x)
 	$fishbub.visible = false
 	$Label.visible = false
 
 func _on_button_pressed() -> void:
-	print("button pressed")
-	print("bobber:", bobber)
-	print("fishing:", fishing)
 	var pos = Vector2(get_global_mouse_position())
-	#print(pos)
 	if bobber == false:
 		$Outside/Slider.position = Vector2(127,6)
 		fightcount = 0
@@ -36,17 +30,13 @@ func _on_button_pressed() -> void:
 		var bob_pos: Vector2 = $bobber.global_position
 		$fishbub.global_position = bob_pos
 		$fishbub2.global_position = bob_pos
-		print($fishbub.global_position)
-		print(pos)
 		rand_time()
-		print("cast")
 	
 	elif bobber == true and fishing == false:
 		bobber = false
 		fishing = false
 		$bobber.visible = false
 		$FishingTimer.stop()
-		print("realled")
 		
 	elif bobber == true and fishing == true:
 		var target_x: float = $Outside/Slider.position.x + 15
@@ -54,7 +44,7 @@ func _on_button_pressed() -> void:
 		tween.tween_property($Outside/Slider, "position:x", target_x, 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 
 func rand_time():
-	time = randi_range(2, 7)
+	time = randi_range(2, 5)
 	$FishingTimer.wait_time = time
 	$FishingTimer.start()
 
@@ -66,8 +56,6 @@ func _on_fishing_timer_timeout() -> void:
 			fish = 7
 		else:
 			fish = randi_range(1, 6)
-		print(fish)
-		print(fish_ammount)
 		if fish == 1 or fish == 2 or fish == 3:
 			$Outside/Slider.modulate = Color(0.031, 0.235, 0.078)
 		elif fish == 4 or fish == 5:
@@ -86,7 +74,6 @@ func _on_fishing_timer_timeout() -> void:
 		time_catch = randi_range(8, 15)
 		$WaitReel.wait_time = time_catch
 		$WaitReel.start()
-		print("Starting WaitReel for ", time_catch, " seconds")
 		fight_type()
 		inside_slide()
 		
@@ -137,7 +124,6 @@ func slide_move():
 
 func fight_type():
 	fish_type = randi_range(1,2)
-	#print(fish_type)
 	if fishing == true:
 		if fish_type == 1:
 			fightcount = 0
@@ -222,10 +208,8 @@ func _on_wait_reel_timeout() -> void:
 	bobber = false
 	fishing = false
 	await get_tree().create_timer(0.3).timeout
-	if fish_ammount == 4:
-		pass
-	elif fish_ammount == 5:
-		print("5 fish")
+	if fish_ammount == 5:
+		print("done")
 	else:
 		$Button.disabled = false
 
@@ -248,22 +232,14 @@ func _on_s_lider_area_body_entered(body: Node2D) -> void:
 		$WaitReel.stop()
 		fishing = false
 		bobber = false
+		
 		print("in edge")
 
 
-func _on_area_2d_3_body_exited(body: Node2D) -> void: 
-	$TimeOutOfTank.start()
-	#this is the inside one
-func _on_area_2d_3_body_entered(body: Node2D) -> void:
-	$TimeOutOfTank.stop()
 	#inside one
 
-func _on_timer_timeout() -> void:
-	$Button.disabled = true
-	$TimeOutOfTank.stop()
-	await get_tree().create_timer(0.3).timeout
-	$Button.disabled = false
-	print("fish lost")
+
+	
 
 func inside_slide():
 	if insslider_tween:
@@ -286,3 +262,29 @@ func inside_slide():
 func _on_ins_move_timeout() -> void:
 	$InsMove.stop()
 	inside_slide()
+
+
+
+func _on_inside_slider_area_entered(area: Area2D) -> void:
+	print("enter")
+	$TimeOutOfTank.stop()
+
+
+func _on_inside_slider_area_exited(area: Area2D) -> void:
+	print("exited")
+	$TimeOutOfTank.start()
+
+
+func _on_time_out_of_tank_timeout() -> void:
+	if slider_tween and slider_tween.is_valid():
+		slider_tween.kill()
+	if insslider_tween and insslider_tween.is_valid():
+		insslider_tween.kill()
+	$InsMove.stop()
+	$WaitReel.stop()
+	$Button.disabled = true
+	fishing = false
+	bobber = false
+	print("fish lost")
+	await get_tree().create_timer(0.3).timeout
+	$Button.disabled = false

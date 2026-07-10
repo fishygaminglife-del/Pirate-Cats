@@ -108,7 +108,8 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abwp3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_084we"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abwp3"]
+bg_color = Color(0.6392157, 0.6392157, 0.6392157, 0.61960787)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu85m"]
 
@@ -207,10 +208,10 @@ offset_bottom = 33.0
 mouse_filter = 2
 color = Color(0.9005855, 0.4261436, 0.4134724, 1)
 
-[node name="Area2D3" type="Area2D" parent="Outside/Inside" unique_id=197222457]
+[node name="InsideSlider" type="Area2D" parent="Outside/Inside" unique_id=197222457]
 position = Vector2(30, 6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/Inside/Area2D3" unique_id=1373898159]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/Inside/InsideSlider" unique_id=1373898159]
 position = Vector2(14.5, 10)
 shape = SubResource("RectangleShape2D_ue6ed")
 
@@ -264,7 +265,7 @@ offset_right = 871.0
 offset_bottom = 418.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_abwp3")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_084we")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_abwp3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_eu85m")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
 
@@ -273,7 +274,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
 [node name="WaitReel" type="Timer" parent="." unique_id=1826671054]
 
 [node name="TimeOutOfTank" type="Timer" parent="." unique_id=1315127960]
-wait_time = 3.0
+wait_time = 1.2999999999999998
 
 [node name="InsMove" type="Timer" parent="." unique_id=1764474044]
 
@@ -337,11 +338,11 @@ shape = SubResource("RectangleShape2D_f8at7")
 position = Vector2(722.25, 474)
 shape = SubResource("RectangleShape2D_f8at7")
 
-[connection signal="body_entered" from="Outside/Inside/Area2D3" to="." method="_on_area_2d_3_body_entered"]
-[connection signal="body_exited" from="Outside/Inside/Area2D3" to="." method="_on_area_2d_3_body_exited"]
+[connection signal="area_entered" from="Outside/Inside/InsideSlider" to="." method="_on_inside_slider_area_entered"]
+[connection signal="area_exited" from="Outside/Inside/InsideSlider" to="." method="_on_inside_slider_area_exited"]
 [connection signal="body_entered" from="Outside/Slider/SLiderArea" to="." method="_on_s_lider_area_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="FishingTimer" to="." method="_on_fishing_timer_timeout"]
 [connection signal="timeout" from="WaitReel" to="." method="_on_wait_reel_timeout"]
-[connection signal="timeout" from="TimeOutOfTank" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimeOutOfTank" to="." method="_on_time_out_of_tank_timeout"]
 [connection signal="timeout" from="InsMove" to="." method="_on_ins_move_timeout"]
