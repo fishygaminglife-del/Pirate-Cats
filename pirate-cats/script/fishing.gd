@@ -44,7 +44,7 @@ func _on_button_pressed() -> void:
 		tween.tween_property($Outside/Slider, "position:x", target_x, 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 
 func rand_time():
-	time = randi_range(2, 5)
+	time = randi_range(1, 4)
 	$FishingTimer.wait_time = time
 	$FishingTimer.start()
 
@@ -78,26 +78,26 @@ func _on_fishing_timer_timeout() -> void:
 		inside_slide()
 		
 func _physics_process(delta: float) -> void:
-	
-	
-	
 	if fishing == true and fight_style == "stream" and (fish == 1 or fish == 2 or fish == 3):
 		$Outside/Slider.position.x -= 60 * delta	
-		$Outside/Slider.position.x = clamp(
-		$Outside/Slider.position.x,
-		$StaticBody2D/CollisionShape2D.position.x + 45,
-		$StaticBody2D/CollisionShape2D2.position.x - 45
-	)
 	elif fishing == true and fight_style == "stream" and (fish == 4 or fish == 5):
 		$Outside/Slider.position.x -= 50 * delta	
 	elif fishing == true and fight_style == "stream" and fish == 6:
 		$Outside/Slider.position.x -= 40 * delta	
 	elif fishing == true and fight_style == "stream" and fish == 7:
 		$Outside/Slider.position.x -= 30 * delta	
-
+	$Outside/Slider.position.x = clamp(
+		$Outside/Slider.position.x,
+		0,
+	$Outside.size.x - $Outside/Slider.size.x
+	)
 func slide_move():
 	if fish == 1 or fish == 2 or fish == 3:
-		var target_x: float = $Outside/Slider.position.x - 50
+		var target_x: float = clamp(
+		$Outside/Slider.position.x - 50,
+		0,
+	$Outside.size.x - $Outside/Slider.size.x
+	)
 		slider_tween = create_tween()
 		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await slider_tween.finished
@@ -105,7 +105,11 @@ func slide_move():
 			fight_type()
 
 	elif fish == 4 or fish == 5:
-		var target_x: float = $Outside/Slider.position.x - 60
+		var target_x: float = clamp(
+		$Outside/Slider.position.x - 60,
+		0,
+	$Outside.size.x - $Outside/Slider.size.x
+	)
 		slider_tween = create_tween()
 		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await slider_tween.finished
@@ -113,14 +117,22 @@ func slide_move():
 			fight_type()
 
 	elif fish == 6:
-		var target_x: float = $Outside/Slider.position.x - 70
+		var target_x: float = clamp(
+		$Outside/Slider.position.x - 70,
+		0,
+	$Outside.size.x - $Outside/Slider.size.x
+	)
 		slider_tween = create_tween()
 		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await slider_tween.finished
 		if fishing:
 			fight_type()
 	elif fish == 7:
-		var target_x: float = $Outside/Slider.position.x - 75
+		var target_x: float = clamp(
+		$Outside/Slider.position.x - 75,
+		0,
+	$Outside.size.x - $Outside/Slider.size.x
+	)
 		slider_tween = create_tween()
 		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		await slider_tween.finished
