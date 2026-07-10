@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://blu2p3lh6yh33" path="res://assets/fishbubles.png" id="1_ly0cx"]
 [ext_resource type="Script" uid="uid://wyeb0d4gkeeq" path="res://script/fishing.gd" id="1_ue6ed"]
-[ext_resource type="Texture2D" uid="uid://twsdpehvo25k" path="res://assets/bg.png" id="2_abwp3"]
+[ext_resource type="Texture2D" uid="uid://dil0cjndkhiur" path="res://assets/fishing bg.png" id="2_so0t4"]
 [ext_resource type="Texture2D" uid="uid://dwmuadhp3c8dl" path="res://assets/fishbubles2.png" id="2_ue6ed"]
 [ext_resource type="Texture2D" uid="uid://b34qsr1pj2oqa" path="res://assets/purple fish.png" id="4_f8at7"]
+[ext_resource type="Texture2D" uid="uid://bnouob6hk72st" path="res://assets/rod.png" id="4_j7myu"]
+[ext_resource type="Texture2D" uid="uid://bd6x30jb2oo27" path="res://assets/fishline.png" id="4_u3snr"]
+[ext_resource type="Texture2D" uid="uid://c2lggmhpcboly" path="res://assets/bobber.png" id="4_y3t8l"]
 [ext_resource type="Texture2D" uid="uid://73g5qxvhwqeg" path="res://assets/puff.png" id="5_abwp3"]
 [ext_resource type="Texture2D" uid="uid://v7d4ra687lii" path="res://assets/green fish.png" id="6_so0t4"]
 [ext_resource type="Texture2D" uid="uid://dk2qa7xurhhtn" path="res://assets/golden cat fish.png" id="7_y3t8l"]
@@ -67,13 +70,6 @@ corner_radius_bottom_left = 4
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_084we"]
 size = Vector2(29, 23)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_084we"]
-bg_color = Color(0.8666667, 0.19215687, 0.21568628, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6b7ss"]
 atlas = ExtResource("2_ue6ed")
 region = Rect2(0, 0, 32, 32)
@@ -108,8 +104,7 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abwp3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abwp3"]
-bg_color = Color(0.6392157, 0.6392157, 0.6392157, 0.61960787)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3snr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu85m"]
 
@@ -158,23 +153,15 @@ size = Vector2(0.5, 33)
 [node name="Node2D" type="Node2D" unique_id=1008847777]
 script = ExtResource("1_ue6ed")
 
+[node name="FishingBg" type="Sprite2D" parent="." unique_id=1344961108]
+position = Vector2(581.7222, 348)
+scale = Vector2(0.50048226, 0.5)
+texture = ExtResource("2_so0t4")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118414367]
 position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
-
-[node name="Bg" type="Sprite2D" parent="." unique_id=1249185224]
-position = Vector2(582, 302)
-scale = Vector2(0.5017361, 0.3580247)
-texture = ExtResource("2_abwp3")
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1731107578]
-offset_left = 293.0
-offset_top = 418.0
-offset_right = 871.0
-offset_bottom = 511.0
-mouse_filter = 2
-color = Color(0.47181648, 0.26303184, 0.022503389, 1)
 
 [node name="fish" type="ColorRect" parent="." unique_id=767431247]
 offset_left = 960.0
@@ -184,11 +171,11 @@ offset_bottom = 408.0
 mouse_filter = 2
 
 [node name="fishbub" type="AnimatedSprite2D" parent="." unique_id=719645160]
+visible = false
 texture_filter = 1
-position = Vector2(947, 301)
-scale = Vector2(2.781251, 2.781251)
+position = Vector2(183, 209)
+scale = Vector2(3.8828058, 3.8828058)
 sprite_frames = SubResource("SpriteFrames_6b7ss")
-frame_progress = 0.98905593
 speed_scale = 0.5
 
 [node name="Outside" type="Panel" parent="." unique_id=1768988802]
@@ -238,22 +225,32 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ue6ed")
 position = Vector2(14.5, 11.5)
 shape = SubResource("RectangleShape2D_084we")
 
-[node name="bobber" type="Sprite2D" parent="." unique_id=2088464533]
-position = Vector2(151, 87)
+[node name="Rod" type="Sprite2D" parent="." unique_id=1744036295]
+position = Vector2(789, 356)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_j7myu")
 
-[node name="bobber" type="Panel" parent="bobber" unique_id=188340520]
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 6.0
-pivot_offset = Vector2(6, 6)
-theme_override_styles/panel = SubResource("StyleBoxFlat_084we")
+[node name="Fishline2" type="Sprite2D" parent="Rod" unique_id=1323275697]
+position = Vector2(-69.999954, -532)
+rotation = 0.43026876
+scale = Vector2(1.4482108, 0.6879971)
+texture = ExtResource("4_u3snr")
+
+[node name="bobber" type="Sprite2D" parent="." unique_id=2088464533]
+position = Vector2(130, 112.99999)
+scale = Vector2(0.4168915, 0.4168915)
+texture = ExtResource("4_y3t8l")
+
+[node name="Fishline" type="Sprite2D" parent="bobber" unique_id=1040824825]
+position = Vector2(-55.170227, -863.53406)
+scale = Vector2(0.8938418, 2.2854784)
+texture = ExtResource("4_u3snr")
 
 [node name="fishbub2" type="AnimatedSprite2D" parent="." unique_id=2029107961]
 visible = false
 texture_filter = 1
-position = Vector2(947, 301)
-scale = Vector2(2.7812507, 2.7812507)
+position = Vector2(-11.000015, 178)
+scale = Vector2(3.883, 3.883)
 sprite_frames = SubResource("SpriteFrames_abwp3")
 speed_scale = 0.5
 
@@ -262,10 +259,10 @@ modulate = Color(1, 1, 1, 0.20392157)
 offset_left = 293.0
 offset_top = 185.0
 offset_right = 871.0
-offset_bottom = 418.0
+offset_bottom = 415.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_abwp3")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_abwp3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3snr")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_eu85m")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
 

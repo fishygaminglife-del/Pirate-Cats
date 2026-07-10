@@ -14,6 +14,7 @@ var insslide_move
 var insslider_tween: Tween
 var time_insmove
 func _ready() -> void:
+	$Rod.visible = false
 	$Outside.visible = false
 	$fishbub.visible = false
 	$Label.visible = false
@@ -21,6 +22,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	var pos = Vector2(get_global_mouse_position())
 	if bobber == false:
+		$Rod.visible = true
 		$Outside/Slider.position = Vector2(127,6)
 		fightcount = 0
 		fight_style = ""
@@ -30,9 +32,12 @@ func _on_button_pressed() -> void:
 		var bob_pos: Vector2 = $bobber.global_position
 		$fishbub.global_position = bob_pos
 		$fishbub2.global_position = bob_pos
+		$Button.size.y = 324
 		rand_time()
 	
 	elif bobber == true and fishing == false:
+		$Button.size.y = 230
+		$Rod.visible = false
 		bobber = false
 		fishing = false
 		$bobber.visible = false
@@ -178,6 +183,7 @@ func _on_wait_reel_timeout() -> void:
 	$bobber.visible = false
 	$fishbub.visible = false
 	$Outside.visible = false
+	$Rod.visible = false
 	if fish == 1 or fish == 2 or fish == 3:
 		$ColorRect/PurpleFish.visible = false
 		$ColorRect/Puff.visible = false
@@ -228,11 +234,12 @@ func _on_wait_reel_timeout() -> void:
 	if fish_ammount == 5:
 		print("done")
 	else:
+		$Button.size.y = 230
 		$Button.disabled = false
 
 func _on_s_lider_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lineedge"):
-
+		$Rod.visible = false
 		$Button.disabled = true
 		$TimeOutOfTank.stop()
 		if slider_tween and slider_tween.is_valid():
@@ -249,6 +256,7 @@ func _on_s_lider_area_body_entered(body: Node2D) -> void:
 		$fishbub.visible = false
 		$fishbub2.visible =false
 		$bobber.visible = false
+		$Button.size.y = 230
 		$Button.disabled = false
 		fish_type = 3
 		$WaitReel.stop()
@@ -292,6 +300,7 @@ func _on_inside_slider_area_exited(area: Area2D) -> void:
 
 func _on_time_out_of_tank_timeout() -> void:
 	$Button.disabled = true
+	$Rod.visible = false
 	$TimeOutOfTank.stop()
 	if slider_tween and slider_tween.is_valid():
 		slider_tween.kill()
@@ -307,4 +316,5 @@ func _on_time_out_of_tank_timeout() -> void:
 	$fishbub.visible = false
 	$fishbub2.visible =false
 	$bobber.visible = false
+	$Button.size.y = 230
 	$Button.disabled = false
