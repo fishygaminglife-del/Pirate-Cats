@@ -10,9 +10,36 @@
 [ext_resource type="Texture2D" uid="uid://cktu0nawmpjoh" path="res://assets/front blue (1).png" id="6_xq2r4"]
 [ext_resource type="Texture2D" uid="uid://bcqnv5lqra7vt" path="res://assets/catshow.png" id="8_pjvru"]
 [ext_resource type="Texture2D" uid="uid://in8dasb1lynv" path="res://assets/lcuky cat (1).png" id="10_ifos2"]
+[ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="11_5fpcd"]
+[ext_resource type="FontFile" uid="uid://b46q62x2dethf" path="res://fonts/Jua-Regular.ttf" id="11_qvx0c"]
+[ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_qvx0c"]
 
 [sub_resource type="Animation" id="Animation_riyh1"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_2e2bh"]
 resource_name = "boat craddle"
@@ -68,7 +95,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xq2r4"]
 resource_name = "showcats"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,6 +192,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fpcd"]
 _data = {
@@ -242,7 +293,8 @@ texture = ExtResource("4_eqgp1")
 centered = false
 
 [node name="Boat" type="Sprite2D" parent="parallaxbg" unique_id=1432534839]
-position = Vector2(-290, 575)
+position = Vector2(-274.01788, 559.00006)
+rotation = 0.085175544
 scale = Vector2(0.26081735, 0.26081732)
 texture = ExtResource("5_ifos2")
 
@@ -284,4 +336,32 @@ position = Vector2(842, 485.50003)
 scale = Vector2(0.14677404, 0.14677402)
 texture = ExtResource("10_ifos2")
 
+[node name="Button" type="Button" parent="." unique_id=642604634]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 749.0
+offset_top = 555.0
+offset_right = 933.0
+offset_bottom = 605.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_qvx0c")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("11_5fpcd")
+theme_override_styles/pressed = ExtResource("12_qvx0c")
+theme_override_styles/hover = ExtResource("12_qvx0c")
+theme_override_styles/focus = ExtResource("12_qvx0c")
+text = "\"...\""
+
+[node name="Label" type="Label" parent="Button" unique_id=1977352449]
+visible = false
+layout_mode = 0
+offset_left = 110.0
+offset_top = 38.0
+offset_right = 174.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("11_qvx0c")
+theme_override_font_sizes/font_size = 8
+text = " press to continue"
+
 [connection signal="pressed" from="parallaxbg/Camera2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_player_button_pressed"]
