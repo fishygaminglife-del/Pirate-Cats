@@ -1,28 +1,209 @@
 [gd_scene format=3 uid="uid://d8yknlk0lcm2"]
 
+[ext_resource type="Texture2D" uid="uid://blu2p3lh6yh33" path="res://assets/fishbubles.png" id="1_ly0cx"]
+[ext_resource type="Script" uid="uid://wyeb0d4gkeeq" path="res://script/fishing.gd" id="1_ue6ed"]
+[ext_resource type="Texture2D" uid="uid://dwmuadhp3c8dl" path="res://assets/fishbubles2.png" id="2_ue6ed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue6ed"]
+atlas = ExtResource("1_ly0cx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_084we"]
+atlas = ExtResource("1_ly0cx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu85m"]
+atlas = ExtResource("1_ly0cx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6b7ss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue6ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_084we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu85m")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu85m"]
+bg_color = Color(0.7950457, 0.5372931, 0.24919632, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue6ed"]
+size = Vector2(89, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue6ed"]
+bg_color = Color(0.030223753, 0.23394567, 0.07736852, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_084we"]
+size = Vector2(29, 23)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_084we"]
+bg_color = Color(0.8666667, 0.19215687, 0.21568628, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b7ss"]
+atlas = ExtResource("2_ue6ed")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ubln"]
+atlas = ExtResource("2_ue6ed")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8at7"]
+atlas = ExtResource("2_ue6ed")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_abwp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b7ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ubln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8at7")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6ed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_084we"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eu85m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6b7ss"]
+
 [node name="Node2D" type="Node2D" unique_id=1008847777]
+script = ExtResource("1_ue6ed")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118414367]
 position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
 
-[node name="Button" type="Button" parent="." unique_id=143069040]
-visible = false
-offset_left = 293.0
-offset_top = 185.0
-offset_right = 871.0
-offset_bottom = 511.0
-
-[node name="bobber" type="ColorRect" parent="." unique_id=425023039]
-offset_left = 1013.0
-offset_top = 262.0
-offset_right = 1053.0
-offset_bottom = 302.0
-color = Color(1, 0.09019608, 0.3529412, 1)
-
 [node name="fish" type="ColorRect" parent="." unique_id=767431247]
 offset_left = 960.0
 offset_top = 390.0
 offset_right = 1033.0
 offset_bottom = 408.0
+
+[node name="fishbub" type="AnimatedSprite2D" parent="." unique_id=719645160]
+texture_filter = 1
+position = Vector2(947, 301)
+scale = Vector2(2.781251, 2.781251)
+sprite_frames = SubResource("SpriteFrames_6b7ss")
+frame_progress = 0.98905593
+speed_scale = 0.5
+
+[node name="Outside" type="Panel" parent="." unique_id=1768988802]
+offset_left = 463.0
+offset_top = 457.0
+offset_right = 700.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu85m")
+
+[node name="Inside" type="ColorRect" parent="." unique_id=249505669]
+offset_left = 537.0
+offset_top = 458.0
+offset_right = 626.0
+offset_bottom = 490.0
+color = Color(0.9005855, 0.4261436, 0.4134724, 1)
+
+[node name="Area2D3" type="Area2D" parent="Inside" unique_id=197222457]
+position = Vector2(30, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inside/Area2D3" unique_id=1373898159]
+visible = false
+position = Vector2(14.5, 10)
+shape = SubResource("RectangleShape2D_ue6ed")
+
+[node name="Indicator" type="ColorRect" parent="." unique_id=1539767730]
+offset_left = 581.0
+offset_top = 457.0
+offset_right = 582.0
+offset_bottom = 473.0
+
+[node name="Slider" type="Panel" parent="." unique_id=957563179]
+offset_left = 567.0
+offset_top = 463.0
+offset_right = 596.0
+offset_bottom = 486.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ue6ed")
+
+[node name="Area2D" type="Area2D" parent="Slider" unique_id=588722318]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slider/Area2D" unique_id=1538843132]
+position = Vector2(14.5, 11.5)
+shape = SubResource("RectangleShape2D_084we")
+
+[node name="FishingTimer" type="Timer" parent="." unique_id=620431212]
+
+[node name="bobber" type="Sprite2D" parent="." unique_id=2088464533]
+position = Vector2(151, 87)
+
+[node name="bobber" type="Panel" parent="bobber" unique_id=188340520]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 6.0
+offset_bottom = 6.0
+pivot_offset = Vector2(6, 6)
+theme_override_styles/panel = SubResource("StyleBoxFlat_084we")
+
+[node name="fishbub2" type="AnimatedSprite2D" parent="." unique_id=2029107961]
+visible = false
+texture_filter = 1
+position = Vector2(947, 301)
+scale = Vector2(2.7812507, 2.7812507)
+sprite_frames = SubResource("SpriteFrames_abwp3")
+speed_scale = 0.5
+
+[node name="Button" type="Button" parent="." unique_id=143069040]
+modulate = Color(1, 1, 1, 0.20392157)
+offset_left = 293.0
+offset_top = 185.0
+offset_right = 871.0
+offset_bottom = 511.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ue6ed")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_084we")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eu85m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
+
+[connection signal="timeout" from="FishingTimer" to="." method="_on_fishing_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
