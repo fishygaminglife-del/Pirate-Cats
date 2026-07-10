@@ -113,6 +113,46 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6b7ss"]
 
+[sub_resource type="Animation" id="Animation_f8at7"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_abwp3"]
+resource_name = "fish_caught"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.1666666, 1.3666667, 1.5, 1.6666666, 1.8333334, 2, 3, 3.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(119.000015, 588), Vector2(263, 461), Vector2(444.00003, 394.00003), Vector2(444, 383), Vector2(441, 412), Vector2(446, 381), Vector2(447, 413), Vector2(444.00003, 394.00003), Vector2(667, 405), Vector2(804, 487)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.1666666, 2, 3, 3.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.6789331, -0.16929694, 0.0, 0.0, 0.50963616, 1.0192723]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_so0t4"]
+_data = {
+&"RESET": SubResource("Animation_f8at7"),
+&"fish_caught": SubResource("Animation_abwp3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8at7"]
+size = Vector2(0.5, 33)
+
 [node name="Node2D" type="Node2D" unique_id=1008847777]
 script = ExtResource("1_ue6ed")
 
@@ -126,6 +166,7 @@ offset_left = 960.0
 offset_top = 390.0
 offset_right = 1033.0
 offset_bottom = 408.0
+mouse_filter = 2
 
 [node name="fishbub" type="AnimatedSprite2D" parent="." unique_id=719645160]
 texture_filter = 1
@@ -140,6 +181,7 @@ offset_left = 440.0
 offset_top = 457.0
 offset_right = 723.0
 offset_bottom = 491.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eu85m")
 
 [node name="Inside" type="ColorRect" parent="Outside" unique_id=249505669]
@@ -154,7 +196,6 @@ color = Color(0.9005855, 0.4261436, 0.4134724, 1)
 position = Vector2(30, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/Inside/Area2D3" unique_id=1373898159]
-visible = false
 position = Vector2(14.5, 10)
 shape = SubResource("RectangleShape2D_ue6ed")
 
@@ -164,7 +205,7 @@ offset_left = 141.0
 offset_right = 142.0
 offset_bottom = 16.0
 
-[node name="Slider" type="Panel" parent="Outside" unique_id=957563179]
+[node name="Slider" type="Panel" parent="Outside" unique_id=957563179 groups=["slider"]]
 layout_mode = 0
 offset_left = 127.0
 offset_top = 6.0
@@ -172,13 +213,11 @@ offset_right = 156.0
 offset_bottom = 29.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ue6ed")
 
-[node name="Area2D" type="Area2D" parent="Outside/Slider" unique_id=588722318]
+[node name="SLiderArea" type="Area2D" parent="Outside/Slider" unique_id=588722318]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/Slider/Area2D" unique_id=1538843132]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside/Slider/SLiderArea" unique_id=1538843132]
 position = Vector2(14.5, 11.5)
 shape = SubResource("RectangleShape2D_084we")
-
-[node name="FishingTimer" type="Timer" parent="." unique_id=620431212]
 
 [node name="bobber" type="Sprite2D" parent="." unique_id=2088464533]
 position = Vector2(151, 87)
@@ -204,13 +243,20 @@ modulate = Color(1, 1, 1, 0.20392157)
 offset_left = 293.0
 offset_top = 185.0
 offset_right = 871.0
-offset_bottom = 448.0
+offset_bottom = 418.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ue6ed")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_084we")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_eu85m")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
 
+[node name="FishingTimer" type="Timer" parent="." unique_id=620431212]
+
 [node name="WaitReel" type="Timer" parent="." unique_id=1826671054]
+
+[node name="TimeOutOfTank" type="Timer" parent="." unique_id=1315127960]
+wait_time = 3.0
+
+[node name="InsMove" type="Timer" parent="." unique_id=1764474044]
 
 [node name="Label" type="Label" parent="." unique_id=1355043990]
 offset_left = 405.0
@@ -218,29 +264,65 @@ offset_top = 283.0
 offset_right = 445.0
 offset_bottom = 306.0
 
-[node name="PurpleFish" type="Sprite2D" parent="." unique_id=651392733]
-position = Vector2(67, 380.99997)
-scale = Vector2(0.22158079, 0.2215808)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=9942349]
+offset_left = 119.000015
+offset_top = 588.0
+offset_right = 362.8183
+offset_bottom = 628.00006
+rotation = -0.6789331
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PurpleFish" type="Sprite2D" parent="ColorRect" unique_id=651392733]
+position = Vector2(132.77145, -86.262726)
+scale = Vector2(0.22158077, 0.22158079)
 texture = ExtResource("4_f8at7")
 flip_h = true
 
-[node name="Puff" type="Sprite2D" parent="." unique_id=1602303756]
-position = Vector2(132.00002, 151)
-rotation = -0.5794468
+[node name="Puff" type="Sprite2D" parent="ColorRect" unique_id=1602303756]
+position = Vector2(138.77147, -89.26276)
+rotation = -0.27617016
 scale = Vector2(0.20356037, 0.20356037)
 texture = ExtResource("5_abwp3")
 
-[node name="GreenFish" type="Sprite2D" parent="." unique_id=1616590210]
-position = Vector2(52, 519)
-scale = Vector2(0.17032968, 0.17032968)
+[node name="GreenFish" type="Sprite2D" parent="ColorRect" unique_id=1616590210]
+position = Vector2(138.7715, -88.262695)
+scale = Vector2(0.17032966, 0.17032966)
 texture = ExtResource("6_so0t4")
 flip_h = true
 
-[node name="GoldenCatFish" type="Sprite2D" parent="." unique_id=284080269]
-position = Vector2(125, 270.99997)
-scale = Vector2(0.2376163, 0.23761632)
+[node name="GoldenCatFish" type="Sprite2D" parent="ColorRect" unique_id=284080269]
+position = Vector2(127.771454, -97.26276)
+scale = Vector2(0.2376163, 0.2376163)
 texture = ExtResource("7_y3t8l")
 
-[connection signal="timeout" from="FishingTimer" to="." method="_on_fishing_timer_timeout"]
+[node name="Label" type="Label" parent="ColorRect" unique_id=877499037]
+layout_mode = 0
+offset_left = 46.034492
+offset_top = -28.387093
+offset_right = 224.03448
+offset_bottom = -5.3870926
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You Caught A Common"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=240840749]
+libraries/ = SubResource("AnimationLibrary_so0t4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1425469299 groups=["lineedge"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1026462524]
+position = Vector2(440.5, 474)
+shape = SubResource("RectangleShape2D_f8at7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=125367951]
+position = Vector2(722.25, 474)
+shape = SubResource("RectangleShape2D_f8at7")
+
+[connection signal="body_entered" from="Outside/Inside/Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_exited" from="Outside/Inside/Area2D3" to="." method="_on_area_2d_3_body_exited"]
+[connection signal="body_entered" from="Outside/Slider/SLiderArea" to="." method="_on_s_lider_area_body_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="FishingTimer" to="." method="_on_fishing_timer_timeout"]
 [connection signal="timeout" from="WaitReel" to="." method="_on_wait_reel_timeout"]
+[connection signal="timeout" from="TimeOutOfTank" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="InsMove" to="." method="_on_ins_move_timeout"]
