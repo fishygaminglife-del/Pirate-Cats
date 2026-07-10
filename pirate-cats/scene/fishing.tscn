@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://blu2p3lh6yh33" path="res://assets/fishbubles.png" id="1_ly0cx"]
 [ext_resource type="Script" uid="uid://wyeb0d4gkeeq" path="res://script/fishing.gd" id="1_ue6ed"]
+[ext_resource type="Texture2D" uid="uid://twsdpehvo25k" path="res://assets/bg.png" id="2_abwp3"]
 [ext_resource type="Texture2D" uid="uid://dwmuadhp3c8dl" path="res://assets/fishbubles2.png" id="2_ue6ed"]
 [ext_resource type="Texture2D" uid="uid://b34qsr1pj2oqa" path="res://assets/purple fish.png" id="4_f8at7"]
 [ext_resource type="Texture2D" uid="uid://73g5qxvhwqeg" path="res://assets/puff.png" id="5_abwp3"]
@@ -105,7 +106,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue6ed"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abwp3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_084we"]
 
@@ -161,6 +162,19 @@ position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
 
+[node name="Bg" type="Sprite2D" parent="." unique_id=1249185224]
+position = Vector2(582, 302)
+scale = Vector2(0.5017361, 0.3580247)
+texture = ExtResource("2_abwp3")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1731107578]
+offset_left = 293.0
+offset_top = 418.0
+offset_right = 871.0
+offset_bottom = 511.0
+mouse_filter = 2
+color = Color(0.47181648, 0.26303184, 0.022503389, 1)
+
 [node name="fish" type="ColorRect" parent="." unique_id=767431247]
 offset_left = 960.0
 offset_top = 390.0
@@ -190,6 +204,7 @@ offset_left = 97.0
 offset_top = 1.0
 offset_right = 186.0
 offset_bottom = 33.0
+mouse_filter = 2
 color = Color(0.9005855, 0.4261436, 0.4134724, 1)
 
 [node name="Area2D3" type="Area2D" parent="Outside/Inside" unique_id=197222457]
@@ -199,11 +214,13 @@ position = Vector2(30, 6)
 position = Vector2(14.5, 10)
 shape = SubResource("RectangleShape2D_ue6ed")
 
-[node name="Indicator" type="ColorRect" parent="Outside" unique_id=1539767730]
+[node name="Indicator" type="ColorRect" parent="Outside/Inside" unique_id=1539767730]
 layout_mode = 0
-offset_left = 141.0
-offset_right = 142.0
-offset_bottom = 16.0
+offset_left = 44.0
+offset_top = -1.0
+offset_right = 45.0
+offset_bottom = 15.0
+mouse_filter = 2
 
 [node name="Slider" type="Panel" parent="Outside" unique_id=957563179 groups=["slider"]]
 layout_mode = 0
@@ -211,6 +228,7 @@ offset_left = 127.0
 offset_top = 6.0
 offset_right = 156.0
 offset_bottom = 29.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ue6ed")
 
 [node name="SLiderArea" type="Area2D" parent="Outside/Slider" unique_id=588722318]
@@ -244,7 +262,8 @@ offset_left = 293.0
 offset_top = 185.0
 offset_right = 871.0
 offset_bottom = 418.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ue6ed")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_abwp3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_084we")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_eu85m")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6b7ss")
