@@ -96,80 +96,82 @@ func _physics_process(delta: float) -> void:
 		0,
 	$Outside.size.x - $Outside/Slider.size.x
 	)
-func slide_move():
-	if fish == 1 or fish == 2 or fish == 3:
-		var target_x: float = clamp(
-		$Outside/Slider.position.x - 50,
-		0,
-	$Outside.size.x - $Outside/Slider.size.x
-	)
-		slider_tween = create_tween()
-		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		await slider_tween.finished
-		if fishing:
-			fight_type()
 
-	elif fish == 4 or fish == 5:
-		var target_x: float = clamp(
-		$Outside/Slider.position.x - 60,
-		0,
-	$Outside.size.x - $Outside/Slider.size.x
-	)
-		slider_tween = create_tween()
-		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		await slider_tween.finished
-		if fishing:
-			fight_type()
-
-	elif fish == 6:
-		var target_x: float = clamp(
-		$Outside/Slider.position.x - 70,
-		0,
-	$Outside.size.x - $Outside/Slider.size.x
-	)
-		slider_tween = create_tween()
-		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		await slider_tween.finished
-		if fishing:
-			fight_type()
-	elif fish == 7:
-		var target_x: float = clamp(
-		$Outside/Slider.position.x - 75,
-		0,
-	$Outside.size.x - $Outside/Slider.size.x
-	)
-		slider_tween = create_tween()
-		slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		await slider_tween.finished
-		if fishing:
-			fight_type()
 
 func fight_type():
-	fish_type = randi_range(1,2)
-	if fishing == true:
-		if fish_type == 1:
-			fightcount = 0
-			fight_style = "stream"
-			var time_fight = randi_range(1,4)
-			await get_tree().create_timer(time_fight).timeout
-			if !fishing:
-				return
-			fight_type()
-		elif fish_type == 2:
-			if fightcount > 1:
-				fish_type = 1
+	while $WaitReel.time_left > 0:
+		fish_type = randi_range(1,2)
+		if fishing == true:
+			if fish_type == 1:
+				fightcount = 0
 				fight_style = "stream"
 				var time_fight = randi_range(1,4)
 				await get_tree().create_timer(time_fight).timeout
 				if !fishing:
 					return
-				fight_type()
-			else:
-				fight_style = "fight"
-				fightcount += 1
-				await slide_move()
+			elif fish_type == 2:
+				if fish_type == 2 and fightcount >= 1:
+					fish_type = 1
+					fish_type = 1
+					fight_style = "stream"
+					var time_fight = randi_range(1,4)
+					await get_tree().create_timer(time_fight).timeout
+					if !fishing:
+						return
+				else:
+					fight_style = "fight"
+					fightcount += 1
+					if fish == 1 or fish == 2 or fish == 3:
+						var target_x: float = clamp(
+						$Outside/Slider.position.x - 50,
+						0,
+					$Outside.size.x - $Outside/Slider.size.x
+					)
+						slider_tween = create_tween()
+						slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+						await slider_tween.finished
+						if !fishing:
+							return
+
+					elif fish == 4 or fish == 5:
+						var target_x: float = clamp(
+						$Outside/Slider.position.x - 60,
+						0,
+					$Outside.size.x - $Outside/Slider.size.x
+					)
+						slider_tween = create_tween()
+						slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+						await slider_tween.finished
+						if !fishing:
+							return
+						
+
+					elif fish == 6:
+						var target_x: float = clamp(
+						$Outside/Slider.position.x - 70,
+						0,
+					$Outside.size.x - $Outside/Slider.size.x
+					)
+						slider_tween = create_tween()
+						slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+						await slider_tween.finished
+						if !fishing:
+							return
+
+					elif fish == 7:
+						var target_x: float = clamp(
+						$Outside/Slider.position.x - 75,
+						0,
+					$Outside.size.x - $Outside/Slider.size.x
+					)
+						slider_tween = create_tween()
+						slider_tween.tween_property($Outside/Slider, "position:x", target_x, 0.5).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+						await slider_tween.finished
+						if !fishing:
+							return
 
 func _on_wait_reel_timeout() -> void:
+	$WaitReel.stop()
 	if slider_tween and slider_tween.is_valid():
 		slider_tween.kill()
 	$Button.disabled = true
