@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://73g5qxvhwqeg" path="res://assets/puff.png" id="5_abwp3"]
 [ext_resource type="Texture2D" uid="uid://v7d4ra687lii" path="res://assets/green fish.png" id="6_so0t4"]
 [ext_resource type="Texture2D" uid="uid://dk2qa7xurhhtn" path="res://assets/golden cat fish.png" id="7_y3t8l"]
+[ext_resource type="Texture2D" uid="uid://b3x4qcdo2ul6v" path="res://assets/Fishing BOat Only.png" id="12_j7myu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ue6ed"]
 atlas = ExtResource("1_ly0cx")
@@ -158,17 +159,61 @@ position = Vector2(581.7222, 348)
 scale = Vector2(0.50048226, 0.5)
 texture = ExtResource("2_so0t4")
 
+[node name="FishingBOatOnly" type="Sprite2D" parent="." unique_id=544271052]
+position = Vector2(580, 457)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_j7myu")
+
+[node name="Swiming Fish" type="Node2D" parent="." unique_id=1509683532]
+
+[node name="GreenFish" type="Sprite2D" parent="Swiming Fish" unique_id=447047432]
+position = Vector2(261, 417.00003)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("6_so0t4")
+flip_h = true
+
+[node name="GoldenCatFish" type="Sprite2D" parent="Swiming Fish" unique_id=586478393]
+position = Vector2(-207, 229)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("7_y3t8l")
+
+[node name="Puff" type="Sprite2D" parent="Swiming Fish" unique_id=218163448]
+position = Vector2(276.00003, 223.00002)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("5_abwp3")
+
+[node name="PurpleFish" type="Sprite2D" parent="Swiming Fish" unique_id=1878967994]
+position = Vector2(-8.999985, 322)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("4_f8at7")
+flip_h = true
+
+[node name="GreenFish2" type="Sprite2D" parent="Swiming Fish" unique_id=1113141708]
+position = Vector2(1193.793, 200.58022)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("6_so0t4")
+
+[node name="GoldenCatFish2" type="Sprite2D" parent="Swiming Fish" unique_id=2137834766]
+position = Vector2(894.00006, 324)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("7_y3t8l")
+flip_h = true
+
+[node name="Puff2" type="Sprite2D" parent="Swiming Fish" unique_id=1326056551]
+position = Vector2(1203.793, 417.58026)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("5_abwp3")
+flip_h = true
+
+[node name="PurpleFish2" type="Sprite2D" parent="Swiming Fish" unique_id=1247118608]
+position = Vector2(1551.0001, 415)
+scale = Vector2(0.052638546, 0.052638546)
+texture = ExtResource("4_f8at7")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118414367]
 position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
-
-[node name="fish" type="ColorRect" parent="." unique_id=767431247]
-offset_left = 960.0
-offset_top = 390.0
-offset_right = 1033.0
-offset_bottom = 408.0
-mouse_filter = 2
 
 [node name="fishbub" type="AnimatedSprite2D" parent="." unique_id=719645160]
 visible = false
@@ -256,9 +301,9 @@ speed_scale = 0.5
 
 [node name="Button" type="Button" parent="." unique_id=143069040]
 modulate = Color(1, 1, 1, 0.20392157)
-offset_left = 293.0
+offset_left = 294.0
 offset_top = 185.0
-offset_right = 871.0
+offset_right = 872.0
 offset_bottom = 415.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_abwp3")
@@ -282,10 +327,10 @@ offset_right = 445.0
 offset_bottom = 306.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=9942349]
-offset_left = 119.000015
-offset_top = 588.0
-offset_right = 362.8183
-offset_bottom = 628.00006
+offset_left = -11.000015
+offset_top = 582.0
+offset_right = 232.81827
+offset_bottom = 622.00006
 rotation = -0.6789331
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
