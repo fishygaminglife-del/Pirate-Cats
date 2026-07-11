@@ -21,49 +21,7 @@ func _ready() -> void:
 	$Outside.visible = false
 	$fishbub.visible = false
 	$Label.visible = false
-	while_fish_swim()
-
-func while_fish_swim():
-	var fish1 = $"Swiming Fish/GreenFish".position.x
-	var fish2 = $"Swiming Fish/Puff".position.x
-	var fish3 = $"Swiming Fish/PurpleFish".position.x
-	var fish4 = $"Swiming Fish/GoldenCatFish".position.x
-	var fish5 = $"Swiming Fish/GoldenCatFish2".position.x
-	var fish6 = $"Swiming Fish/GreenFish2".position.x
-	var fish7 = $"Swiming Fish/Puff2".position.x
-	var fish8 = $"Swiming Fish/PurpleFish2".position.x
-	while fish_swiming == true:
-		var target_a: float = $"Swiming Fish/GreenFish".position.x + 100
-		var Sfish: Tween = create_tween()
-		Sfish.tween_property($"Swiming Fish/GreenFish", "position:x", target_a, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_b: float = $"Swiming Fish/Puff".position.x + 100
-		var Sfish1: Tween = create_tween()
-		Sfish1.tween_property($"Swiming Fish/Puff", "position:x", target_b, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_c: float = $"Swiming Fish/GoldenCatFish2".position.x - 100
-		var Sfish2: Tween = create_tween()
-		Sfish2.tween_property($"Swiming Fish/GoldenCatFish2", "position:x", target_c, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_d: float = $"Swiming Fish/PurpleFish".position.x - 100
-		var Sfish3: Tween = create_tween()
-		Sfish3.tween_property($"Swiming Fish/PurpleFish", "position:x", target_d, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_e: float = $"Swiming Fish/Puff2".position.x - 100
-		var Sfish4: Tween = create_tween()
-		Sfish4.tween_property($"Swiming Fish/Puff2", "position:x", target_e, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_f: float = $"Swiming Fish/GreenFish2".position.x - 100
-		var Sfish5: Tween = create_tween()
-		Sfish5.tween_property($"Swiming Fish/GreenFish2", "position:x", target_f, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_g: float = $"Swiming Fish/GoldenCatFish".position.x - 100
-		var Sfish6: Tween = create_tween()
-		Sfish6.tween_property($"Swiming Fish/GoldenCatFish", "position:x", target_g, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		
-		var target_h: float = $"Swiming Fish/PurpleFish2".position.x - 100
-		var Sfish7: Tween = create_tween()
-		Sfish7.tween_property($"Swiming Fish/PurpleFish2", "position:x", target_h, 2).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
 		
 
 func _on_button_pressed() -> void:

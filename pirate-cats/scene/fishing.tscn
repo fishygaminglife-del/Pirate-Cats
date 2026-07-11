@@ -164,52 +164,6 @@ position = Vector2(580, 457)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_j7myu")
 
-[node name="Swiming Fish" type="Node2D" parent="." unique_id=1509683532]
-
-[node name="GreenFish" type="Sprite2D" parent="Swiming Fish" unique_id=447047432]
-position = Vector2(261, 417.00003)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("6_so0t4")
-flip_h = true
-
-[node name="GoldenCatFish" type="Sprite2D" parent="Swiming Fish" unique_id=586478393]
-position = Vector2(-207, 229)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("7_y3t8l")
-
-[node name="Puff" type="Sprite2D" parent="Swiming Fish" unique_id=218163448]
-position = Vector2(276.00003, 223.00002)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("5_abwp3")
-
-[node name="PurpleFish" type="Sprite2D" parent="Swiming Fish" unique_id=1878967994]
-position = Vector2(-8.999985, 322)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("4_f8at7")
-flip_h = true
-
-[node name="GreenFish2" type="Sprite2D" parent="Swiming Fish" unique_id=1113141708]
-position = Vector2(1193.793, 200.58022)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("6_so0t4")
-
-[node name="GoldenCatFish2" type="Sprite2D" parent="Swiming Fish" unique_id=2137834766]
-position = Vector2(894.00006, 324)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("7_y3t8l")
-flip_h = true
-
-[node name="Puff2" type="Sprite2D" parent="Swiming Fish" unique_id=1326056551]
-position = Vector2(1203.793, 417.58026)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("5_abwp3")
-flip_h = true
-
-[node name="PurpleFish2" type="Sprite2D" parent="Swiming Fish" unique_id=1247118608]
-position = Vector2(1551.0001, 415)
-scale = Vector2(0.052638546, 0.052638546)
-texture = ExtResource("4_f8at7")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=118414367]
 position = Vector2(582, 348)
 scale = Vector2(0.5, 0.5)
