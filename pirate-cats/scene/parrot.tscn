@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bvrtykewrn43u"]
+
+[ext_resource type="Script" uid="uid://dmnsurbujx6au" path="res://script/parrot.gd" id="1_8w02c"]
+[ext_resource type="Texture2D" uid="uid://clgvwimjyo83a" path="res://assets/parrot cookie eating bg.png" id="1_avchr"]
+[ext_resource type="Texture2D" uid="uid://b3fs43s6b7gdg" path="res://assets/bird.png" id="2_bo8uk"]
+[ext_resource type="Texture2D" uid="uid://gtufp5dsc4m7" path="res://assets/bird-1.png" id="3_40ni8"]
+[ext_resource type="Texture2D" uid="uid://ctluqwjcax78k" path="res://assets/bird-2.png" id="4_wopdc"]
+[ext_resource type="Texture2D" uid="uid://cevrk8jih6j88" path="res://assets/cookie-1.png" id="5_8w02c"]
+[ext_resource type="Texture2D" uid="uid://ct6ei37ds08xr" path="res://assets/cookie-2.png" id="6_3wdn5"]
+[ext_resource type="Script" uid="uid://dbutkajflkofi" path="res://script/cookiedrag/cookie_1.gd" id="6_bo8uk"]
+[ext_resource type="Texture2D" uid="uid://d3xw82k84mra1" path="res://assets/cookie.png" id="7_2qepk"]
+[ext_resource type="Script" uid="uid://criwh07w2b44y" path="res://script/cookiedrag/cookie_2.gd" id="9_3wdn5"]
+[ext_resource type="Script" uid="uid://yjdf28v0c0ku" path="res://script/cookiedrag/cookie.gd" id="11_2qepk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iio88"]
+atlas = ExtResource("2_bo8uk")
+region = Rect2(0, 0, 240, 308)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iio88")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_40ni8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wopdc")
+}],
+"loop": 1,
+"name": &"eating",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1530235564]
+script = ExtResource("1_8w02c")
+
+[node name="ParrotCookieEatingBg" type="Sprite2D" parent="." unique_id=1208192207]
+position = Vector2(1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_avchr")
+
+[node name="Parrot" type="AnimatedSprite2D" parent="." unique_id=1622419352]
+position = Vector2(15.000008, -6)
+scale = Vector2(0.49583334, 0.4958333)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.3
+
+[node name="Cookie1" type="Sprite2D" parent="." unique_id=1528820441]
+position = Vector2(-83, 93)
+scale = Vector2(0.1326816, 0.13268158)
+texture = ExtResource("5_8w02c")
+script = ExtResource("6_bo8uk")
+
+[node name="Panel2" type="Panel" parent="Cookie1" unique_id=1982181152]
+modulate = Color(1, 1, 1, 0)
+offset_left = -150.7368
+offset_top = -90.44206
+offset_right = 150.7368
+offset_bottom = 82.90523
+
+[node name="Button" type="Button" parent="Cookie1" unique_id=933777572]
+offset_left = -150.7368
+offset_top = -90.44209
+offset_right = 150.7368
+offset_bottom = 82.90526
+
+[node name="Cookie2" type="Sprite2D" parent="." unique_id=404815045]
+position = Vector2(-138, 101)
+scale = Vector2(0.20731704, 0.20731704)
+texture = ExtResource("6_3wdn5")
+script = ExtResource("9_3wdn5")
+
+[node name="Panel2" type="Panel" parent="Cookie2" unique_id=801105220]
+modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Button" type="Button" parent="Cookie2" unique_id=513794151]
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Cookie" type="Sprite2D" parent="." unique_id=1225448216]
+position = Vector2(-37, 96)
+scale = Vector2(0.20959605, 0.20959604)
+texture = ExtResource("7_2qepk")
+script = ExtResource("11_2qepk")
+
+[node name="Panel2" type="Panel" parent="Cookie" unique_id=653329175]
+modulate = Color(1, 1, 1, 0)
+offset_left = -62.02408
+offset_top = -47.710846
+offset_right = 63.387726
+offset_bottom = 43.93622
+
+[node name="Button" type="Button" parent="Cookie" unique_id=2046551242]
+offset_left = -62.02408
+offset_top = -47.710846
+offset_right = 63.387726
+offset_bottom = 43.93622
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1212599927]
+zoom = Vector2(2, 2)
+
+[node name="Panel" type="Panel" parent="." unique_id=812682678]
+offset_left = -49.0
+offset_top = -87.0
+offset_right = 59.0
+offset_bottom = 75.0
+
+[connection signal="button_down" from="Cookie1/Button" to="Cookie1" method="_on_button_button_down"]
+[connection signal="button_up" from="Cookie1/Button" to="Cookie1" method="_on_button_button_up"]
+[connection signal="button_down" from="Cookie2/Button" to="Cookie2" method="_on_button_button_down"]
+[connection signal="button_up" from="Cookie2/Button" to="Cookie2" method="_on_button_button_up"]
+[connection signal="button_down" from="Cookie/Button" to="Cookie" method="_on_button_button_down"]
+[connection signal="button_up" from="Cookie/Button" to="Cookie" method="_on_button_button_up"]
