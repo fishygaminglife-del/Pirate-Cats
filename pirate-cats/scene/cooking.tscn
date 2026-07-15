@@ -140,6 +140,12 @@ position = Vector2(874, 463)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_u8adt")
 
+[node name="Cookbg2" type="Sprite2D" parent="." unique_id=23835731]
+position = Vector2(2600, 463)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u8adt")
+flip_h = true
+
 [node name="PlatePanel" type="Panel" parent="." unique_id=744955472]
 visible = false
 offset_left = 234.0
@@ -199,7 +205,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_0colb")
 
 [node name="MiddlePlate" type="Sprite2D" parent="." unique_id=1426199758]
-position = Vector2(875, 540)
+position = Vector2(298, 540)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_si2go")
 script = ExtResource("5_6h2ao")
@@ -487,38 +493,10 @@ offset_top = -40.5128
 offset_right = 45.914734
 offset_bottom = 39.162373
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2024708833]
-libraries/ = SubResource("AnimationLibrary_6h2ao")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=648021941]
-libraries/ = SubResource("AnimationLibrary_6h2ao")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=32059403]
-position = Vector2(875, 463)
-zoom = Vector2(2, 2)
-
-[node name="Arrow" type="Sprite2D" parent="." unique_id=592210537]
-position = Vector2(1080, 513)
-scale = Vector2(0.56666666, 0.56666666)
-texture = ExtResource("20_8giwa")
-
-[node name="Buttonmove" type="Button" parent="Arrow" unique_id=602018987]
-modulate = Color(1.1288555, 1.1288555, 1.1288555, 0)
-offset_left = -115.0
-offset_top = -55.0
-offset_right = 108.0
-offset_bottom = 51.0
-
-[node name="Cookbg2" type="Sprite2D" parent="." unique_id=23835731]
-position = Vector2(2600, 463)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_u8adt")
-flip_h = true
-
 [node name="Order" type="Sprite2D" parent="." unique_id=557691217]
 position = Vector2(293, 370)
 rotation = -1.3835788
-scale = Vector2(0.5887395, 0.58873945)
+scale = Vector2(0.5887395, 0.5887395)
 texture = ExtResource("21_yc3pb")
 
 [node name="Flag1" type="Sprite2D" parent="Order" unique_id=19859864]
@@ -544,28 +522,28 @@ texture = ExtResource("6_i0riy")
 
 [node name="Top2" type="Sprite2D" parent="Order" unique_id=231195970]
 visible = false
-position = Vector2(27.421352, -1.3911738)
+position = Vector2(27.421265, -1.3911133)
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.50956327)
 texture = ExtResource("10_ns7iu")
 
 [node name="Top1" type="Sprite2D" parent="Order" unique_id=1905301592]
 visible = false
-position = Vector2(27.421291, -1.3911128)
+position = Vector2(27.421265, -1.3910522)
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.50956327)
 texture = ExtResource("9_i7xxb")
 
 [node name="Top2-1" type="Sprite2D" parent="Order" unique_id=250112133]
 visible = false
-position = Vector2(-61.3447, 13.695558)
+position = Vector2(-27.967407, 7.3727417)
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.5095632)
 texture = ExtResource("10_ns7iu")
 
 [node name="Top1-1" type="Sprite2D" parent="Order" unique_id=1666328059]
 visible = false
-position = Vector2(-61.3447, 13.695558)
+position = Vector2(-27.967407, 7.3727417)
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.5095632)
 texture = ExtResource("9_i7xxb")
@@ -667,6 +645,42 @@ rotation = 0.57745856
 scale = Vector2(0.6447787, 0.64477867)
 texture = ExtResource("15_l8xg6")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2024708833]
+libraries/ = SubResource("AnimationLibrary_6h2ao")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=648021941]
+libraries/ = SubResource("AnimationLibrary_6h2ao")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=32059403]
+position = Vector2(299, 463)
+zoom = Vector2(2, 2)
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=592210537]
+position = Vector2(1080, 513)
+scale = Vector2(0.56666666, 0.56666666)
+texture = ExtResource("20_8giwa")
+
+[node name="Buttonmove" type="Button" parent="Arrow" unique_id=602018987]
+modulate = Color(1.1288555, 1.1288555, 1.1288555, 0)
+offset_left = -115.0
+offset_top = -55.0
+offset_right = 108.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow2" type="Sprite2D" parent="." unique_id=1163599062]
+position = Vector2(1664, 399)
+scale = Vector2(0.56666666, 0.56666666)
+texture = ExtResource("20_8giwa")
+
+[node name="Buttonmove1" type="Button" parent="Arrow2" unique_id=1071428878]
+modulate = Color(1.1288555, 1.1288555, 1.1288555, 0)
+offset_left = -115.0
+offset_top = -55.0
+offset_right = 108.0
+offset_bottom = 51.0
+metadata/_edit_use_anchors_ = true
+
 [connection signal="button_down" from="MiddlePlate/Button" to="MiddlePlate" method="_on_button_button_down"]
 [connection signal="button_up" from="MiddlePlate/Button" to="MiddlePlate" method="_on_button_button_up"]
 [connection signal="button_down" from="Bottom1/Button" to="Bottom1" method="_on_button_button_down"]
@@ -684,3 +698,4 @@ texture = ExtResource("15_l8xg6")
 [connection signal="button_down" from="Clam/Button" to="Clam" method="_on_button_button_down"]
 [connection signal="button_up" from="Clam/Button" to="Clam" method="_on_button_button_up"]
 [connection signal="pressed" from="Arrow/Buttonmove" to="." method="_on_buttonmove_pressed"]
+[connection signal="pressed" from="Arrow2/Buttonmove1" to="." method="_on_buttonmove_1_pressed"]
