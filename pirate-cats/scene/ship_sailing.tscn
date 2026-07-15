@@ -13,6 +13,8 @@
 [ext_resource type="StyleBox" uid="uid://mgm47pkvgrxx" path="res://styles/userchoice.tres" id="11_5fpcd"]
 [ext_resource type="FontFile" uid="uid://b46q62x2dethf" path="res://fonts/Jua-Regular.ttf" id="11_qvx0c"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_qvx0c"]
+[ext_resource type="Texture2D" uid="uid://bk0yokqeio7rc" path="res://assets/textbox.png" id="14_xhnfh"]
+[ext_resource type="Script" uid="uid://0fdng7l2egc3" path="res://scene/area_2d.gd" id="15_gy4ki"]
 
 [sub_resource type="Animation" id="Animation_riyh1"]
 length = 0.001
@@ -95,7 +97,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xq2r4"]
 resource_name = "showcats"
-length = 3.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -211,7 +213,7 @@ tracks/9/path = NodePath("Button:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(2, 3),
+"times": PackedFloat32Array(2, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -247,7 +249,7 @@ texture = ExtResource("1_1ymlp")
 
 [node name="Cloude2d" type="Parallax2D" parent="parallaxbg" unique_id=947462412]
 scroll_scale = Vector2(0.4, 0.4)
-scroll_offset = Vector2(-13, -136)
+scroll_offset = Vector2(30, -179)
 repeat_size = Vector2(1152, 0)
 repeat_times = 2
 
@@ -269,6 +271,7 @@ scale = Vector2(0.5805083, 0.5805083)
 texture = ExtResource("4_ifos2")
 
 [node name="Back" type="Parallax2D" parent="parallaxbg" unique_id=1560224030]
+visible = false
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-575, -231)
@@ -281,6 +284,7 @@ texture = ExtResource("3_pjvru")
 centered = false
 
 [node name="Mid" type="Parallax2D" parent="parallaxbg" unique_id=1950133527]
+visible = false
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-575, -231)
@@ -293,13 +297,14 @@ texture = ExtResource("4_eqgp1")
 centered = false
 
 [node name="Boat" type="Sprite2D" parent="parallaxbg" unique_id=1432534839]
+visible = false
 position = Vector2(-274.01788, 559.00006)
 rotation = 0.085175544
 scale = Vector2(0.26081735, 0.26081732)
 texture = ExtResource("5_ifos2")
 
 [node name="Camera2D" type="Camera2D" parent="parallaxbg" unique_id=1861970315]
-position = Vector2(840.8889, 525)
+position = Vector2(840.8889, 582)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(2, 2)
 
@@ -310,6 +315,7 @@ offset_right = 578.0
 offset_bottom = -318.0
 
 [node name="Front" type="Parallax2D" parent="parallaxbg" unique_id=415243839]
+visible = false
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.4, 0.4)
 scroll_offset = Vector2(-575, -231)
@@ -325,13 +331,11 @@ centered = false
 libraries/ = SubResource("AnimationLibrary_5fpcd")
 
 [node name="Catshow" type="Sprite2D" parent="." unique_id=1735153117]
-visible = false
 position = Vector2(841, 604)
 scale = Vector2(0.28087604, 0.28087604)
 texture = ExtResource("8_pjvru")
 
 [node name="LcukyCat(1)" type="Sprite2D" parent="." unique_id=361457369]
-visible = false
 position = Vector2(842, 485.50003)
 scale = Vector2(0.14677404, 0.14677402)
 texture = ExtResource("10_ifos2")
@@ -355,6 +359,7 @@ theme_override_styles/pressed = ExtResource("12_qvx0c")
 theme_override_styles/hover = ExtResource("12_qvx0c")
 theme_override_styles/focus = ExtResource("12_qvx0c")
 text = "\"...\""
+autowrap_mode = 3
 
 [node name="Label" type="Label" parent="Button" unique_id=1977352449]
 visible = false
@@ -366,6 +371,64 @@ offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("11_qvx0c")
 theme_override_font_sizes/font_size = 8
 text = " press to continue"
+
+[node name="Panel" type="Panel" parent="." unique_id=679206117]
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1095604811]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 623.00006
+offset_right = 1491.0
+offset_bottom = 818.00006
+scale = Vector2(0.39999753, 0.39999753)
+texture = ExtResource("14_xhnfh")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1513096851]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 624.0
+offset_right = 740.0
+offset_bottom = 641.0
+theme_override_fonts/font = ExtResource("11_qvx0c")
+theme_override_font_sizes/font_size = 14
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel" unique_id=2023934384]
+layout_mode = 0
+offset_left = 925.0
+offset_top = 680.0
+offset_right = 989.0
+offset_bottom = 697.0
+theme_override_colors/font_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/font = ExtResource("11_qvx0c")
+theme_override_font_sizes/font_size = 8
+text = "SPACE TO SKIP →"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=111799715]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 649.0
+offset_right = 970.0
+offset_bottom = 689.0
+theme_override_constants/separation = -66
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/HBoxContainer" unique_id=1063272034]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.32941177, 0.2627451, 0.2627451, 1)
+theme_override_fonts/normal_font = ExtResource("11_qvx0c")
+bbcode_enabled = true
+text = "[table=2]
+[cell][img=50x40]res://assets/headshots/CAPTIAN CAT.png[/img][/cell]
+[cell]hihi[/cell]
+[/table]"
+scroll_active = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=641092592]
+script = ExtResource("15_gy4ki")
 
 [connection signal="pressed" from="parallaxbg/Camera2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_player_button_pressed"]
