@@ -1,8 +1,8 @@
 extends Node2D
 
 var you_text = [
-	"\"...\"",
-	"\"Where am I?\"",
+	"...",
+	"Where am I?",
 ]
 var you_text_index = 0
 
