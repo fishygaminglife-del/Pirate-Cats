@@ -113,14 +113,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
+tracks/0/path = NodePath("Order:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(299, 463)]
+"values": [Vector2(293, 370)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6h2ao"]
@@ -493,31 +493,6 @@ offset_top = -40.5128
 offset_right = 45.914734
 offset_bottom = 39.162373
 
-<<<<<<< Updated upstream
-=======
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2024708833]
-libraries/ = SubResource("AnimationLibrary_6h2ao")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=648021941]
-libraries/ = SubResource("AnimationLibrary_6h2ao")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=32059403]
-position = Vector2(299, 463)
-zoom = Vector2(2, 2)
-
-[node name="Arrow" type="Sprite2D" parent="." unique_id=592210537]
-position = Vector2(1077, 384)
-scale = Vector2(0.56666666, 0.56666666)
-texture = ExtResource("20_8giwa")
-
-[node name="Buttonmove" type="Button" parent="Arrow" unique_id=602018987]
-modulate = Color(1.1288555, 1.1288555, 1.1288555, 0)
-offset_left = -115.0
-offset_top = -55.0
-offset_right = 108.0
-offset_bottom = 51.0
-
->>>>>>> Stashed changes
 [node name="Order" type="Sprite2D" parent="." unique_id=557691217]
 position = Vector2(293, 370)
 rotation = -1.3835788
@@ -561,22 +536,14 @@ texture = ExtResource("9_i7xxb")
 
 [node name="Top2-1" type="Sprite2D" parent="Order" unique_id=250112133]
 visible = false
-<<<<<<< Updated upstream
 position = Vector2(-27.967407, 7.3727417)
-=======
-position = Vector2(-44.656128, 10.53418)
->>>>>>> Stashed changes
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.5095632)
 texture = ExtResource("10_ns7iu")
 
 [node name="Top1-1" type="Sprite2D" parent="Order" unique_id=1666328059]
 visible = false
-<<<<<<< Updated upstream
 position = Vector2(-27.967407, 7.3727417)
-=======
-position = Vector2(-44.656128, 10.53418)
->>>>>>> Stashed changes
 rotation = 1.3835788
 scale = Vector2(0.5095632, 0.5095632)
 texture = ExtResource("9_i7xxb")
