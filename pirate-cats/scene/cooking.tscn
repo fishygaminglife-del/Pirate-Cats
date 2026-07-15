@@ -488,11 +488,8 @@ offset_right = 45.914734
 offset_bottom = 39.162373
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
-=======
->>>>>>> parent of ef9945c (Add Cook Check)
 =======
 >>>>>>> parent of ef9945c (Add Cook Check)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2024708833]
@@ -503,23 +500,17 @@ libraries/ = SubResource("AnimationLibrary_6h2ao")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=32059403]
 <<<<<<< HEAD
-<<<<<<< HEAD
 position = Vector2(299, 463)
 zoom = Vector2(2, 2)
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=592210537]
 position = Vector2(1077, 384)
 =======
-=======
->>>>>>> parent of ef9945c (Add Cook Check)
 position = Vector2(875, 463)
 zoom = Vector2(2, 2)
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=592210537]
 position = Vector2(1080, 513)
-<<<<<<< HEAD
->>>>>>> parent of ef9945c (Add Cook Check)
-=======
 >>>>>>> parent of ef9945c (Add Cook Check)
 scale = Vector2(0.56666666, 0.56666666)
 texture = ExtResource("20_8giwa")
@@ -532,20 +523,14 @@ offset_right = 108.0
 offset_bottom = 51.0
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> Stashed changes
 =======
-=======
->>>>>>> parent of ef9945c (Add Cook Check)
 [node name="Cookbg2" type="Sprite2D" parent="." unique_id=23835731]
 position = Vector2(2600, 463)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_u8adt")
 flip_h = true
 
-<<<<<<< HEAD
->>>>>>> parent of ef9945c (Add Cook Check)
-=======
 >>>>>>> parent of ef9945c (Add Cook Check)
 [node name="Order" type="Sprite2D" parent="." unique_id=557691217]
 position = Vector2(293, 370)
@@ -591,15 +576,11 @@ texture = ExtResource("9_i7xxb")
 [node name="Top2-1" type="Sprite2D" parent="Order" unique_id=250112133]
 visible = false
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 position = Vector2(-27.967407, 7.3727417)
 =======
 position = Vector2(-44.656128, 10.53418)
 >>>>>>> Stashed changes
-=======
-position = Vector2(-61.3447, 13.695558)
->>>>>>> parent of ef9945c (Add Cook Check)
 =======
 position = Vector2(-61.3447, 13.695558)
 >>>>>>> parent of ef9945c (Add Cook Check)
@@ -610,15 +591,11 @@ texture = ExtResource("10_ns7iu")
 [node name="Top1-1" type="Sprite2D" parent="Order" unique_id=1666328059]
 visible = false
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 position = Vector2(-27.967407, 7.3727417)
 =======
 position = Vector2(-44.656128, 10.53418)
 >>>>>>> Stashed changes
-=======
-position = Vector2(-61.3447, 13.695558)
->>>>>>> parent of ef9945c (Add Cook Check)
 =======
 position = Vector2(-61.3447, 13.695558)
 >>>>>>> parent of ef9945c (Add Cook Check)
