@@ -173,32 +173,37 @@ func plate_check():
 	
 	if OBase1 == PBase1:
 		CBase1 = true
+		$B1.modulate = Color(4.869, 4.869, 4.869)
+		print(CBase1)
 	if OBase2 == PBase2:
 		CBase2 = true
-	if OTop1 == PTop1:
+		$B2.modulate = Color(4.869, 4.869, 4.869)
+		print(CBase2)
+	if OTop1 == PTop1 :
 		CTop1 = true
+		$T1.modulate = Color(4.869, 4.869, 4.869)
+		print(CTop1)
 	if OTop2 == PTop2:
 		CTop2 = true
+		$T2.modulate = Color(4.869, 4.869, 4.869)
+		print(CTop2 )
 	if OShell == PShell:
 		CShell = true
+		$C1.modulate = Color(4.869, 4.869, 4.869)
+		print(CShell)
 	if OStar == PStar:
 		CStar = true
+		$S1.modulate = Color(4.869, 4.869, 4.869)
+		print(CStar)
 	if OFlag == PFlag:
 		CFlag  = true
-	
-
-
+		$F1.modulate = Color(4.869, 4.869, 4.869)
+		print(CFlag )
 func _on_buttonmove_pressed() -> void:
 	$AnimationPlayer.play("CastleFinish")
 	await get_tree().create_timer(0.65).timeout
 	$AnimationPlayer2.play("CastleMenu")
 
 func _on_buttonmove_1_pressed() -> void:
+	$AnimationPlayer.play("ToppingsFinish")
 	plate_check()
-	print(CBase1)
-	print(CBase2 )
-	print(CTop1)
-	print(CTop2 )
-	print(CShell)
-	print(CFlag )
-	print(CStar)

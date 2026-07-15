@@ -17,10 +17,13 @@ func _on_button_button_up() -> void:
 			can_drag = false
 			if $"../MiddlePlate/Top2".visible == true or $"../MiddlePlate/Top1".visible == true:
 				$"../MiddlePlate/Flag1".visible = true
+				$".".visible = false
 			elif $"../MiddlePlate/Top1-1".visible == true or $"../MiddlePlate/Top2-1".visible == true:
 				$"../MiddlePlate/Flag2".visible = true
+				$".".visible = false
 			elif $"../MiddlePlate/Bottom1".visible  == true or $"../MiddlePlate/Bottom2".visible == true:
 				$"../MiddlePlate/Flag3".visible = true
+				$".".visible = false
 		$".".global_position = Vector2(1670, 520)
 
 func _on_button_button_down() -> void:
