@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://b46q62x2dethf" path="res://fonts/Jua-Regular.ttf" id="11_qvx0c"]
 [ext_resource type="StyleBox" uid="uid://sgstie1jsmlw" path="res://styles/userchoicehover+focus.tres" id="12_qvx0c"]
 [ext_resource type="Texture2D" uid="uid://bk0yokqeio7rc" path="res://assets/textbox.png" id="14_xhnfh"]
-[ext_resource type="Script" uid="uid://0fdng7l2egc3" path="res://script/area_2d.gd" id="15_gy4ki"]
+[ext_resource type="Script" uid="uid://0fdng7l2egc3" path="res://scene/area_2d.gd" id="15_gy4ki"]
 
 [sub_resource type="Animation" id="Animation_riyh1"]
 length = 0.001
