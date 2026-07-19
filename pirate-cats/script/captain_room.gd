@@ -2,6 +2,9 @@ extends Node2D
 var tank_locked = false
 var moveleft = false
 var moveright = false
+var m1 = 0
+var m2 = 0
+var m3 = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -53,3 +56,40 @@ func _on_cam_right_mouse_entered() -> void:
 	moveright = true
 func _on_cam_right_mouse_exited() -> void:
 	moveright = false
+
+
+func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://scene/Backship.tscn")
+
+
+	
+
+func _on_area_m_1_mouse_entered() -> void:
+	if not $m1.is_playing():
+		if m1 == 0:
+			m1 = 1
+			$m1.play("rat1 move")
+		else:
+			m1 = 0
+			$m1.play("rat1 move back")
+
+
+func _on_area_m_2_mouse_entered() -> void:
+	if not $m2.is_playing():
+		if m2 == 0:
+			m2 = 1
+			$m2.play("rat2 move")
+		else:
+			m2 = 0
+			$m2.play("rat2 move back")
+
+
+func _on_area_m_3_mouse_entered() -> void:
+	if not $m3.is_playing():
+		if m3 == 0:
+			m3 = 1
+			$m3.play("rat3 move")
+		else:
+			m3 = 0
+			$m3.play("rat3 move back")

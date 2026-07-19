@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://i7hpqkwpxn2q" path="res://assets/cat toy anim sprite.png" id="4_hp81p"]
 [ext_resource type="Texture2D" uid="uid://troxryithbxb" path="res://assets/bottleanimsprite.png" id="5_qyjxp"]
 [ext_resource type="Texture2D" uid="uid://m765ky3nyymd" path="res://assets/wheelanimsprite.png" id="6_yfeqn"]
+[ext_resource type="Texture2D" uid="uid://4ini3stmid5m" path="res://assets/mouse toy.png" id="7_mcfne"]
+[ext_resource type="Texture2D" uid="uid://l7sdkpegyugb" path="res://assets/mouse toy-2.png" id="8_yetyy"]
+[ext_resource type="Texture2D" uid="uid://c8rghwml3rgmy" path="res://assets/mouse toy-1.png" id="9_2nijj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyjxp"]
 atlas = ExtResource("3_hp81p")
@@ -151,6 +154,319 @@ size = Vector2(92, 93)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
 size = Vector2(44, 324)
 
+[sub_resource type="Animation" id="Animation_mcfne"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse3/AreaM3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(222.99997, 122)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse3:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yetyy"]
+resource_name = "rat1 move"
+length = 0.47
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-325.99997, 125), Vector2(-386, 124)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.28409764]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse1:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mouse1/AreaM1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2nijj"]
+resource_name = "rat1 move back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.66),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-386, 124), Vector2(-326, 125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.66),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.28409764, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse1/AreaM1:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mouse1:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_8akd2"]
+resource_name = "rat2 move"
+length = 0.57
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-51.000008, 127), Vector2(-125, 113)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse2/AreaM2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse2:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3njir"]
+resource_name = "rat2 move back"
+length = 0.451
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-125, 113), Vector2(-51.000008, 127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse2:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse2/AreaM2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ganqv"]
+resource_name = "rat3 move"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse3/AreaM3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(222.99997, 122), Vector2(96, 140)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse3:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lerbx"]
+resource_name = "rat3 move back"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mouse3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(96, 140), Vector2(223, 122)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mouse3:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mouse3/AreaM3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8akd2"]
+_data = {
+&"RESET": SubResource("Animation_mcfne"),
+&"rat1 move": SubResource("Animation_yetyy"),
+&"rat1 move back": SubResource("Animation_2nijj"),
+&"rat2 move": SubResource("Animation_8akd2"),
+&"rat2 move back": SubResource("Animation_3njir"),
+&"rat3 move": SubResource("Animation_ganqv"),
+&"rat3 move back": SubResource("Animation_lerbx")
+}
+
 [node name="Node2D" type="Node2D" unique_id=1551274641]
 script = ExtResource("1_gppsv")
 
@@ -223,6 +539,48 @@ offset_top = -69.0
 offset_right = -21.0
 offset_bottom = -24.0
 
+[node name="Mouse3" type="Sprite2D" parent="." unique_id=166004136]
+position = Vector2(222.99997, 122)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_mcfne")
+flip_h = true
+
+[node name="AreaM3" type="Area2D" parent="Mouse3" unique_id=1633841083]
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mouse3/AreaM3" unique_id=1979597143]
+position = Vector2(439.99997, -307.49997)
+scale = Vector2(2.4999998, 2.4999998)
+polygon = PackedVector2Array(-204, 117, -192, 114, -184, 115, -181, 110, -169, 109, -157, 115, -154, 112, -151, 113, -153, 119, -148, 125, -148, 130, -152, 133, -180, 133, -186, 126, -186, 119, -192, 116, -197, 121, -205, 119)
+
+[node name="Mouse1" type="Sprite2D" parent="." unique_id=1042952789]
+position = Vector2(-325.99997, 125)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_yetyy")
+
+[node name="AreaM1" type="Area2D" parent="Mouse1" unique_id=876327508]
+position = Vector2(-3.4332275e-05, -1.1444092e-05)
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mouse1/AreaM1" unique_id=937306213]
+position = Vector2(439.99997, -307.49997)
+scale = Vector2(2.4999998, 2.4999998)
+polygon = PackedVector2Array(-204, 117, -192, 114, -184, 115, -181, 110, -169, 109, -157, 115, -154, 112, -151, 113, -153, 119, -148, 125, -148, 130, -152, 133, -180, 133, -186, 126, -186, 119, -192, 116, -197, 121, -205, 119)
+
+[node name="Mouse2" type="Sprite2D" parent="." unique_id=464182184]
+position = Vector2(-51.000008, 127)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_2nijj")
+flip_h = true
+
+[node name="AreaM2" type="Area2D" parent="Mouse2" unique_id=1946788205]
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mouse2/AreaM2" unique_id=97808701]
+position = Vector2(439.99997, -307.49997)
+scale = Vector2(2.4999998, 2.4999998)
+polygon = PackedVector2Array(-204, 117, -192, 114, -184, 115, -181, 110, -169, 109, -157, 115, -154, 112, -151, 113, -153, 119, -148, 125, -148, 130, -152, 133, -180, 133, -186, 126, -186, 119, -192, 116, -197, 121, -205, 119)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1932166162]
 zoom = Vector2(2, 2)
 
@@ -238,6 +596,20 @@ shape = SubResource("RectangleShape2D_ldxs4")
 position = Vector2(266, 0)
 shape = SubResource("RectangleShape2D_ldxs4")
 
+[node name="BackShip" type="Area2D" parent="." unique_id=1159395156]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=784450281]
+polygon = PackedVector2Array(312, 99, 350, 75, 354, 75, 388, 98, 388, 105, 370, 106, 371, 123, 367, 128, 335, 128, 331, 124, 331, 107, 315, 106, 311, 101)
+
+[node name="m1" type="AnimationPlayer" parent="." unique_id=1896461276]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
+[node name="m2" type="AnimationPlayer" parent="." unique_id=1483437173]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
+[node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
 [connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
 [connection signal="mouse_exited" from="DoorHandle" to="." method="_on_door_handle_mouse_exited"]
 [connection signal="mouse_entered" from="Tank" to="." method="_on_tank_mouse_entered"]
@@ -246,7 +618,11 @@ shape = SubResource("RectangleShape2D_ldxs4")
 [connection signal="mouse_exited" from="CatToys" to="." method="_on_cat_toys_mouse_exited"]
 [connection signal="mouse_entered" from="Bottle" to="." method="_on_bottle_mouse_entered"]
 [connection signal="mouse_exited" from="Bottle" to="." method="_on_bottle_mouse_exited"]
+[connection signal="mouse_entered" from="Mouse3/AreaM3" to="." method="_on_area_m_3_mouse_entered"]
+[connection signal="mouse_entered" from="Mouse1/AreaM1" to="." method="_on_area_m_1_mouse_entered"]
+[connection signal="mouse_entered" from="Mouse2/AreaM2" to="." method="_on_area_m_2_mouse_entered"]
 [connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
 [connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
+[connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]

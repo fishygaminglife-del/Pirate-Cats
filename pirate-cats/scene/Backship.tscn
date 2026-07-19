@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtt7uo4fx7dgx" path="res://assets/nofish.png" id="3_i0nue"]
 [ext_resource type="Texture2D" uid="uid://d0wlabvjcu6fv" path="res://assets/fisher.png" id="3_j2d8o"]
 [ext_resource type="Texture2D" uid="uid://b6hx4ir767xjl" path="res://assets/fish box with fish anim sprite.png" id="4_j2d8o"]
+[ext_resource type="Texture2D" uid="uid://rb44yvydtdb7" path="res://assets/chef cat (2).png" id="4_vp247"]
 [ext_resource type="Texture2D" uid="uid://bpgusf78mlj4a" path="res://assets/fried egg anim sprite.png" id="5_vp247"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1gyp"]
@@ -132,6 +133,11 @@ texture = ExtResource("1_iabjy")
 position = Vector2(241, 351)
 scale = Vector2(0.23720136, 0.23720136)
 texture = ExtResource("3_j2d8o")
+
+[node name="ChefCat(2)" type="Sprite2D" parent="." unique_id=1794500386]
+position = Vector2(877.0001, 377.99997)
+scale = Vector2(0.25438595, 0.25438598)
+texture = ExtResource("4_vp247")
 
 [node name="fish" type="AnimatedSprite2D" parent="." unique_id=1895750698]
 position = Vector2(156.00002, 370)

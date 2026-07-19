@@ -69,6 +69,11 @@ func _physics_process(delta):
 	var speed = 200.0
 	var direction = Input.get_axis("left", "right")
 	$Cannon.position.x += direction * speed * delta
+	$Cannon.global_position.x = clamp(
+		$Cannon.global_position.x,
+		-267,
+		267
+	)
 
 
 func pick_crabs():
