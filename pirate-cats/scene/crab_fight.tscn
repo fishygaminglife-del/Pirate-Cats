@@ -120,6 +120,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+
 [sub_resource type="Animation" id="Animation_2f17f"]
 length = 0.001
 tracks/0/type = "value"
@@ -247,6 +255,8 @@ position = Vector2(223, 103)
 position = Vector2(-223, -114)
 scale = Vector2(0.2001017, 0.20140988)
 sprite_frames = SubResource("SpriteFrames_ldxs4")
+frame = 3
+frame_progress = 1.0
 speed_scale = 0.5
 
 [node name="greencrab" type="AnimatedSprite2D" parent="CMid" unique_id=1437353293]
@@ -328,13 +338,44 @@ texture = ExtResource("2_v05nj")
 zoom = Vector2(2, 2)
 
 [node name="Cannon" type="Sprite2D" parent="." unique_id=1238047416]
-position = Vector2(3, 90)
+position = Vector2(0, 106)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_xrn5h")
 
 [node name="CannonBall" type="Sprite2D" parent="Cannon" unique_id=1732189251]
-position = Vector2(4, -18)
+position = Vector2(2, 2)
 texture = ExtResource("3_tjtok")
+
+[node name="CannonPanel" type="Panel" parent="Cannon/CannonBall" unique_id=629679654]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=867353463]
 libraries/ = SubResource("AnimationLibrary_x4gui")
+
+[node name="Panel" type="Panel" parent="." unique_id=1671154806]
+visible = false
+modulate = Color(4.8672786, 0, 0.22180009, 1)
+offset_left = -292.0
+offset_top = -173.0
+offset_right = 291.0
+offset_bottom = 174.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=2098583087]
+visible = false
+modulate = Color(4.8672786, 0, 0.22180009, 1)
+offset_left = -292.0
+offset_top = -173.0
+offset_right = 291.0
+offset_bottom = 174.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=727923897]
+visible = false
+modulate = Color(4.8672786, 0, 0.22180009, 1)
+offset_left = -292.0
+offset_top = -173.0
+offset_right = 291.0
+offset_bottom = 174.0
