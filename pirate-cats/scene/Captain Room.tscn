@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://dv6y276tbp23m"]
+
+[ext_resource type="Texture2D" uid="uid://7igth2j2pyet" path="res://assets/captain room.png" id="1_7xqkk"]
+[ext_resource type="Script" uid="uid://c86bso6e36ypk" path="res://script/captain_room.gd" id="1_gppsv"]
+[ext_resource type="Texture2D" uid="uid://bxulaw3a8oldb" path="res://assets/jellyanimsprites.png" id="3_hp81p"]
+[ext_resource type="Texture2D" uid="uid://i7hpqkwpxn2q" path="res://assets/cat toy anim sprite.png" id="4_hp81p"]
+[ext_resource type="Texture2D" uid="uid://troxryithbxb" path="res://assets/bottleanimsprite.png" id="5_qyjxp"]
+[ext_resource type="Texture2D" uid="uid://m765ky3nyymd" path="res://assets/wheelanimsprite.png" id="6_yfeqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyjxp"]
+atlas = ExtResource("3_hp81p")
+region = Rect2(0, 0, 261, 174)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfeqn"]
+atlas = ExtResource("3_hp81p")
+region = Rect2(261, 0, 261, 174)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2287m"]
+atlas = ExtResource("3_hp81p")
+region = Rect2(522, 0, 261, 174)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyjxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfeqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2287m")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8opf0"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(0, 0, 130, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcfne"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(130, 0, 130, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yetyy"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(260, 0, 130, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kpj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8opf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcfne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yetyy")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp81p"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(0, 0, 130, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nijj"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(130, 0, 130, 281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8akd2"]
+atlas = ExtResource("4_hp81p")
+region = Rect2(260, 0, 130, 281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hp81p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp81p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nijj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8akd2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3njir"]
+atlas = ExtResource("5_qyjxp")
+region = Rect2(0, 0, 90, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ganqv"]
+atlas = ExtResource("5_qyjxp")
+region = Rect2(90, 0, 90, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lerbx"]
+atlas = ExtResource("5_qyjxp")
+region = Rect2(180, 0, 90, 111)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w173s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3njir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ganqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lerbx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8n7k"]
+atlas = ExtResource("6_yfeqn")
+region = Rect2(0, 0, 186, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmuir"]
+atlas = ExtResource("6_yfeqn")
+region = Rect2(186, 0, 186, 186)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48q5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8n7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmuir")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
+size = Vector2(92, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(44, 324)
+
+[node name="Node2D" type="Node2D" unique_id=1551274641]
+script = ExtResource("1_gppsv")
+
+[node name="CaptainRoom" type="Sprite2D" parent="." unique_id=1439313211]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7xqkk")
+
+[node name="JellyFish" type="AnimatedSprite2D" parent="." unique_id=215381750]
+position = Vector2(93, -98)
+scale = Vector2(0.4655172, 0.46551722)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+frame_progress = 0.8036056
+speed_scale = 0.5
+
+[node name="CatToy" type="AnimatedSprite2D" parent="." unique_id=24485884]
+position = Vector2(-228.75, -126.267334)
+scale = Vector2(0.34999987, 0.34999985)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+frame = 2
+
+[node name="CatToy2" type="AnimatedSprite2D" parent="." unique_id=1448745997]
+position = Vector2(-166, -148)
+scale = Vector2(0.34999987, 0.34999985)
+sprite_frames = SubResource("SpriteFrames_hp81p")
+
+[node name="CatToy3" type="AnimatedSprite2D" parent="." unique_id=1602832544]
+position = Vector2(-95, -120)
+scale = Vector2(0.34999987, 0.34999985)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+frame = 1
+
+[node name="bottle" type="AnimatedSprite2D" parent="." unique_id=2094331000]
+position = Vector2(-38, -47.000004)
+scale = Vector2(0.42222223, 0.42222223)
+sprite_frames = SubResource("SpriteFrames_w173s")
+speed_scale = 0.65
+
+[node name="doorhandle" type="AnimatedSprite2D" parent="." unique_id=498399561]
+position = Vector2(347.00003, 5.0000005)
+scale = Vector2(0.516129, 0.516129)
+sprite_frames = SubResource("SpriteFrames_48q5p")
+frame = 1
+frame_progress = 0.83096135
+speed_scale = 0.6
+
+[node name="DoorHandle" type="Area2D" parent="." unique_id=582241120]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorHandle" unique_id=1122352194]
+position = Vector2(347, 4.5)
+shape = SubResource("RectangleShape2D_w173s")
+
+[node name="Tank" type="Button" parent="." unique_id=1269975970]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 3.0
+offset_top = -142.0
+offset_right = 191.0
+offset_bottom = -48.0
+
+[node name="CatToys" type="Button" parent="." unique_id=664371061]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -251.0
+offset_top = -188.0
+offset_right = -77.0
+offset_bottom = -76.0
+
+[node name="Bottle" type="Button" parent="." unique_id=110725516]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -57.0
+offset_top = -69.0
+offset_right = -21.0
+offset_bottom = -24.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1932166162]
+zoom = Vector2(2, 2)
+
+[node name="CamLeft" type="Area2D" parent="Camera2D" unique_id=1801226290]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CamLeft" unique_id=581563861]
+position = Vector2(-266, 0)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="CamRight" type="Area2D" parent="Camera2D" unique_id=1102894513]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CamRight" unique_id=111330817]
+position = Vector2(266, 0)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
+[connection signal="mouse_exited" from="DoorHandle" to="." method="_on_door_handle_mouse_exited"]
+[connection signal="mouse_entered" from="Tank" to="." method="_on_tank_mouse_entered"]
+[connection signal="mouse_exited" from="Tank" to="." method="_on_tank_mouse_exited"]
+[connection signal="mouse_entered" from="CatToys" to="." method="_on_cat_toys_mouse_entered"]
+[connection signal="mouse_exited" from="CatToys" to="." method="_on_cat_toys_mouse_exited"]
+[connection signal="mouse_entered" from="Bottle" to="." method="_on_bottle_mouse_entered"]
+[connection signal="mouse_exited" from="Bottle" to="." method="_on_bottle_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]

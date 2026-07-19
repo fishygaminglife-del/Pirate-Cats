@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://r2ysg6pidu8t"]
+
+[ext_resource type="Script" uid="uid://vtpyn4y634od" path="res://script/backship.gd" id="1_i2e2r"]
+[ext_resource type="Texture2D" uid="uid://dwhlgak0fr0a8" path="res://assets/backship view.png" id="1_iabjy"]
+[ext_resource type="Texture2D" uid="uid://dtt7uo4fx7dgx" path="res://assets/nofish.png" id="3_i0nue"]
+[ext_resource type="Texture2D" uid="uid://d0wlabvjcu6fv" path="res://assets/fisher.png" id="3_j2d8o"]
+[ext_resource type="Texture2D" uid="uid://b6hx4ir767xjl" path="res://assets/fish box with fish anim sprite.png" id="4_j2d8o"]
+[ext_resource type="Texture2D" uid="uid://bpgusf78mlj4a" path="res://assets/fried egg anim sprite.png" id="5_vp247"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1gyp"]
+atlas = ExtResource("3_i0nue")
+region = Rect2(0, 0, 182, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfvap"]
+atlas = ExtResource("3_i0nue")
+region = Rect2(182, 0, 182, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1drr4"]
+atlas = ExtResource("3_i0nue")
+region = Rect2(364, 0, 182, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65i2n"]
+atlas = ExtResource("4_j2d8o")
+region = Rect2(0, 0, 180, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjcn3"]
+atlas = ExtResource("4_j2d8o")
+region = Rect2(180, 0, 180, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeyb3"]
+atlas = ExtResource("4_j2d8o")
+region = Rect2(360, 0, 180, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5cb5"]
+atlas = ExtResource("4_j2d8o")
+region = Rect2(540, 0, 180, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i1im"]
+atlas = ExtResource("4_j2d8o")
+region = Rect2(720, 0, 180, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1gyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfvap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1drr4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65i2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjcn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeyb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5cb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i1im")
+}],
+"loop": 1,
+"name": &"have_fish",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhqvm"]
+atlas = ExtResource("5_vp247")
+region = Rect2(0, 0, 110, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bxgu"]
+atlas = ExtResource("5_vp247")
+region = Rect2(110, 0, 110, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytiwk"]
+atlas = ExtResource("5_vp247")
+region = Rect2(220, 0, 110, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kpj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhqvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bxgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytiwk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
+size = Vector2(94, 43.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
+size = Vector2(168, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(57, 324)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48q5p"]
+size = Vector2(119, 162.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp247"]
+size = Vector2(230, 183)
+
+[node name="Node2D" type="Node2D" unique_id=866134312]
+script = ExtResource("1_i2e2r")
+
+[node name="BackshipView" type="Sprite2D" parent="." unique_id=481443563]
+position = Vector2(614, 322)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iabjy")
+
+[node name="Fisher" type="Sprite2D" parent="." unique_id=1959537866]
+position = Vector2(241, 351)
+scale = Vector2(0.23720136, 0.23720136)
+texture = ExtResource("3_j2d8o")
+
+[node name="fish" type="AnimatedSprite2D" parent="." unique_id=1895750698]
+position = Vector2(156.00002, 370)
+scale = Vector2(0.5222222, 0.5222222)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+animation = &"have_fish"
+
+[node name="pan" type="AnimatedSprite2D" parent="." unique_id=370215601]
+position = Vector2(1039, 344.00003)
+rotation = 0.04861711
+scale = Vector2(0.3630137, 0.36301368)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+speed_scale = 0.65
+
+[node name="Fish" type="Area2D" parent="." unique_id=441495562]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish" unique_id=16535665]
+position = Vector2(155, 382.25)
+shape = SubResource("RectangleShape2D_0kpj8")
+
+[node name="Cook" type="Area2D" parent="." unique_id=1907389259]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cook" unique_id=1886875496]
+position = Vector2(976, 331)
+shape = SubResource("RectangleShape2D_w173s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1476215314]
+position = Vector2(615, 322)
+zoom = Vector2(2, 2)
+
+[node name="CamLeft" type="Area2D" parent="Camera2D" unique_id=858063255]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CamLeft" unique_id=847061544]
+position = Vector2(-259.5, 0)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="CamRight" type="Area2D" parent="Camera2D" unique_id=437113817]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CamRight" unique_id=1058926836]
+position = Vector2(259.5, 0)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="FishingMG" type="Area2D" parent="." unique_id=457048676]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingMG" unique_id=2095353628]
+position = Vector2(202.5, 335)
+shape = SubResource("RectangleShape2D_48q5p")
+
+[node name="CaptainMG" type="Area2D" parent="." unique_id=786668237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaptainMG" unique_id=1515276729]
+position = Vector2(614.5, 288.75)
+shape = SubResource("RectangleShape2D_48q5p")
+
+[node name="CookingMG" type="Area2D" parent="." unique_id=1149133300]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CookingMG" unique_id=1203685176]
+position = Vector2(978, 315.5)
+shape = SubResource("RectangleShape2D_vp247")
+
+[connection signal="mouse_entered" from="Fish" to="." method="_on_fish_mouse_entered"]
+[connection signal="mouse_exited" from="Fish" to="." method="_on_fish_mouse_exited"]
+[connection signal="mouse_entered" from="Cook" to="." method="_on_cook_mouse_entered"]
+[connection signal="mouse_exited" from="Cook" to="." method="_on_cook_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
+[connection signal="input_event" from="FishingMG" to="." method="_on_fishing_mg_input_event"]
+[connection signal="input_event" from="CaptainMG" to="." method="_on_captain_mg_input_event"]
+[connection signal="input_event" from="CookingMG" to="." method="_on_cooking_mg_input_event"]

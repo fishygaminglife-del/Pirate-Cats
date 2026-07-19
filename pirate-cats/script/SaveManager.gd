@@ -4,6 +4,8 @@ const SAVE_FOLDER = "user://"
 var current_slot = 0
 var scene = 1
 var coins = 0
+var fish_played = false
+var cook_played = false
 
 
 func save_game(slot: int) -> void:
