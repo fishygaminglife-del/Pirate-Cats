@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cd45y1mnrpk5n"]
+
+[ext_resource type="Texture2D" uid="uid://cuuq2no8b5qr" path="res://assets/cannon ball.png" id="1_iy7ds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbp4x"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0.596)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+
+[node name="Node2D" type="Node2D" unique_id=1629556389]
+
+[node name="CannonBall" type="Sprite2D" parent="." unique_id=1396061474]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iy7ds")
+
+[node name="CannonPanel" type="Panel" parent="." unique_id=1163672836]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nbp4x")

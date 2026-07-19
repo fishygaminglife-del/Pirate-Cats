@@ -255,8 +255,6 @@ position = Vector2(223, 103)
 position = Vector2(-223, -114)
 scale = Vector2(0.2001017, 0.20140988)
 sprite_frames = SubResource("SpriteFrames_ldxs4")
-frame = 3
-frame_progress = 1.0
 speed_scale = 0.5
 
 [node name="greencrab" type="AnimatedSprite2D" parent="CMid" unique_id=1437353293]
@@ -270,6 +268,13 @@ position = Vector2(-223, -114)
 scale = Vector2(0.2001017, 0.20140988)
 sprite_frames = SubResource("SpriteFrames_0kpj8")
 speed_scale = 0.5
+
+[node name="MidPanel" type="Panel" parent="CMid" unique_id=348723417]
+visible = false
+offset_left = -269.0
+offset_top = -147.0
+offset_right = -175.0
+offset_bottom = -79.0
 
 [node name="CLeft" type="Node2D" parent="." unique_id=1946392259]
 position = Vector2(-219, 100)
@@ -292,6 +297,13 @@ scale = Vector2(0.2001017, 0.20140988)
 sprite_frames = SubResource("SpriteFrames_0kpj8")
 speed_scale = 0.5
 
+[node name="LeftPanel" type="Panel" parent="CLeft" unique_id=56620647]
+visible = false
+offset_left = -67.0
+offset_top = -138.0
+offset_right = 27.0
+offset_bottom = -70.0
+
 [node name="CRight" type="Node2D" parent="." unique_id=1754864415]
 position = Vector2(54, 96)
 
@@ -313,6 +325,13 @@ scale = Vector2(0.2001017, 0.20140988)
 sprite_frames = SubResource("SpriteFrames_0kpj8")
 speed_scale = 0.5
 
+[node name="RightPanel" type="Panel" parent="CRight" unique_id=409156639]
+visible = false
+offset_left = 143.0
+offset_top = -139.0
+offset_right = 237.0
+offset_bottom = -71.0
+
 [node name="Crabwave3-1" type="Sprite2D" parent="." unique_id=679593757]
 visible = false
 position = Vector2(-8.516312, -75.38253)
@@ -330,8 +349,8 @@ scale = Vector2(0.39766705, 0.39766705)
 texture = ExtResource("7_kwl4s")
 
 [node name="Crabboatfront" type="Sprite2D" parent="." unique_id=120962628]
-position = Vector2(9.536743e-07, 161.00002)
-scale = Vector2(0.29677418, 0.29677418)
+position = Vector2(6.571412e-06, 161.00002)
+scale = Vector2(0.29706034, 0.29677418)
 texture = ExtResource("2_v05nj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2089663637]
@@ -352,6 +371,7 @@ offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=867353463]
 libraries/ = SubResource("AnimationLibrary_x4gui")
