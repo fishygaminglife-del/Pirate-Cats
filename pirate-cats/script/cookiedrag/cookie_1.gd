@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 func _on_button_button_up() -> void:
 	if can_drag:
 		dragging = false
-		if $Panel2.get_global_rect().intersects($"../Panel".get_global_rect()):
-			if $"..".eating == false:
+		if $Panel2.get_global_rect().intersects($"../../Panel".get_global_rect()):
+			if $"../..".eating == false:
 				can_drag = false
 				$".".visible = false
-				$"..".parrot_eat()
+				$"../..".parrot_eat()
 			else:
-				$".".global_position = Vector2(-83, 93)
+				$".".global_position = Vector2(112, 95)
 
 func _on_button_button_down() -> void:
 	if can_drag:

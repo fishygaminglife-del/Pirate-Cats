@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://d3xw82k84mra1" path="res://assets/cookie.png" id="7_2qepk"]
 [ext_resource type="Script" uid="uid://criwh07w2b44y" path="res://script/cookiedrag/cookie_2.gd" id="9_3wdn5"]
 [ext_resource type="Script" uid="uid://yjdf28v0c0ku" path="res://script/cookiedrag/cookie.gd" id="11_2qepk"]
+[ext_resource type="Script" uid="uid://ck2bs7ephrf1c" path="res://script/cookiedrag/cookie_5.gd" id="12_a8ta6"]
+[ext_resource type="Script" uid="uid://tbxmdcvv1gr4" path="res://script/cookiedrag/cookie_4.gd" id="13_smaph"]
+[ext_resource type="Script" uid="uid://b5xpjmt28nq2v" path="res://script/cookiedrag/cookie_3.gd" id="14_dx3dx"]
+[ext_resource type="Script" uid="uid://650qitycpjeg" path="res://script/cookiedrag/cookie_6.gd" id="15_x416l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iio88"]
 atlas = ExtResource("2_bo8uk")
@@ -52,58 +56,150 @@ scale = Vector2(0.49583334, 0.4958333)
 sprite_frames = SubResource("SpriteFrames_ldxs4")
 speed_scale = 0.3
 
-[node name="Cookie1" type="Sprite2D" parent="." unique_id=1528820441]
-position = Vector2(-83, 93)
-scale = Vector2(0.1326816, 0.13268158)
+[node name="Right" type="Node2D" parent="." unique_id=1988404520]
+
+[node name="Cookie2" type="Sprite2D" parent="Right" unique_id=404815045]
+position = Vector2(78, 110)
+rotation = -0.13519306
+scale = Vector2(0.2699312, 0.27930492)
+texture = ExtResource("6_3wdn5")
+script = ExtResource("9_3wdn5")
+
+[node name="Panel2" type="Panel" parent="Right/Cookie2" unique_id=801105220]
+modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Button" type="Button" parent="Right/Cookie2" unique_id=513794151]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Cookie1" type="Sprite2D" parent="Right" unique_id=1528820441]
+position = Vector2(112, 95.00001)
+rotation = 0.19125211
+scale = Vector2(0.29418474, 0.2941847)
 texture = ExtResource("5_8w02c")
 script = ExtResource("6_bo8uk")
 
-[node name="Panel2" type="Panel" parent="Cookie1" unique_id=1982181152]
+[node name="Panel2" type="Panel" parent="Right/Cookie1" unique_id=1982181152]
 modulate = Color(1, 1, 1, 0)
 offset_left = -150.7368
 offset_top = -90.44206
 offset_right = 150.7368
 offset_bottom = 82.90523
 
-[node name="Button" type="Button" parent="Cookie1" unique_id=933777572]
+[node name="Button" type="Button" parent="Right/Cookie1" unique_id=933777572]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -150.7368
 offset_top = -90.44209
 offset_right = 150.7368
 offset_bottom = 82.90526
 
-[node name="Cookie2" type="Sprite2D" parent="." unique_id=404815045]
-position = Vector2(-138, 101)
-scale = Vector2(0.20731704, 0.20731704)
-texture = ExtResource("6_3wdn5")
-script = ExtResource("9_3wdn5")
-
-[node name="Panel2" type="Panel" parent="Cookie2" unique_id=801105220]
-modulate = Color(1, 1, 1, 0)
-offset_left = -110.941284
-offset_top = -38.588226
-offset_right = 108.5285
-offset_bottom = 32.978027
-
-[node name="Button" type="Button" parent="Cookie2" unique_id=513794151]
-offset_left = -110.941284
-offset_top = -38.588226
-offset_right = 108.5285
-offset_bottom = 32.978027
-
-[node name="Cookie" type="Sprite2D" parent="." unique_id=1225448216]
-position = Vector2(-37, 96)
-scale = Vector2(0.20959605, 0.20959604)
+[node name="Cookie" type="Sprite2D" parent="Right" unique_id=1225448216]
+position = Vector2(132, 123)
+scale = Vector2(0.28821537, 0.28821534)
 texture = ExtResource("7_2qepk")
 script = ExtResource("11_2qepk")
 
-[node name="Panel2" type="Panel" parent="Cookie" unique_id=653329175]
+[node name="Panel2" type="Panel" parent="Right/Cookie" unique_id=653329175]
 modulate = Color(1, 1, 1, 0)
 offset_left = -62.02408
 offset_top = -47.710846
 offset_right = 63.387726
 offset_bottom = 43.93622
 
-[node name="Button" type="Button" parent="Cookie" unique_id=2046551242]
+[node name="Button" type="Button" parent="Right/Cookie" unique_id=2046551242]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -62.02408
+offset_top = -47.710846
+offset_right = 63.387726
+offset_bottom = 43.93622
+
+[node name="Left" type="Node2D" parent="." unique_id=588155686]
+
+[node name="Cookie5" type="Sprite2D" parent="Left" unique_id=344263049]
+position = Vector2(-111.99999, 111.00001)
+rotation = -0.29304665
+scale = Vector2(0.26993123, 0.27930492)
+texture = ExtResource("6_3wdn5")
+script = ExtResource("12_a8ta6")
+
+[node name="Panel2" type="Panel" parent="Left/Cookie5" unique_id=1503605412]
+modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Button" type="Button" parent="Left/Cookie5" unique_id=306260195]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Cookie4" type="Sprite2D" parent="Left" unique_id=785211687]
+position = Vector2(-156, 94.99999)
+rotation = -0.28642845
+scale = Vector2(0.29418477, 0.2941847)
+texture = ExtResource("5_8w02c")
+script = ExtResource("13_smaph")
+
+[node name="Panel2" type="Panel" parent="Left/Cookie4" unique_id=80945257]
+modulate = Color(1, 1, 1, 0)
+offset_left = -150.7368
+offset_top = -90.44206
+offset_right = 150.7368
+offset_bottom = 82.90523
+
+[node name="Button" type="Button" parent="Left/Cookie4" unique_id=591414112]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -150.7368
+offset_top = -90.44209
+offset_right = 150.7368
+offset_bottom = 82.90526
+
+[node name="Cookie3" type="Sprite2D" parent="Left" unique_id=1174864992]
+position = Vector2(-177, 120)
+rotation = 0.19888173
+scale = Vector2(0.26993117, 0.27930492)
+texture = ExtResource("6_3wdn5")
+script = ExtResource("14_dx3dx")
+
+[node name="Panel2" type="Panel" parent="Left/Cookie3" unique_id=775088329]
+modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Button" type="Button" parent="Left/Cookie3" unique_id=1710961255]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -110.941284
+offset_top = -38.588226
+offset_right = 108.5285
+offset_bottom = 32.978027
+
+[node name="Cookie6" type="Sprite2D" parent="Left" unique_id=1534105527]
+position = Vector2(-116, 89)
+scale = Vector2(0.28821537, 0.28821534)
+texture = ExtResource("7_2qepk")
+script = ExtResource("15_x416l")
+
+[node name="Panel2" type="Panel" parent="Left/Cookie6" unique_id=753208317]
+modulate = Color(1, 1, 1, 0)
+offset_left = -62.02408
+offset_top = -47.710846
+offset_right = 63.387726
+offset_bottom = 43.93622
+
+[node name="Button" type="Button" parent="Left/Cookie6" unique_id=1999865704]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -62.02408
 offset_top = -47.710846
 offset_right = 63.387726
@@ -113,14 +209,23 @@ offset_bottom = 43.93622
 zoom = Vector2(2, 2)
 
 [node name="Panel" type="Panel" parent="." unique_id=812682678]
+visible = false
 offset_left = -49.0
 offset_top = -87.0
 offset_right = 59.0
 offset_bottom = 75.0
 
-[connection signal="button_down" from="Cookie1/Button" to="Cookie1" method="_on_button_button_down"]
-[connection signal="button_up" from="Cookie1/Button" to="Cookie1" method="_on_button_button_up"]
-[connection signal="button_down" from="Cookie2/Button" to="Cookie2" method="_on_button_button_down"]
-[connection signal="button_up" from="Cookie2/Button" to="Cookie2" method="_on_button_button_up"]
-[connection signal="button_down" from="Cookie/Button" to="Cookie" method="_on_button_button_down"]
-[connection signal="button_up" from="Cookie/Button" to="Cookie" method="_on_button_button_up"]
+[connection signal="button_down" from="Right/Cookie2/Button" to="Right/Cookie2" method="_on_button_button_down"]
+[connection signal="button_up" from="Right/Cookie2/Button" to="Right/Cookie2" method="_on_button_button_up"]
+[connection signal="button_down" from="Right/Cookie1/Button" to="Right/Cookie1" method="_on_button_button_down"]
+[connection signal="button_up" from="Right/Cookie1/Button" to="Right/Cookie1" method="_on_button_button_up"]
+[connection signal="button_down" from="Right/Cookie/Button" to="Right/Cookie" method="_on_button_button_down"]
+[connection signal="button_up" from="Right/Cookie/Button" to="Right/Cookie" method="_on_button_button_up"]
+[connection signal="button_down" from="Left/Cookie5/Button" to="Left/Cookie5" method="_on_button_button_down"]
+[connection signal="button_up" from="Left/Cookie5/Button" to="Left/Cookie5" method="_on_button_button_up"]
+[connection signal="button_down" from="Left/Cookie4/Button" to="Left/Cookie4" method="_on_button_button_down"]
+[connection signal="button_up" from="Left/Cookie4/Button" to="Left/Cookie4" method="_on_button_button_up"]
+[connection signal="button_down" from="Left/Cookie3/Button" to="Left/Cookie3" method="_on_button_button_down"]
+[connection signal="button_up" from="Left/Cookie3/Button" to="Left/Cookie3" method="_on_button_button_up"]
+[connection signal="button_down" from="Left/Cookie6/Button" to="Left/Cookie6" method="_on_button_button_down"]
+[connection signal="button_up" from="Left/Cookie6/Button" to="Left/Cookie6" method="_on_button_button_up"]

@@ -10,7 +10,7 @@ func parrot_eat():
 	if eating == false:
 		eating = true
 		$Parrot.play("eating")
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(2).timeout
 		$Parrot.play("default")
 		eating = false
 	

@@ -1,0 +1,340 @@
+[gd_scene format=3 uid="uid://byypeq8etmc8a"]
+
+[ext_resource type="Script" uid="uid://dsxbvorybag5q" path="res://script/crab_fight.gd" id="1_2f17f"]
+[ext_resource type="Texture2D" uid="uid://twsdpehvo25k" path="res://assets/bg.png" id="1_v05nj"]
+[ext_resource type="Texture2D" uid="uid://gacxa6x8q78s" path="res://assets/crabboatfront.png" id="2_v05nj"]
+[ext_resource type="Texture2D" uid="uid://bk6srrtle4nc1" path="res://assets/cannon.png" id="2_xrn5h"]
+[ext_resource type="Texture2D" uid="uid://cuuq2no8b5qr" path="res://assets/cannon ball.png" id="3_tjtok"]
+[ext_resource type="Texture2D" uid="uid://etasvi870x6r" path="res://assets/purplecrabs.png" id="6_1lbqr"]
+[ext_resource type="Texture2D" uid="uid://27pxglwpxqic" path="res://assets/crabwave1.png" id="7_kwl4s"]
+[ext_resource type="Texture2D" uid="uid://dc4qmwgkslrrn" path="res://assets/orangecrabs.png" id="7_x4gui"]
+[ext_resource type="Texture2D" uid="uid://b6pdkwn0imxw" path="res://assets/crabwave2.png" id="8_2f17f"]
+[ext_resource type="Texture2D" uid="uid://b2yng8yole2uc" path="res://assets/greencrabs.png" id="8_tceo0"]
+[ext_resource type="Texture2D" uid="uid://dqlgdm73a5y56" path="res://assets/crabwave3.png" id="9_1lbqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rubrj"]
+atlas = ExtResource("6_1lbqr")
+region = Rect2(0, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4goi"]
+atlas = ExtResource("6_1lbqr")
+region = Rect2(506, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j8du"]
+atlas = ExtResource("6_1lbqr")
+region = Rect2(1012, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41y0m"]
+atlas = ExtResource("6_1lbqr")
+region = Rect2(1518, 0, 506, 354)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxs4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rubrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4goi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j8du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41y0m")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmqxy"]
+atlas = ExtResource("8_tceo0")
+region = Rect2(0, 0, 504, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja70w"]
+atlas = ExtResource("8_tceo0")
+region = Rect2(504, 0, 504, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkgaa"]
+atlas = ExtResource("8_tceo0")
+region = Rect2(1008, 0, 504, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iud6y"]
+atlas = ExtResource("8_tceo0")
+region = Rect2(1512, 0, 504, 354)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w173s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmqxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja70w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkgaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iud6y")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdsdr"]
+atlas = ExtResource("7_x4gui")
+region = Rect2(0, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tukgc"]
+atlas = ExtResource("7_x4gui")
+region = Rect2(506, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8ee6"]
+atlas = ExtResource("7_x4gui")
+region = Rect2(1012, 0, 506, 354)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6mlq"]
+atlas = ExtResource("7_x4gui")
+region = Rect2(1518, 0, 506, 354)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kpj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdsdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tukgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8ee6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6mlq")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_2f17f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crabwave1-1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-29, 38)]
+}
+
+[sub_resource type="Animation" id="Animation_1lbqr"]
+resource_name = "wavesmove"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crabwave3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9666667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-85, -79), Vector2(63, -72), Vector2(-85, -79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crabwave2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.9666667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(89, -1), Vector2(-88, -11), Vector2(89, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Crabwave1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5667, 4.9666667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-76, 69), Vector2(-29, 38), Vector2(39, 66), Vector2(-76, 69)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Crabwave1-1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5667, 4.9667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-76, 69), Vector2(-29, 38), Vector2(39, 66), Vector2(-76, 69)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Crabwave3-1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.9667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-85.00001, -79), Vector2(63, -72.00001), Vector2(-85.00001, -79)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Crabwave2-1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.9667, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(89.00001, -1), Vector2(-88, -11), Vector2(89.00001, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4gui"]
+_data = {
+&"RESET": SubResource("Animation_2f17f"),
+&"wavesmove": SubResource("Animation_1lbqr")
+}
+
+[node name="CrabFight" type="Node2D" unique_id=924975727]
+script = ExtResource("1_2f17f")
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=743572922]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v05nj")
+
+[node name="Crabwave3" type="Sprite2D" parent="." unique_id=298175295]
+position = Vector2(-8.515793, -75.38251)
+scale = Vector2(0.39766708, 0.39766708)
+texture = ExtResource("9_1lbqr")
+
+[node name="Crabwave2" type="Sprite2D" parent="." unique_id=492448919]
+position = Vector2(-2.4709778, -6.167852)
+scale = Vector2(0.39766708, 0.39766708)
+texture = ExtResource("8_2f17f")
+
+[node name="Crabwave1" type="Sprite2D" parent="." unique_id=299398626]
+position = Vector2(-29, 38)
+scale = Vector2(0.39766708, 0.39766708)
+texture = ExtResource("7_kwl4s")
+
+[node name="CMid" type="Node2D" parent="." unique_id=1492342210]
+position = Vector2(223, 103)
+
+[node name="purplecrab" type="AnimatedSprite2D" parent="CMid" unique_id=759613664]
+position = Vector2(-223, -114)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.5
+
+[node name="greencrab" type="AnimatedSprite2D" parent="CMid" unique_id=1437353293]
+position = Vector2(-223.00002, -114)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_w173s")
+speed_scale = 0.5
+
+[node name="yellowcrab" type="AnimatedSprite2D" parent="CMid" unique_id=696945719]
+position = Vector2(-223, -114)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+speed_scale = 0.5
+
+[node name="CLeft" type="Node2D" parent="." unique_id=1946392259]
+position = Vector2(-219, 100)
+
+[node name="purplecrab" type="AnimatedSprite2D" parent="CLeft" unique_id=50900428]
+position = Vector2(-20.374268, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.5
+
+[node name="greencrab" type="AnimatedSprite2D" parent="CLeft" unique_id=117614097]
+position = Vector2(-20.374283, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_w173s")
+speed_scale = 0.5
+
+[node name="yellowcrab" type="AnimatedSprite2D" parent="CLeft" unique_id=1270997019]
+position = Vector2(-20.374268, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+speed_scale = 0.5
+
+[node name="CRight" type="Node2D" parent="." unique_id=1754864415]
+position = Vector2(54, 96)
+
+[node name="purplecrab" type="AnimatedSprite2D" parent="CRight" unique_id=1139740797]
+position = Vector2(189.62573, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_ldxs4")
+speed_scale = 0.5
+
+[node name="greencrab" type="AnimatedSprite2D" parent="CRight" unique_id=761000919]
+position = Vector2(189.62572, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_w173s")
+speed_scale = 0.5
+
+[node name="yellowcrab" type="AnimatedSprite2D" parent="CRight" unique_id=739626058]
+position = Vector2(189.62573, -105.35045)
+scale = Vector2(0.2001017, 0.20140988)
+sprite_frames = SubResource("SpriteFrames_0kpj8")
+speed_scale = 0.5
+
+[node name="Crabwave3-1" type="Sprite2D" parent="." unique_id=679593757]
+visible = false
+position = Vector2(-8.516312, -75.38253)
+scale = Vector2(0.39766705, 0.39766705)
+texture = ExtResource("9_1lbqr")
+
+[node name="Crabwave2-1" type="Sprite2D" parent="." unique_id=896784216]
+position = Vector2(-2.4703598, -6.1678176)
+scale = Vector2(0.39766705, 0.39766705)
+texture = ExtResource("8_2f17f")
+
+[node name="Crabwave1-1" type="Sprite2D" parent="." unique_id=346930070]
+position = Vector2(-29, 38)
+scale = Vector2(0.39766705, 0.39766705)
+texture = ExtResource("7_kwl4s")
+
+[node name="Crabboatfront" type="Sprite2D" parent="." unique_id=120962628]
+position = Vector2(9.536743e-07, 161.00002)
+scale = Vector2(0.29677418, 0.29677418)
+texture = ExtResource("2_v05nj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2089663637]
+zoom = Vector2(2, 2)
+
+[node name="Cannon" type="Sprite2D" parent="." unique_id=1238047416]
+position = Vector2(3, 90)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_xrn5h")
+
+[node name="CannonBall" type="Sprite2D" parent="Cannon" unique_id=1732189251]
+position = Vector2(4, -18)
+texture = ExtResource("3_tjtok")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=867353463]
+libraries/ = SubResource("AnimationLibrary_x4gui")
