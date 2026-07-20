@@ -6,7 +6,12 @@ var scene = 1
 var coins = 0
 var fish_played = false
 var cook_played = false
-
+var fishmap = false
+var cookmap = false
+var crabmap = false
+var parrotmap = false
+var captainmap = false
+var powdermap = false
 
 func save_game(slot: int) -> void:
 	var path = SAVE_FOLDER + "save_%d.json" % slot

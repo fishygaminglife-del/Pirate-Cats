@@ -5,12 +5,56 @@ var moveright = false
 var m1 = 0
 var m2 = 0
 var m3 = 0
+var map1 = false
+var map2 = false
+var map3 = false
+var map4 = false
+var map5 = false
+var map6 = false
+var panels = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
+var maps = [$Map1, $Map2, $Map3, $Map4, $Map5, $Map6]
+@onready var butmap = $Map1
+var dragging = false
+var of = Vector2(0,0)
+var in_zone = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if dragging:
+		$Map1.global_position = get_global_mouse_position() - of
+	if $PH1.get_global_rect().intersects(butmap.get_global_rect()):
+		if $Map1 == butmap:
+			map1 = true
+		if $Map2 == butmap:
+			map2 = true
+		if $Map3 == butmap:
+			map3 = true
+		if $Map4 == butmap:
+			map4 = true
+		if $Map5 == butmap:
+			map5 = true
+		if $Map6 == butmap:
+			map6 = true
+		print(butmap)
+
+	else:
+		if $Map1 == butmap:
+			map1 = false
+		if $Map2 == butmap:
+			map2 = false
+		if $Map3 == butmap:
+			map3 = false
+		if $Map4 == butmap:
+			map4 = false
+		if $Map5 == butmap:
+			map5 = false
+		if $Map6 == butmap:
+			map6 = false
+		
 	if moveleft == true:
 		$Camera2D.global_position += Vector2(-150, 0) * delta
 	$Camera2D.global_position.x = clamp(
@@ -93,3 +137,12 @@ func _on_area_m_3_mouse_entered() -> void:
 		else:
 			m3 = 0
 			$m3.play("rat3 move back")
+
+
+func _on_map_1_button_down() -> void:
+	dragging = true
+	of = get_global_mouse_position() - $Map1.global_position
+
+func _on_map_1_button_up() -> void:
+	dragging = false
+	

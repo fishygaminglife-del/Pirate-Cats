@@ -8,7 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://m765ky3nyymd" path="res://assets/wheelanimsprite.png" id="6_yfeqn"]
 [ext_resource type="Texture2D" uid="uid://4ini3stmid5m" path="res://assets/mouse toy.png" id="7_mcfne"]
 [ext_resource type="Texture2D" uid="uid://l7sdkpegyugb" path="res://assets/mouse toy-2.png" id="8_yetyy"]
-[ext_resource type="Texture2D" uid="uid://c8rghwml3rgmy" path="res://assets/mouse toy-1.png" id="9_2nijj"]
+[ext_resource type="Texture2D" uid="uid://c8bkutybtaau0" path="res://assets/map1.png" id="10_yetyy"]
+[ext_resource type="Texture2D" uid="uid://rfqlsdlgdnrf" path="res://assets/map2.png" id="11_lerbx"]
+[ext_resource type="Texture2D" uid="uid://b0ioblyl7a35b" path="res://assets/map3.png" id="12_i8n7k"]
+[ext_resource type="Texture2D" uid="uid://cjnad54uiwsts" path="res://assets/map4.png" id="13_jmuir"]
+[ext_resource type="Texture2D" uid="uid://d4h57p80rq2uh" path="res://assets/map5.png" id="14_3v756"]
+[ext_resource type="Texture2D" uid="uid://5p61n5jeldm0" path="res://assets/map6.png" id="15_it88h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyjxp"]
 atlas = ExtResource("3_hp81p")
@@ -151,8 +156,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
 size = Vector2(92, 93)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
+size = Vector2(248, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48q5p"]
+size = Vector2(36, 43)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
 size = Vector2(44, 324)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0.46171945, 0.2969604, 0.04311364, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2501067, 0.15314022, 0.012437925, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
 
 [sub_resource type="Animation" id="Animation_mcfne"]
 length = 0.001
@@ -299,82 +323,10 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_8akd2"]
 resource_name = "rat2 move"
 length = 0.57
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mouse2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.56666666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-51.000008, 127), Vector2(-125, 113)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mouse2/AreaM2:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mouse2:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_3njir"]
 resource_name = "rat2 move back"
 length = 0.451
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mouse2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.45),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-125, 113), Vector2(-51.000008, 127)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mouse2:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mouse2/AreaM2:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_ganqv"]
 resource_name = "rat3 move"
@@ -467,6 +419,29 @@ _data = {
 &"rat3 move back": SubResource("Animation_lerbx")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kpj8"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nijj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8akd2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3njir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ganqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8n7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmuir"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v756"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it88h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob04i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2tfi"]
+
 [node name="Node2D" type="Node2D" unique_id=1551274641]
 script = ExtResource("1_gppsv")
 
@@ -532,13 +507,6 @@ offset_top = -188.0
 offset_right = -77.0
 offset_bottom = -76.0
 
-[node name="Bottle" type="Button" parent="." unique_id=110725516]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -57.0
-offset_top = -69.0
-offset_right = -21.0
-offset_bottom = -24.0
-
 [node name="Mouse3" type="Sprite2D" parent="." unique_id=166004136]
 position = Vector2(222.99997, 122)
 scale = Vector2(0.4, 0.4)
@@ -567,19 +535,22 @@ position = Vector2(439.99997, -307.49997)
 scale = Vector2(2.4999998, 2.4999998)
 polygon = PackedVector2Array(-204, 117, -192, 114, -184, 115, -181, 110, -169, 109, -157, 115, -154, 112, -151, 113, -153, 119, -148, 125, -148, 130, -152, 133, -180, 133, -186, 126, -186, 119, -192, 116, -197, 121, -205, 119)
 
-[node name="Mouse2" type="Sprite2D" parent="." unique_id=464182184]
-position = Vector2(-51.000008, 127)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_2nijj")
-flip_h = true
+[node name="Table" type="Area2D" parent="." unique_id=1874030947]
 
-[node name="AreaM2" type="Area2D" parent="Mouse2" unique_id=1946788205]
-scale = Vector2(-1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table" unique_id=1027079671]
+position = Vector2(-124, 19.5)
+shape = SubResource("RectangleShape2D_0kpj8")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mouse2/AreaM2" unique_id=97808701]
-position = Vector2(439.99997, -307.49997)
-scale = Vector2(2.4999998, 2.4999998)
-polygon = PackedVector2Array(-204, 117, -192, 114, -184, 115, -181, 110, -169, 109, -157, 115, -154, 112, -151, 113, -153, 119, -148, 125, -148, 130, -152, 133, -180, 133, -186, 126, -186, 119, -192, 116, -197, 121, -205, 119)
+[node name="Bottle" type="Area2D" parent="." unique_id=1827474335]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottle" unique_id=657963265]
+position = Vector2(-39, -46.5)
+shape = SubResource("RectangleShape2D_48q5p")
+
+[node name="BackShip" type="Area2D" parent="." unique_id=1159395156]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=784450281]
+polygon = PackedVector2Array(312, 99, 350, 75, 354, 75, 388, 98, 388, 105, 370, 106, 371, 123, 367, 128, 335, 128, 331, 124, 331, 107, 315, 106, 311, 101)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1932166162]
 zoom = Vector2(2, 2)
@@ -596,10 +567,19 @@ shape = SubResource("RectangleShape2D_ldxs4")
 position = Vector2(266, 0)
 shape = SubResource("RectangleShape2D_ldxs4")
 
-[node name="BackShip" type="Area2D" parent="." unique_id=1159395156]
+[node name="bg" type="Panel" parent="Camera2D" unique_id=1966440609]
+offset_left = -288.0
+offset_top = -201.0
+offset_right = 319.0
+offset_bottom = 205.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=784450281]
-polygon = PackedVector2Array(312, 99, 350, 75, 354, 75, 388, 98, 388, 105, 370, 106, 371, 123, 367, 128, 335, 128, 331, 124, 331, 107, 315, 106, 311, 101)
+[node name="table" type="Panel" parent="Camera2D/bg" unique_id=8533758]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 64.0
+offset_right = 531.0
+offset_bottom = 337.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
 
 [node name="m1" type="AnimationPlayer" parent="." unique_id=1896461276]
 libraries/ = SubResource("AnimationLibrary_8akd2")
@@ -610,19 +590,176 @@ libraries/ = SubResource("AnimationLibrary_8akd2")
 [node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
 libraries/ = SubResource("AnimationLibrary_8akd2")
 
+[node name="Map1" type="Button" parent="." unique_id=1198860316]
+offset_left = -218.0
+offset_top = -74.0
+offset_right = -134.0
+offset_bottom = 10.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("10_yetyy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Map2" type="Button" parent="." unique_id=1332756257]
+offset_left = -40.0
+offset_top = -79.0
+offset_right = 44.0
+offset_bottom = 5.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("11_lerbx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Map3" type="Button" parent="." unique_id=889974617]
+offset_left = 44.0
+offset_top = -80.0
+offset_right = 128.0
+offset_bottom = 4.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("12_i8n7k")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Map4" type="Button" parent="." unique_id=431006987]
+offset_left = -124.0
+offset_top = 4.0
+offset_right = -40.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("13_jmuir")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Map5" type="Button" parent="." unique_id=1757049657]
+offset_left = -40.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("14_3v756")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Map6" type="Button" parent="." unique_id=908678224]
+offset_left = 43.0
+offset_top = 4.0
+offset_right = 127.0
+offset_bottom = 88.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_3njir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ganqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_i8n7k")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jmuir")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
+icon = ExtResource("15_it88h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PH1" type="Panel" parent="." unique_id=780656321]
+offset_left = -123.0
+offset_top = -78.0
+offset_right = -41.0
+offset_bottom = 3.0
+
+[node name="PH2" type="Panel" parent="." unique_id=870294715]
+offset_left = -39.0
+offset_top = -78.0
+offset_right = 43.0
+offset_bottom = 3.0
+
+[node name="PH3" type="Panel" parent="." unique_id=1743325725]
+offset_left = 44.0
+offset_top = -78.0
+offset_right = 126.0
+offset_bottom = 3.0
+
+[node name="PH4" type="Panel" parent="." unique_id=1977258869]
+offset_left = -123.0
+offset_top = 5.0
+offset_right = -41.0
+offset_bottom = 86.0
+
+[node name="PH5" type="Panel" parent="." unique_id=1642609299]
+offset_left = -39.0
+offset_top = 5.0
+offset_right = 43.0
+offset_bottom = 86.0
+
+[node name="PH6" type="Panel" parent="." unique_id=1322151804]
+offset_left = 44.0
+offset_top = 5.0
+offset_right = 126.0
+offset_bottom = 86.0
+
 [connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
 [connection signal="mouse_exited" from="DoorHandle" to="." method="_on_door_handle_mouse_exited"]
 [connection signal="mouse_entered" from="Tank" to="." method="_on_tank_mouse_entered"]
 [connection signal="mouse_exited" from="Tank" to="." method="_on_tank_mouse_exited"]
 [connection signal="mouse_entered" from="CatToys" to="." method="_on_cat_toys_mouse_entered"]
 [connection signal="mouse_exited" from="CatToys" to="." method="_on_cat_toys_mouse_exited"]
-[connection signal="mouse_entered" from="Bottle" to="." method="_on_bottle_mouse_entered"]
-[connection signal="mouse_exited" from="Bottle" to="." method="_on_bottle_mouse_exited"]
 [connection signal="mouse_entered" from="Mouse3/AreaM3" to="." method="_on_area_m_3_mouse_entered"]
 [connection signal="mouse_entered" from="Mouse1/AreaM1" to="." method="_on_area_m_1_mouse_entered"]
-[connection signal="mouse_entered" from="Mouse2/AreaM2" to="." method="_on_area_m_2_mouse_entered"]
+[connection signal="mouse_entered" from="Bottle" to="." method="_on_bottle_mouse_entered"]
+[connection signal="mouse_exited" from="Bottle" to="." method="_on_bottle_mouse_exited"]
+[connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]
 [connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
 [connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
-[connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]
+[connection signal="button_down" from="Map1" to="." method="_on_map_1_button_down"]
+[connection signal="button_up" from="Map1" to="." method="_on_map_1_button_up"]
