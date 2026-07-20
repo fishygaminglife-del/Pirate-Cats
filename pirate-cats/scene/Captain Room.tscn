@@ -590,11 +590,68 @@ libraries/ = SubResource("AnimationLibrary_8akd2")
 [node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
 libraries/ = SubResource("AnimationLibrary_8akd2")
 
+[node name="MPArea" type="Panel" parent="." unique_id=28095608]
+offset_left = -93.0
+offset_top = -64.0
+offset_right = 97.0
+offset_bottom = 59.0
+
+[node name="PH1" type="Panel" parent="." unique_id=780656321]
+offset_left = -105.0
+offset_top = -74.99999
+offset_right = -23.0
+offset_bottom = 6.0000076
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH2" type="Panel" parent="." unique_id=870294715]
+offset_left = -40.54962
+offset_top = -75.39658
+offset_right = 41.45038
+offset_bottom = 5.6034164
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH3" type="Panel" parent="." unique_id=1743325725]
+offset_left = 26.450377
+offset_top = -76.39658
+offset_right = 108.45038
+offset_bottom = 4.6034164
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH4" type="Panel" parent="." unique_id=1977258869]
+offset_left = -105.54962
+offset_top = -9.396582
+offset_right = -23.549622
+offset_bottom = 71.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH5" type="Panel" parent="." unique_id=1642609299]
+offset_left = -39.54962
+offset_top = -9.396582
+offset_right = 42.45038
+offset_bottom = 71.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH6" type="Panel" parent="." unique_id=1322151804]
+offset_left = 26.450377
+offset_top = -9.396582
+offset_right = 108.45038
+offset_bottom = 71.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
 [node name="Map1" type="Button" parent="." unique_id=1198860316]
-offset_left = -218.0
-offset_top = -74.0
-offset_right = -134.0
-offset_bottom = 10.0
+offset_left = -225.0
+offset_top = -87.0
+offset_right = -141.0
+offset_bottom = -3.0
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
+theme_override_icons/icon = ExtResource("10_yetyy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -606,15 +663,15 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3v756")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_it88h")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
 theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
-icon = ExtResource("10_yetyy")
-icon_alignment = 1
 expand_icon = true
 
 [node name="Map2" type="Button" parent="." unique_id=1332756257]
-offset_left = -40.0
-offset_top = -79.0
-offset_right = 44.0
-offset_bottom = 5.0
+offset_left = -57.0
+offset_top = -165.0
+offset_right = 27.0
+offset_bottom = -81.0
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -631,10 +688,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map3" type="Button" parent="." unique_id=889974617]
-offset_left = 44.0
-offset_top = -80.0
-offset_right = 128.0
-offset_bottom = 4.0
+offset_left = 136.0
+offset_top = -122.00001
+offset_right = 220.0
+offset_bottom = -38.000008
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -651,10 +710,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map4" type="Button" parent="." unique_id=431006987]
-offset_left = -124.0
-offset_top = 4.0
-offset_right = -40.0
-offset_bottom = 88.0
+offset_left = -210.0
+offset_top = 6.0
+offset_right = -126.0
+offset_bottom = 90.0
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -671,10 +732,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map5" type="Button" parent="." unique_id=1757049657]
-offset_left = -40.0
-offset_top = 4.0
-offset_right = 44.0
-offset_bottom = 88.0
+offset_left = -104.0
+offset_top = 83.0
+offset_right = -20.0
+offset_bottom = 167.0
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -691,10 +754,12 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map6" type="Button" parent="." unique_id=908678224]
-offset_left = 43.0
-offset_top = 4.0
-offset_right = 127.0
-offset_bottom = 88.0
+offset_left = 134.0
+offset_top = -17.999996
+offset_right = 218.0
+offset_bottom = 66.0
+scale = Vector2(0.79338324, 0.79338324)
+pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_2nijj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8akd2")
@@ -709,42 +774,6 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
 icon = ExtResource("15_it88h")
 icon_alignment = 1
 expand_icon = true
-
-[node name="PH1" type="Panel" parent="." unique_id=780656321]
-offset_left = -123.0
-offset_top = -78.0
-offset_right = -41.0
-offset_bottom = 3.0
-
-[node name="PH2" type="Panel" parent="." unique_id=870294715]
-offset_left = -39.0
-offset_top = -78.0
-offset_right = 43.0
-offset_bottom = 3.0
-
-[node name="PH3" type="Panel" parent="." unique_id=1743325725]
-offset_left = 44.0
-offset_top = -78.0
-offset_right = 126.0
-offset_bottom = 3.0
-
-[node name="PH4" type="Panel" parent="." unique_id=1977258869]
-offset_left = -123.0
-offset_top = 5.0
-offset_right = -41.0
-offset_bottom = 86.0
-
-[node name="PH5" type="Panel" parent="." unique_id=1642609299]
-offset_left = -39.0
-offset_top = 5.0
-offset_right = 43.0
-offset_bottom = 86.0
-
-[node name="PH6" type="Panel" parent="." unique_id=1322151804]
-offset_left = 44.0
-offset_top = 5.0
-offset_right = 126.0
-offset_bottom = 86.0
 
 [connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
 [connection signal="mouse_exited" from="DoorHandle" to="." method="_on_door_handle_mouse_exited"]
@@ -763,3 +792,13 @@ offset_bottom = 86.0
 [connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
 [connection signal="button_down" from="Map1" to="." method="_on_map_1_button_down"]
 [connection signal="button_up" from="Map1" to="." method="_on_map_1_button_up"]
+[connection signal="button_down" from="Map2" to="." method="_on_map_2_button_down"]
+[connection signal="button_up" from="Map2" to="." method="_on_map_2_button_up"]
+[connection signal="button_down" from="Map3" to="." method="_on_map_3_button_down"]
+[connection signal="button_up" from="Map3" to="." method="_on_map_3_button_up"]
+[connection signal="button_down" from="Map4" to="." method="_on_map_4_button_down"]
+[connection signal="button_up" from="Map4" to="." method="_on_map_4_button_up"]
+[connection signal="button_down" from="Map5" to="." method="_on_map_5_button_down"]
+[connection signal="button_up" from="Map5" to="." method="_on_map_5_button_up"]
+[connection signal="button_down" from="Map6" to="." method="_on_map_6_button_down"]
+[connection signal="button_up" from="Map6" to="." method="_on_map_6_button_up"]
