@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cjnad54uiwsts" path="res://assets/map4.png" id="13_jmuir"]
 [ext_resource type="Texture2D" uid="uid://d4h57p80rq2uh" path="res://assets/map5.png" id="14_3v756"]
 [ext_resource type="Texture2D" uid="uid://5p61n5jeldm0" path="res://assets/map6.png" id="15_it88h"]
+[ext_resource type="Texture2D" uid="uid://eo3m1jqogybo" path="res://assets/map pieces.png" id="15_lerbx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyjxp"]
 atlas = ExtResource("3_hp81p")
@@ -161,22 +162,6 @@ size = Vector2(248, 103)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48q5p"]
 size = Vector2(36, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
-size = Vector2(44, 324)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
-bg_color = Color(0.46171945, 0.2969604, 0.04311364, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.2501067, 0.15314022, 0.012437925, 1)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-corner_detail = 20
 
 [sub_resource type="Animation" id="Animation_mcfne"]
 length = 0.001
@@ -419,6 +404,33 @@ _data = {
 &"rat3 move back": SubResource("Animation_lerbx")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(44, 324)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldxs4"]
+bg_color = Color(0.46171945, 0.2969604, 0.04311364, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2501067, 0.15314022, 0.012437925, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w173s"]
+bg_color = Color(0.3665946, 0.36659464, 0.36659443, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kpj8"]
 bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 
@@ -552,6 +564,69 @@ shape = SubResource("RectangleShape2D_48q5p")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=784450281]
 polygon = PackedVector2Array(312, 99, 350, 75, 354, 75, 388, 98, 388, 105, 370, 106, 371, 123, 367, 128, 335, 128, 331, 124, 331, 107, 315, 106, 311, 101)
 
+[node name="m1" type="AnimationPlayer" parent="." unique_id=1896461276]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
+[node name="m2" type="AnimationPlayer" parent="." unique_id=1483437173]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
+[node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
+libraries/ = SubResource("AnimationLibrary_8akd2")
+
+[node name="MPArea" type="Panel" parent="." unique_id=28095608]
+offset_left = -93.0
+offset_top = -64.0
+offset_right = 97.0
+offset_bottom = 59.0
+
+[node name="PH1" type="Panel" parent="." unique_id=780656321]
+offset_left = -110.54962
+offset_top = -80.39658
+offset_right = -28.549622
+offset_bottom = 0.60341644
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH2" type="Panel" parent="." unique_id=870294715]
+offset_left = -44.54962
+offset_top = -80.39658
+offset_right = 37.45038
+offset_bottom = 0.60341644
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH3" type="Panel" parent="." unique_id=1743325725]
+offset_left = 22.450378
+offset_top = -80.39658
+offset_right = 104.45038
+offset_bottom = 0.60341644
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH4" type="Panel" parent="." unique_id=1977258869]
+offset_left = -110.54962
+offset_top = -12.396584
+offset_right = -28.549622
+offset_bottom = 68.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH5" type="Panel" parent="." unique_id=1642609299]
+offset_left = -44.54962
+offset_top = -12.396584
+offset_right = 37.45038
+offset_bottom = 68.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH6" type="Panel" parent="." unique_id=1322151804]
+offset_left = 21.450378
+offset_top = -12.396584
+offset_right = 103.45038
+offset_bottom = 68.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1932166162]
 zoom = Vector2(2, 2)
 
@@ -581,74 +656,20 @@ offset_right = 531.0
 offset_bottom = 337.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ldxs4")
 
-[node name="m1" type="AnimationPlayer" parent="." unique_id=1896461276]
-libraries/ = SubResource("AnimationLibrary_8akd2")
-
-[node name="m2" type="AnimationPlayer" parent="." unique_id=1483437173]
-libraries/ = SubResource("AnimationLibrary_8akd2")
-
-[node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
-libraries/ = SubResource("AnimationLibrary_8akd2")
-
-[node name="MPArea" type="Panel" parent="." unique_id=28095608]
-offset_left = -93.0
-offset_top = -64.0
-offset_right = 97.0
-offset_bottom = 59.0
-
-[node name="PH1" type="Panel" parent="." unique_id=780656321]
-offset_left = -105.0
-offset_top = -74.99999
-offset_right = -23.0
-offset_bottom = 6.0000076
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH2" type="Panel" parent="." unique_id=870294715]
-offset_left = -40.54962
-offset_top = -75.39658
-offset_right = 41.45038
-offset_bottom = 5.6034164
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH3" type="Panel" parent="." unique_id=1743325725]
-offset_left = 26.450377
-offset_top = -76.39658
-offset_right = 108.45038
-offset_bottom = 4.6034164
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH4" type="Panel" parent="." unique_id=1977258869]
-offset_left = -105.54962
-offset_top = -9.396582
-offset_right = -23.549622
-offset_bottom = 71.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH5" type="Panel" parent="." unique_id=1642609299]
-offset_left = -39.54962
-offset_top = -9.396582
-offset_right = 42.45038
-offset_bottom = 71.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH6" type="Panel" parent="." unique_id=1322151804]
-offset_left = 26.450377
-offset_top = -9.396582
-offset_right = 108.45038
-offset_bottom = 71.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
+[node name="Panel" type="Panel" parent="Camera2D/bg" unique_id=231751445]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 128.0
+offset_right = 395.0
+offset_bottom = 272.0
+pivot_offset = Vector2(107, 70)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w173s")
 
 [node name="Map1" type="Button" parent="." unique_id=1198860316]
-offset_left = -225.0
-offset_top = -87.0
-offset_right = -141.0
-offset_bottom = -3.0
+offset_left = 106.0
+offset_top = 31.000002
+offset_right = 190.0
+offset_bottom = 115.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_icons/icon = ExtResource("10_yetyy")
@@ -666,10 +687,10 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
 expand_icon = true
 
 [node name="Map2" type="Button" parent="." unique_id=1332756257]
-offset_left = -57.0
-offset_top = -165.0
-offset_right = 27.0
-offset_bottom = -81.0
+offset_left = 135.0
+offset_top = -49.000004
+offset_right = 219.0
+offset_bottom = 34.999996
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -688,10 +709,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map3" type="Button" parent="." unique_id=889974617]
-offset_left = 136.0
-offset_top = -122.00001
-offset_right = 220.0
-offset_bottom = -38.000008
+offset_left = -194.00002
+offset_top = 36.000004
+offset_right = -110.000015
+offset_bottom = 120.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -710,10 +731,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map4" type="Button" parent="." unique_id=431006987]
-offset_left = -210.0
-offset_top = 6.0
-offset_right = -126.0
-offset_bottom = 90.0
+offset_left = 94.0
+offset_top = -128.0
+offset_right = 178.0
+offset_bottom = -44.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -732,10 +753,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map5" type="Button" parent="." unique_id=1757049657]
-offset_left = -104.0
-offset_top = 83.0
-offset_right = -20.0
-offset_bottom = 167.0
+offset_left = -223.0
+offset_top = -47.0
+offset_right = -139.0
+offset_bottom = 37.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -754,10 +775,10 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Map6" type="Button" parent="." unique_id=908678224]
-offset_left = 134.0
-offset_top = -17.999996
-offset_right = 218.0
-offset_bottom = 66.0
+offset_left = -186.00002
+offset_top = -125.00001
+offset_right = -102.000015
+offset_bottom = -41.000008
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -774,6 +795,12 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
 icon = ExtResource("15_it88h")
 icon_alignment = 1
 expand_icon = true
+
+[node name="MapPieces" type="Sprite2D" parent="." unique_id=1544993023]
+visible = false
+position = Vector2(0, -1)
+scale = Vector2(0.13166995, 0.13166997)
+texture = ExtResource("15_lerbx")
 
 [connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
 [connection signal="mouse_exited" from="DoorHandle" to="." method="_on_door_handle_mouse_exited"]
