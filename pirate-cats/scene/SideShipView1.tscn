@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bmkt1g1dhs0dp" path="res://assets/shell (1).png" id="4_x4fq0"]
 [ext_resource type="Texture2D" uid="uid://6ahevtfqotj0" path="res://assets/crabanim.png" id="5_b4svm"]
 [ext_resource type="Texture2D" uid="uid://cf52x8qgvxnnl" path="res://assets/shell.png" id="6_krglq"]
+[ext_resource type="Texture2D" uid="uid://cippd77hlp4i7" path="res://assets/powder monkey.png" id="8_x4fq0"]
+[ext_resource type="Texture2D" uid="uid://dxir4o0fqpffg" path="res://assets/ship flag.png" id="9_b4svm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvh76"]
 atlas = ExtResource("2_cjbe2")
@@ -29,6 +31,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjbe2"]
+size = Vector2(112.41936, 800.8598)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vi4cs"]
 atlas = ExtResource("5_b4svm")
@@ -105,8 +110,36 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
 size = Vector2(121.5, 86.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
+size = Vector2(162, 195)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
 size = Vector2(118, 113.5)
+
+[sub_resource type="Animation" id="Animation_krglq"]
+resource_name = "FlagRaise"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShipFlag:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(641, 327), Vector2(636, 239), Vector2(633, 154)]
+}
+
+[sub_resource type="Animation" id="Animation_lvh76"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68eca"]
+_data = {
+&"FlagRaise": SubResource("Animation_krglq"),
+&"RESET": SubResource("Animation_lvh76")
+}
 
 [node name="Node2D" type="Node2D" unique_id=2068451106]
 script = ExtResource("1_cjbe2")
@@ -120,6 +153,23 @@ texture = ExtResource("1_37hvm")
 position = Vector2(819, 328)
 scale = Vector2(0.48198202, 0.48198202)
 sprite_frames = SubResource("SpriteFrames_ldxs4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1267768793]
+position = Vector2(561, 359)
+scale = Vector2(0.48198202, 0.48198202)
+zoom = Vector2(2, 2)
+
+[node name="CamLeft" type="Area2D" parent="Camera2D" unique_id=1064420549]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CamLeft" unique_id=304114120]
+position = Vector2(-541.514, 18.672918)
+shape = SubResource("RectangleShape2D_cjbe2")
+
+[node name="CamRight" type="Area2D" parent="Camera2D" unique_id=52888330]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CamRight" unique_id=472727123]
+position = Vector2(541.70496, 0)
+shape = SubResource("RectangleShape2D_cjbe2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1755548329]
 position = Vector2(778, 478.60608)
@@ -141,6 +191,16 @@ position = Vector2(733, 453.60605)
 scale = Vector2(0.8484842, 0.8484843)
 texture = ExtResource("6_krglq")
 
+[node name="PowderMonkey" type="Sprite2D" parent="." unique_id=980984142]
+position = Vector2(405, 360)
+scale = Vector2(0.33, 0.33000007)
+texture = ExtResource("8_x4fq0")
+
+[node name="ShipFlag" type="Sprite2D" parent="." unique_id=1437451342]
+position = Vector2(641, 327)
+scale = Vector2(0.37336248, 0.3733625)
+texture = ExtResource("9_b4svm")
+
 [node name="CrabOut" type="Area2D" parent="." unique_id=881185874]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrabOut" unique_id=1826257465]
@@ -153,15 +213,29 @@ shape = SubResource("RectangleShape2D_ldxs4")
 position = Vector2(242.25, 456.75)
 shape = SubResource("RectangleShape2D_ldxs4")
 
+[node name="FlagRaise" type="Area2D" parent="." unique_id=1694146921]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlagRaise" unique_id=1445901905]
+position = Vector2(558, 288.5)
+shape = SubResource("RectangleShape2D_w173s")
+
 [node name="BouyPlay" type="Area2D" parent="." unique_id=1148176613]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BouyPlay" unique_id=240136696]
 position = Vector2(817, 327.25)
 shape = SubResource("RectangleShape2D_0kpj8")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1640960394]
+libraries/ = SubResource("AnimationLibrary_68eca")
+
+[connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
 [connection signal="mouse_entered" from="CrabOut" to="." method="_on_crab_out_mouse_entered"]
 [connection signal="mouse_exited" from="CrabOut" to="." method="_on_crab_out_mouse_exited"]
 [connection signal="mouse_entered" from="DynaPlay" to="." method="_on_dyna_play_mouse_entered"]
 [connection signal="mouse_exited" from="DynaPlay" to="." method="_on_dyna_play_mouse_exited"]
+[connection signal="mouse_entered" from="FlagRaise" to="." method="_on_flag_raise_mouse_entered"]
 [connection signal="mouse_entered" from="BouyPlay" to="." method="_on_bouy_play_mouse_entered"]
 [connection signal="mouse_exited" from="BouyPlay" to="." method="_on_bouy_play_mouse_exited"]
