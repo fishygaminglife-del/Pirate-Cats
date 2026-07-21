@@ -59,3 +59,13 @@ func _on_cooking_mg_input_event(viewport: Node, event: InputEvent, shape_idx: in
 func _on_captain_mg_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		get_tree().change_scene_to_file("res://scene/Captain Room.tscn")
+
+
+func _on_side_ship_view_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://scene/SideShipView1.tscn")
+
+
+func _on_captains_room_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://scene/Captain Room.tscn")

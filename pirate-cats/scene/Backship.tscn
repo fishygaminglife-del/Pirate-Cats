@@ -198,6 +198,17 @@ shape = SubResource("RectangleShape2D_48q5p")
 position = Vector2(978, 315.5)
 shape = SubResource("RectangleShape2D_vp247")
 
+[node name="Captains Room" type="Area2D" parent="." unique_id=135304425]
+position = Vector2(264, 299)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Captains Room" unique_id=243226592]
+polygon = PackedVector2Array(312, 99, 350, 75, 354, 75, 388, 98, 388, 105, 370, 106, 371, 123, 367, 128, 335, 128, 331, 124, 331, 107, 315, 106, 311, 101)
+
+[node name="SideShipView1" type="Area2D" parent="." unique_id=1792151883]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideShipView1" unique_id=565191992]
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 187, 436, 180, 410, 121, 410, 118, 405, 107, 404, 107, 402)
+
 [connection signal="mouse_entered" from="Fish" to="." method="_on_fish_mouse_entered"]
 [connection signal="mouse_exited" from="Fish" to="." method="_on_fish_mouse_exited"]
 [connection signal="mouse_entered" from="Cook" to="." method="_on_cook_mouse_entered"]
@@ -209,3 +220,5 @@ shape = SubResource("RectangleShape2D_vp247")
 [connection signal="input_event" from="FishingMG" to="." method="_on_fishing_mg_input_event"]
 [connection signal="input_event" from="CaptainMG" to="." method="_on_captain_mg_input_event"]
 [connection signal="input_event" from="CookingMG" to="." method="_on_cooking_mg_input_event"]
+[connection signal="input_event" from="Captains Room" to="." method="_on_captains_room_input_event"]
+[connection signal="input_event" from="SideShipView1" to="." method="_on_side_ship_view_1_input_event"]

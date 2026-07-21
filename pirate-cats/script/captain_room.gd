@@ -17,9 +17,16 @@ var pan3 = false
 var pan4 = false
 var pan5 = false
 var pan6 = false
+var placed1 = false
+var placed2 = false
+var placed3 = false
+var placed4 = false
+var placed5 = false
+var placed6 = false
 var maps = []
 var panels = []
-@onready var butmap = $Map1
+var placds = [placed1, placed2, placed3, placed4, placed5, placed6]
+@onready var butmap = $Camera2D/bg/Map1
 var dragging1 = false
 var of1 = Vector2(0,0)
 var in_zone1 = false
@@ -41,53 +48,64 @@ var in_zone6 = false
 var get_map = false
 
 func _ready() -> void:
-	maps = [$Map1, $Map2, $Map3, $Map4, $Map5, $Map6]
-	panels = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-
+	maps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
+	panels = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
 func _process(delta: float) -> void:
 	if all_maps_placed():
 		if map1 and map2 and map3 and map4 and map5 and map6 and get_map == false:
 			get_map = true
 			allign_map()
 		else:
-			$Map1.global_position = Vector2(106,31)
-			$Map2.global_position = Vector2(135,-49)
-			$Map3.global_position = Vector2(-194,36)
-			$Map4.global_position = Vector2(94,-128)
-			$Map5.global_position = Vector2(-223,-47)
-			$Map6.global_position = Vector2(-186,-125)
+			map1 = false
+			map2 = false
+			map3 = false
+			map4 = false
+			map5 = false
+			map6 = false
+			placed1 = false
+			placed2 = false
+			placed3 = false
+			placed4 = false
+			placed5 = false
+			placed6 = false
+			$Camera2D/bg/Map1.position = Vector2(394, 232)
+			$Camera2D/bg/Map2.position = Vector2(423, 152)
+			$Camera2D/bg/Map3.position = Vector2(94, 237)
+			$Camera2D/bg/Map4.position = Vector2(382, 73)
+			$Camera2D/bg/Map5.position = Vector2(65, 154)
+			$Camera2D/bg/Map6.position = Vector2(102, 76)
 
 
 	if dragging1:
-		$Map1.global_position = get_global_mouse_position() - of1
+		$Camera2D/bg/Map1.position =  $Camera2D/bg.get_local_mouse_position() - of1
 	if dragging2:
-		$Map2.global_position = get_global_mouse_position() - of2
+		$Camera2D/bg/Map2.position =  $Camera2D/bg.get_local_mouse_position() - of2
 	if dragging3:
-		$Map3.global_position = get_global_mouse_position() - of3
+		$Camera2D/bg/Map3.position =  $Camera2D/bg.get_local_mouse_position() - of3
 	if dragging4:
-		$Map4.global_position = get_global_mouse_position() - of4
+		$Camera2D/bg/Map4.position =  $Camera2D/bg.get_local_mouse_position() - of4
 	if dragging5:
-		$Map5.global_position = get_global_mouse_position() - of5
+		$Camera2D/bg/Map5.position =  $Camera2D/bg.get_local_mouse_position() - of5
 	if dragging6:
-		$Map6.global_position = get_global_mouse_position() - of6
+		$Camera2D/bg/Map6.position =  $Camera2D/bg.get_local_mouse_position() - of6
 	if moveleft == true:
-		$Camera2D.global_position += Vector2(-150, 0) * delta
-	$Camera2D.global_position.x = clamp(
-		$Camera2D.global_position.x,
+		$Camera2D.position += Vector2(-150, 0) * delta
+	$Camera2D.position.x = clamp(
+		$Camera2D.position.x,
 		-151,
 		151.5
 	)
 	if moveright == true:
-		$Camera2D.global_position += Vector2(150, 0) * delta
-	$Camera2D.global_position.x = clamp(
-		$Camera2D.global_position.x,
+		$Camera2D.position += Vector2(150, 0) * delta
+	$Camera2D.position.x = clamp(
+		$Camera2D.position.x,
 		-151,
 		151.5
 	)
 	
 func snap_map(map, panel):
-	var panel_center = panel.global_position + (panel.size / 2)
-	map.global_position = panel_center - (map.size / 2)
+	var panel_center = panel.position + (panel.size / 2)
+	map.position = panel_center - (map.size / 2)
 # Dont Mind code below
 func _on_tank_mouse_entered() -> void:
 	$JellyFish.play("default")
@@ -123,14 +141,15 @@ func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int
 #Start minding code below
 
 func allign_map():
-	$Map1.visible = false
-	$Map2.visible = false
-	$Map3.visible = false
-	$Map4.visible = false
-	$Map5.visible = false
-	$Map6.visible = false
-	$MapPieces.visible = true
-
+	$Camera2D/bg/Map1.visible = false
+	$Camera2D/bg/Map2.visible = false
+	$Camera2D/bg/Map3.visible = false
+	$Camera2D/bg/Map4.visible = false
+	$Camera2D/bg/Map5.visible = false
+	$Camera2D/bg/Map6.visible = false
+	$Camera2D/bg/MapPieces.visible = true
+	await get_tree().create_timer(1).timeout
+	$Camera2D/bg.visible = false
 func _on_area_m_1_mouse_entered() -> void:
 	if not $m1.is_playing():
 		if m1 == 0:
@@ -163,241 +182,281 @@ func _on_area_m_3_mouse_entered() -> void:
 
 func _on_map_1_button_down() -> void:
 	dragging1 = true
-	of1 = get_global_mouse_position() - $Map1.global_position
-	butmap = $Map1
+	of1 = $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map1.position
+	butmap = $Camera2D/bg/Map1
 	map1 = false
+	placed1 = false
 func _on_map_1_button_up() -> void:
 	dragging1 = false
 	var can_map1 = true
-	if $Map1.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map2, $Map3, $Map4, $Map5, $Map6]
+	if $Camera2D/bg/Map1.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map1.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map1.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map1):
+			if is_panel_taken(closest, $Camera2D/bg/Map1):
 				can_map1 = false
 			if can_map1:
-				snap_map($Map1, closest)
+				snap_map($Camera2D/bg/Map1, closest)
 
-				if closest == $PH1:
+				if closest == $Camera2D/bg/PH1:
 					map1 = true
 				else:
 					map1 = false
+				placed1 = true
 			else:
-				$Map1.global_position = Vector2(106,31)
-	else:
+				$Camera2D/bg/Map1.position = Vector2(106,31)
+				placed1 = false
+	else:		
 		map1 = false
+		placed1 = false
 
 func _on_map_2_button_down() -> void:
 	dragging2 = true
-	of2 = get_global_mouse_position() - $Map2.global_position
-	butmap = $Map2
+	of2 =  $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map2.position
+	butmap = $Camera2D/bg/Map2
 	map2 = false
+	placed2 = false
 func _on_map_2_button_up() -> void:
 	dragging2 = false
 	var can_map2 = true
-	if $Map2.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map1, $Map3, $Map4, $Map5, $Map6]
+	if $Camera2D/bg/Map2.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map1, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map2.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map2.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map2):
+			if is_panel_taken(closest, $Camera2D/bg/Map2):
 				can_map2 = false
 			if can_map2:
-				snap_map($Map2, closest)
+				snap_map($Camera2D/bg/Map2, closest)
 
-				if closest == $PH2:
+				if closest == $Camera2D/bg/PH2:
 					map2 = true
 				else:
 					map2 = false
+				placed2 = true
 			else:
-				$Map2.global_position = Vector2(135, -49)
+				$Camera2D/bg/Map2.position = Vector2(135, -49)
+				placed2 = false
 	else:
 		map2 = false
-
+		placed2 = false
+	print(placed2)
 func _on_map_3_button_down() -> void:
 	dragging3 = true
-	of3 = get_global_mouse_position() - $Map3.global_position
-	butmap = $Map3
+	of3 =  $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map3.position
+	butmap = $Camera2D/bg/Map3
 	map3 = false
+	placed3 = false
 func _on_map_3_button_up() -> void:
 	dragging3 = false
 	var can_map3 = true
-	if $Map3.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map1, $Map2, $Map4, $Map5, $Map6]
+	if $Camera2D/bg/Map3.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map4, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map3.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map3.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map3):
+			if is_panel_taken(closest, $Camera2D/bg/Map3):
 				can_map3 = false
 			if can_map3:
-				snap_map($Map3, closest)
-
-				if closest == $PH3:
+				snap_map($Camera2D/bg/Map3, closest)
+				
+				if closest == $Camera2D/bg/PH3:
 					map3 = true
 				else:
 					map3 = false
+				placed3 = true
 			else:
-				$Map3.global_position = Vector2(-194, 36)
+				$Camera2D/bg/Map3.position = Vector2(-194, 36)
+				placed3 = false
 	else:
 		map3 = false
+		placed3 = false
 		
 func _on_map_4_button_down() -> void:
 	dragging4 = true
-	of4 = get_global_mouse_position() - $Map4.global_position
-	butmap = $Map4
+	of4 =  $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map4.position
+	butmap = $Camera2D/bg/Map4
 	map4 = false
+	placed4 = false
 func _on_map_4_button_up() -> void:
 	dragging4 = false
 	var can_map4 = true
-	if $Map4.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map1, $Map2, $Map3, $Map5, $Map6]
+	if $Camera2D/bg/Map4.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map4.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map4.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map4):
+			if is_panel_taken(closest, $Camera2D/bg/Map4):
 				can_map4 = false
 			if can_map4:
-				snap_map($Map4, closest)
-
-				if closest == $PH4:
+				snap_map($Camera2D/bg/Map4, closest)
+	
+				if closest == $Camera2D/bg/PH4:
 					map4 = true
 				else:
 					map4 = false
+				placed4 = true
 			else:
-				$Map4.global_position = Vector2(94, -128)
+				$Camera2D/bg/Map4.position = Vector2(94, -128)
+				placed4 = false
 	else:
 		map4 = false
+		placed4 = false
 		
 func _on_map_5_button_down() -> void:
 	dragging5 = true
-	of5 = get_global_mouse_position() - $Map5.global_position
-	butmap = $Map5
+	of5 =  $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map5.position
+	butmap = $Camera2D/bg/Map5
 	map5 = false
+	placed5 = false
 func _on_map_5_button_up() -> void:
 	dragging5 = false
 	var can_map5 = true
-	if $Map5.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map1, $Map2, $Map3, $Map4, $Map6]
+	if $Camera2D/bg/Map5.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map6]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map5.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map5.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map5):
+			if is_panel_taken(closest, $Camera2D/bg/Map5):
 				can_map5 = false
 					
 			if can_map5:
-				snap_map($Map5, closest)
+				snap_map($Camera2D/bg/Map5, closest)
 
-				if closest == $PH5:
+				if closest == $Camera2D/bg/PH5:
 					map5 = true
 				else:
 					map5 = false
+				placed5 = true
 			else:
-				$Map5.global_position = Vector2(-223, -47)
+				$Camera2D/bg/Map5.position = Vector2(-223, -47)
+				placed5 = false
 	else:
 		map5 = false
+		placed5 = false
 		
 func _on_map_6_button_down() -> void:
 	dragging6 = true
-	of6 = get_global_mouse_position() - $Map6.global_position
-	butmap = $Map6
+	of6 =  $Camera2D/bg.get_local_mouse_position() - $Camera2D/bg/Map6.position
+	butmap = $Camera2D/bg/Map6
 	map6 = false
+	placed6 = false
 func _on_map_6_button_up() -> void:
 	dragging6 = false
 	var can_map6 = true
-	if $Map6.get_global_rect().intersects($MPArea.get_global_rect()):
-		var placeholders = [$PH1, $PH2, $PH3, $PH4, $PH5, $PH6]
-		var alimaps = [$Map1, $Map2, $Map3, $Map4, $Map5]
+	if $Camera2D/bg/Map6.get_rect().intersects($Camera2D/bg/MPArea.get_rect()):
+		var placeholders = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
+		var alimaps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map5]
 		var closest = null
 		var closest_dist = INF
 
 		for ph in placeholders:
-			var dist = $Map6.global_position.distance_to(ph.global_position)
+			var dist = $Camera2D/bg/Map6.position.distance_to(ph.position)
 
 			if dist < closest_dist:
 				closest_dist = dist
 				closest = ph
 
 		if closest:
-			if is_panel_taken(closest, $Map6):
+			if is_panel_taken(closest, $Camera2D/bg/Map6):
 				can_map6 = false
 					
 			if can_map6:
-				snap_map($Map6, closest)
-
-				if closest == $PH6:
+				snap_map($Camera2D/bg/Map6, closest)
+				
+				if closest == $Camera2D/bg/PH6:
 					map6 = true
 				else:
 					map6 = false
+				placed6 = true
 			else:
-				$Map6.global_position = Vector2(-186, -125)
+				$Camera2D/bg/Map6.position = Vector2(-186, -125)
+				placed6 = false
 	else:
 		map6 = false
+		placed6 = false
 		
 func is_panel_taken(panel, ignore_map):
 	for map in maps:
 		if map != ignore_map:
-			if map.get_global_rect().intersects(panel.get_global_rect()):
+			if map.get_rect().intersects(panel.get_rect()):
 				return true
 
 	return false
 	
 func all_maps_placed():
-	for map in maps:
-		var placed = false
-		
-		for panel in panels:
-			if map.get_global_rect().intersects(panel.get_global_rect()):
-				placed = true
-				break
-		
-		if not placed:
-			return false
-			
-	return true
+	return placed1 and placed2 and placed3 and placed4 and placed5 and placed6
 	
+	
+
+
+func _on_table_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		$Camera2D/bg.visible = true
+
+
+func _on_resset_map_pressed() -> void:
+	map1 = false
+	map2 = false
+	map3 = false
+	map4 = false	
+	map5 = false
+	map6 = false	
+	placed1 = false
+	placed2 = false		
+	placed3 = false
+	placed4 = false
+	placed5 = false
+	placed6 = false
+	$Camera2D/bg/Map1.position = Vector2(394, 232)
+	$Camera2D/bg/Map2.position = Vector2(423, 152)
+	$Camera2D/bg/Map3.position = Vector2(94, 237)
+	$Camera2D/bg/Map4.position = Vector2(382, 73)
+	$Camera2D/bg/Map5.position = Vector2(65, 154)
+	$Camera2D/bg/Map6.position = Vector2(102, 76)

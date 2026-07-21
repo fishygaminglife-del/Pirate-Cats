@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ioblyl7a35b" path="res://assets/map3.png" id="12_i8n7k"]
 [ext_resource type="Texture2D" uid="uid://cjnad54uiwsts" path="res://assets/map4.png" id="13_jmuir"]
 [ext_resource type="Texture2D" uid="uid://d4h57p80rq2uh" path="res://assets/map5.png" id="14_3v756"]
+[ext_resource type="StyleBox" uid="uid://d02qh5wfrhljo" path="res://styles/Black+WhiteButton.tres" id="15_i8n7k"]
 [ext_resource type="Texture2D" uid="uid://5p61n5jeldm0" path="res://assets/map6.png" id="15_it88h"]
 [ext_resource type="Texture2D" uid="uid://eo3m1jqogybo" path="res://assets/map pieces.png" id="15_lerbx"]
 
@@ -454,6 +455,30 @@ bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2tfi"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djvvj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.86706257, 0.8228336, 1.540184e-06, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hif1r"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8444892, 0.4249097, 0.03876, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Node2D" type="Node2D" unique_id=1551274641]
 script = ExtResource("1_gppsv")
 
@@ -573,60 +598,6 @@ libraries/ = SubResource("AnimationLibrary_8akd2")
 [node name="m3" type="AnimationPlayer" parent="." unique_id=1326461230]
 libraries/ = SubResource("AnimationLibrary_8akd2")
 
-[node name="MPArea" type="Panel" parent="." unique_id=28095608]
-offset_left = -93.0
-offset_top = -64.0
-offset_right = 97.0
-offset_bottom = 59.0
-
-[node name="PH1" type="Panel" parent="." unique_id=780656321]
-offset_left = -110.54962
-offset_top = -80.39658
-offset_right = -28.549622
-offset_bottom = 0.60341644
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH2" type="Panel" parent="." unique_id=870294715]
-offset_left = -44.54962
-offset_top = -80.39658
-offset_right = 37.45038
-offset_bottom = 0.60341644
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH3" type="Panel" parent="." unique_id=1743325725]
-offset_left = 22.450378
-offset_top = -80.39658
-offset_right = 104.45038
-offset_bottom = 0.60341644
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH4" type="Panel" parent="." unique_id=1977258869]
-offset_left = -110.54962
-offset_top = -12.396584
-offset_right = -28.549622
-offset_bottom = 68.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH5" type="Panel" parent="." unique_id=1642609299]
-offset_left = -44.54962
-offset_top = -12.396584
-offset_right = 37.45038
-offset_bottom = 68.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
-[node name="PH6" type="Panel" parent="." unique_id=1322151804]
-offset_left = 21.450378
-offset_top = -12.396584
-offset_right = 103.45038
-offset_bottom = 68.60342
-scale = Vector2(0.6939116, 0.6939116)
-pivot_offset = Vector2(41, 40.5)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1932166162]
 zoom = Vector2(2, 2)
 
@@ -643,6 +614,7 @@ position = Vector2(266, 0)
 shape = SubResource("RectangleShape2D_ldxs4")
 
 [node name="bg" type="Panel" parent="Camera2D" unique_id=1966440609]
+visible = false
 offset_left = -288.0
 offset_top = -201.0
 offset_right = 319.0
@@ -665,11 +637,73 @@ offset_bottom = 272.0
 pivot_offset = Vector2(107, 70)
 theme_override_styles/panel = SubResource("StyleBoxFlat_w173s")
 
-[node name="Map1" type="Button" parent="." unique_id=1198860316]
-offset_left = 106.0
-offset_top = 31.000002
-offset_right = 190.0
-offset_bottom = 115.0
+[node name="MPArea" type="Panel" parent="Camera2D/bg" unique_id=28095608]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 134.0
+offset_right = 387.0
+offset_bottom = 264.0
+
+[node name="PH1" type="Panel" parent="Camera2D/bg" unique_id=780656321]
+layout_mode = 0
+offset_left = 177.45038
+offset_top = 120.603424
+offset_right = 259.45038
+offset_bottom = 201.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH2" type="Panel" parent="Camera2D/bg" unique_id=870294715]
+layout_mode = 0
+offset_left = 243.45038
+offset_top = 120.603424
+offset_right = 325.45038
+offset_bottom = 201.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH3" type="Panel" parent="Camera2D/bg" unique_id=1743325725]
+layout_mode = 0
+offset_left = 310.45038
+offset_top = 120.603424
+offset_right = 392.45038
+offset_bottom = 201.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH4" type="Panel" parent="Camera2D/bg" unique_id=1977258869]
+layout_mode = 0
+offset_left = 177.45038
+offset_top = 188.60342
+offset_right = 259.45038
+offset_bottom = 269.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH5" type="Panel" parent="Camera2D/bg" unique_id=1642609299]
+layout_mode = 0
+offset_left = 243.45038
+offset_top = 188.60342
+offset_right = 325.45038
+offset_bottom = 269.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="PH6" type="Panel" parent="Camera2D/bg" unique_id=1322151804]
+layout_mode = 0
+offset_left = 309.45038
+offset_top = 188.60342
+offset_right = 391.45038
+offset_bottom = 269.60342
+scale = Vector2(0.6939116, 0.6939116)
+pivot_offset = Vector2(41, 40.5)
+
+[node name="Map1" type="Button" parent="Camera2D/bg" unique_id=1198860316]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 232.0
+offset_right = 478.0
+offset_bottom = 316.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_icons/icon = ExtResource("10_yetyy")
@@ -686,11 +720,12 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_ob04i")
 theme_override_styles/focus = SubResource("StyleBoxFlat_m2tfi")
 expand_icon = true
 
-[node name="Map2" type="Button" parent="." unique_id=1332756257]
-offset_left = 135.0
-offset_top = -49.000004
-offset_right = 219.0
-offset_bottom = 34.999996
+[node name="Map2" type="Button" parent="Camera2D/bg" unique_id=1332756257]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 152.0
+offset_right = 507.0
+offset_bottom = 236.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -708,11 +743,12 @@ icon = ExtResource("11_lerbx")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Map3" type="Button" parent="." unique_id=889974617]
-offset_left = -194.00002
-offset_top = 36.000004
-offset_right = -110.000015
-offset_bottom = 120.0
+[node name="Map3" type="Button" parent="Camera2D/bg" unique_id=889974617]
+layout_mode = 0
+offset_left = 93.999985
+offset_top = 237.0
+offset_right = 177.99998
+offset_bottom = 321.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -730,11 +766,12 @@ icon = ExtResource("12_i8n7k")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Map4" type="Button" parent="." unique_id=431006987]
-offset_left = 94.0
-offset_top = -128.0
-offset_right = 178.0
-offset_bottom = -44.0
+[node name="Map4" type="Button" parent="Camera2D/bg" unique_id=431006987]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 73.0
+offset_right = 466.0
+offset_bottom = 157.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -752,11 +789,12 @@ icon = ExtResource("13_jmuir")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Map5" type="Button" parent="." unique_id=1757049657]
-offset_left = -223.0
-offset_top = -47.0
-offset_right = -139.0
-offset_bottom = 37.0
+[node name="Map5" type="Button" parent="Camera2D/bg" unique_id=1757049657]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 154.0
+offset_right = 149.0
+offset_bottom = 238.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -774,11 +812,12 @@ icon = ExtResource("14_3v756")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Map6" type="Button" parent="." unique_id=908678224]
-offset_left = -186.00002
-offset_top = -125.00001
-offset_right = -102.000015
-offset_bottom = -41.000008
+[node name="Map6" type="Button" parent="Camera2D/bg" unique_id=908678224]
+layout_mode = 0
+offset_left = 101.999985
+offset_top = 75.99999
+offset_right = 185.99998
+offset_bottom = 160.0
 scale = Vector2(0.79338324, 0.79338324)
 pivot_offset = Vector2(42, 42)
 theme_override_styles/normal = SubResource("StyleBoxFlat_0kpj8")
@@ -796,10 +835,23 @@ icon = ExtResource("15_it88h")
 icon_alignment = 1
 expand_icon = true
 
-[node name="MapPieces" type="Sprite2D" parent="." unique_id=1544993023]
+[node name="RessetMap" type="Button" parent="Camera2D/bg" unique_id=1741938596]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 299.0
+offset_right = 479.7464
+offset_bottom = 366.0
+scale = Vector2(0.347, 0.347)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = ExtResource("15_i8n7k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_djvvj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hif1r")
+text = "Reset"
+
+[node name="MapPieces" type="Sprite2D" parent="Camera2D/bg" unique_id=1544993023]
 visible = false
-position = Vector2(0, -1)
-scale = Vector2(0.13166995, 0.13166997)
+position = Vector2(288, 200)
+scale = Vector2(0.13166997, 0.13166998)
 texture = ExtResource("15_lerbx")
 
 [connection signal="mouse_entered" from="DoorHandle" to="." method="_on_door_handle_mouse_entered"]
@@ -810,6 +862,7 @@ texture = ExtResource("15_lerbx")
 [connection signal="mouse_exited" from="CatToys" to="." method="_on_cat_toys_mouse_exited"]
 [connection signal="mouse_entered" from="Mouse3/AreaM3" to="." method="_on_area_m_3_mouse_entered"]
 [connection signal="mouse_entered" from="Mouse1/AreaM1" to="." method="_on_area_m_1_mouse_entered"]
+[connection signal="input_event" from="Table" to="." method="_on_table_input_event"]
 [connection signal="mouse_entered" from="Bottle" to="." method="_on_bottle_mouse_entered"]
 [connection signal="mouse_exited" from="Bottle" to="." method="_on_bottle_mouse_exited"]
 [connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]
@@ -817,15 +870,16 @@ texture = ExtResource("15_lerbx")
 [connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
 [connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
-[connection signal="button_down" from="Map1" to="." method="_on_map_1_button_down"]
-[connection signal="button_up" from="Map1" to="." method="_on_map_1_button_up"]
-[connection signal="button_down" from="Map2" to="." method="_on_map_2_button_down"]
-[connection signal="button_up" from="Map2" to="." method="_on_map_2_button_up"]
-[connection signal="button_down" from="Map3" to="." method="_on_map_3_button_down"]
-[connection signal="button_up" from="Map3" to="." method="_on_map_3_button_up"]
-[connection signal="button_down" from="Map4" to="." method="_on_map_4_button_down"]
-[connection signal="button_up" from="Map4" to="." method="_on_map_4_button_up"]
-[connection signal="button_down" from="Map5" to="." method="_on_map_5_button_down"]
-[connection signal="button_up" from="Map5" to="." method="_on_map_5_button_up"]
-[connection signal="button_down" from="Map6" to="." method="_on_map_6_button_down"]
-[connection signal="button_up" from="Map6" to="." method="_on_map_6_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map1" to="." method="_on_map_1_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map1" to="." method="_on_map_1_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map2" to="." method="_on_map_2_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map2" to="." method="_on_map_2_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map3" to="." method="_on_map_3_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map3" to="." method="_on_map_3_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map4" to="." method="_on_map_4_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map4" to="." method="_on_map_4_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map5" to="." method="_on_map_5_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map5" to="." method="_on_map_5_button_up"]
+[connection signal="button_down" from="Camera2D/bg/Map6" to="." method="_on_map_6_button_down"]
+[connection signal="button_up" from="Camera2D/bg/Map6" to="." method="_on_map_6_button_up"]
+[connection signal="pressed" from="Camera2D/bg/RessetMap" to="." method="_on_resset_map_pressed"]
