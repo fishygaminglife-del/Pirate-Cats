@@ -2,7 +2,7 @@ extends Node2D
 var moveleft = false
 var moveright = false
 var flag = 0
-var animationf_play = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -57,17 +57,24 @@ func _on_cam_right_mouse_entered() -> void:
 func _on_cam_right_mouse_exited() -> void:
 	moveright = false
 
-
 func _on_flag_raise_mouse_entered() -> void:
-	if animationf_play == false:
-		animationf_play = true
+	var anim = $AnimationPlayer.get_animation("FlagRaise")
+
+	if flag == 0:
 		flag = 1
-		$AnimationPlayer.play("FlagRaise")
-	elif flag == 0:
-		flag = 1
-		$AnimationPlayer.play("FlagRaise", -1, 1)
+		$AnimationPlayer.play("FlagRaise", -1, 1.0)
 	else:
 		flag = 0
-		$AnimationPlayer.play("FlagRaise", -1, -1)
-	
-		
+		var current_time = $AnimationPlayer.current_animation_position
+		$AnimationPlayer.play("FlagRaise", -1, -1.0)
+		$AnimationPlayer.seek(current_time, true)
+
+
+func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://scene/Backship.tscn")
+
+
+func _on_front_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://scene/FrontShip.tscn")

@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://c5rklamdmyc18"]
+
+[ext_resource type="Texture2D" uid="uid://dhachmfhqdr8a" path="res://assets/FrontView.png" id="1_4bgu4"]
+[ext_resource type="Script" uid="uid://b44xe8iyqn3rs" path="res://script/frontview.gd" id="1_qkhsu"]
+[ext_resource type="Texture2D" uid="uid://cqt21pyacganw" path="res://assets/watermelong fountian anim.png" id="2_2isa1"]
+[ext_resource type="Texture2D" uid="uid://c836j72s5a4fa" path="res://assets/birdhouse anim.png" id="3_jvkyo"]
+[ext_resource type="Texture2D" uid="uid://d3xw82k84mra1" path="res://assets/cookie.png" id="5_lmnjg"]
+[ext_resource type="Texture2D" uid="uid://b3fs43s6b7gdg" path="res://assets/bird.png" id="6_upddb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(605, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0jb"]
+atlas = ExtResource("2_2isa1")
+region = Rect2(0, 0, 381, 267)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipkij"]
+atlas = ExtResource("2_2isa1")
+region = Rect2(381, 0, 381, 267)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tulu"]
+atlas = ExtResource("2_2isa1")
+region = Rect2(762, 0, 381, 267)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epq7a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipkij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tulu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epqup"]
+atlas = ExtResource("3_jvkyo")
+region = Rect2(0, 0, 355, 315)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hrjc"]
+atlas = ExtResource("3_jvkyo")
+region = Rect2(355, 0, 355, 315)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkhsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epqup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hrjc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmnjg"]
+size = Vector2(132, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upddb"]
+size = Vector2(149, 137.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2isa1"]
+radius = 25.681702
+height = 68.17175
+
+[node name="Node2D" type="Node2D" unique_id=1126025007]
+script = ExtResource("1_qkhsu")
+
+[node name="FrontView" type="Sprite2D" parent="." unique_id=1152668402]
+position = Vector2(537, 309)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4bgu4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=627768848]
+position = Vector2(562, 485)
+zoom = Vector2(2, 2)
+
+[node name="MoveUp" type="Area2D" parent="Camera2D" unique_id=1443696298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/MoveUp" unique_id=476999952]
+position = Vector2(2.5, -149.5)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="MoveDOwn" type="Area2D" parent="Camera2D" unique_id=1752003995]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/MoveDOwn" unique_id=1808618389]
+position = Vector2(5, 148)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="Fontain" type="AnimatedSprite2D" parent="." unique_id=2052326945]
+position = Vector2(512, 596)
+scale = Vector2(0.3361423, 0.33614233)
+sprite_frames = SubResource("SpriteFrames_epq7a")
+speed_scale = 0.4
+
+[node name="Bird house" type="AnimatedSprite2D" parent="." unique_id=963027726]
+position = Vector2(376.99997, 484)
+scale = Vector2(0.4172618, 0.4172618)
+sprite_frames = SubResource("SpriteFrames_qkhsu")
+speed_scale = 0.5
+
+[node name="Cookie" type="Sprite2D" parent="." unique_id=664180941]
+position = Vector2(659, 596)
+scale = Vector2(0.36111087, 0.36111084)
+texture = ExtResource("5_lmnjg")
+
+[node name="FontainPlay" type="Area2D" parent="." unique_id=912808511]
+position = Vector2(17, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FontainPlay" unique_id=1177252457]
+position = Vector2(493, 591)
+shape = SubResource("RectangleShape2D_lmnjg")
+
+[node name="BirdhousePlay" type="Area2D" parent="." unique_id=1525699049]
+position = Vector2(-56, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BirdhousePlay" unique_id=1074924636]
+position = Vector2(433.5, 475.75)
+shape = SubResource("RectangleShape2D_upddb")
+
+[node name="ParrotMG" type="Area2D" parent="." unique_id=1819842028]
+position = Vector2(64, 245.00003)
+rotation = 0.003634634
+scale = Vector2(0.72985613, 0.72985613)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParrotMG" unique_id=652378537]
+position = Vector2(816, 477)
+scale = Vector2(1.2849599, -0.7041048)
+shape = SubResource("CapsuleShape2D_2isa1")
+
+[node name="Bird" type="Sprite2D" parent="." unique_id=1311761132]
+position = Vector2(723.5938, 519.6714)
+scale = Vector2(0.30338514, 0.30338514)
+texture = ExtResource("6_upddb")
+
+[node name="SideView1" type="Area2D" parent="." unique_id=233564388]
+position = Vector2(2077, 5)
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideView1" unique_id=1115831204]
+position = Vector2(1167, 164)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
+[node name="SideView2" type="Area2D" parent="." unique_id=1522322198]
+position = Vector2(0, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SideView2" unique_id=651427885]
+position = Vector2(212, 158)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
+[connection signal="mouse_entered" from="Camera2D/MoveUp" to="." method="_on_move_up_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/MoveUp" to="." method="_on_move_up_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/MoveDOwn" to="." method="_on_move_d_own_mouse_entered"]
+[connection signal="mouse_entered" from="FontainPlay" to="." method="_on_fontain_play_mouse_entered"]
+[connection signal="mouse_exited" from="FontainPlay" to="." method="_on_fontain_play_mouse_exited"]
+[connection signal="mouse_entered" from="BirdhousePlay" to="." method="_on_birdhouse_play_mouse_entered"]
+[connection signal="mouse_exited" from="BirdhousePlay" to="." method="_on_birdhouse_play_mouse_exited"]
+[connection signal="input_event" from="ParrotMG" to="." method="_on_parrot_mg_input_event"]
+[connection signal="input_event" from="SideView1" to="." method="_on_side_view_1_input_event"]
+[connection signal="input_event" from="SideView2" to="." method="_on_side_view_2_input_event"]

@@ -106,7 +106,7 @@ func _process(delta: float) -> void:
 func snap_map(map, panel):
 	var panel_center = panel.position + (panel.size / 2)
 	map.position = panel_center - (map.size / 2)
-# Dont Mind code below
+
 func _on_tank_mouse_entered() -> void:
 	$JellyFish.play("default")
 func _on_tank_mouse_exited() -> void:
@@ -138,7 +138,7 @@ func _on_cam_right_mouse_exited() -> void:
 func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		get_tree().change_scene_to_file("res://scene/Backship.tscn")
-#Start minding code below
+
 
 func allign_map():
 	$Camera2D/bg/Map1.visible = false

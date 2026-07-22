@@ -171,6 +171,11 @@ shape = SubResource("RectangleShape2D_cjbe2")
 position = Vector2(541.70496, 0)
 shape = SubResource("RectangleShape2D_cjbe2")
 
+[node name="Shell(1)" type="Sprite2D" parent="." unique_id=756188745]
+position = Vector2(799, 451)
+scale = Vector2(0.7121212, 0.71212125)
+texture = ExtResource("4_x4fq0")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1755548329]
 position = Vector2(778, 478.60608)
 sprite_frames = SubResource("SpriteFrames_48q5p")
@@ -180,11 +185,6 @@ position = Vector2(237, 430.99997)
 scale = Vector2(0.57, 0.57)
 sprite_frames = SubResource("SpriteFrames_0kpj8")
 speed_scale = 0.3
-
-[node name="Shell(1)" type="Sprite2D" parent="." unique_id=756188745]
-position = Vector2(805, 459.60608)
-scale = Vector2(0.7121212, 0.71212125)
-texture = ExtResource("4_x4fq0")
 
 [node name="Shell" type="Sprite2D" parent="." unique_id=1385593565]
 position = Vector2(733, 453.60605)
@@ -204,7 +204,7 @@ texture = ExtResource("9_b4svm")
 [node name="CrabOut" type="Area2D" parent="." unique_id=881185874]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrabOut" unique_id=1826257465]
-position = Vector2(767.5, 460.5)
+position = Vector2(765, 461)
 shape = SubResource("RectangleShape2D_ldxs4")
 
 [node name="DynaPlay" type="Area2D" parent="." unique_id=197714581]
@@ -228,6 +228,21 @@ shape = SubResource("RectangleShape2D_0kpj8")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1640960394]
 libraries/ = SubResource("AnimationLibrary_68eca")
 
+[node name="BackShip" type="Area2D" parent="." unique_id=587079219]
+position = Vector2(2077, 5)
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=541343566]
+position = Vector2(903, 32)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
+[node name="FrontShip" type="Area2D" parent="." unique_id=1409591619]
+position = Vector2(0, 10)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontShip" unique_id=2129835357]
+position = Vector2(-64, 28)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
 [connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
 [connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
@@ -239,3 +254,5 @@ libraries/ = SubResource("AnimationLibrary_68eca")
 [connection signal="mouse_entered" from="FlagRaise" to="." method="_on_flag_raise_mouse_entered"]
 [connection signal="mouse_entered" from="BouyPlay" to="." method="_on_bouy_play_mouse_entered"]
 [connection signal="mouse_exited" from="BouyPlay" to="." method="_on_bouy_play_mouse_exited"]
+[connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]
+[connection signal="input_event" from="FrontShip" to="." method="_on_front_ship_input_event"]

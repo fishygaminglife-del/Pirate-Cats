@@ -54,7 +54,7 @@ texture = ExtResource("1_avchr")
 position = Vector2(15.000008, -6)
 scale = Vector2(0.49583334, 0.4958333)
 sprite_frames = SubResource("SpriteFrames_ldxs4")
-speed_scale = 0.3
+speed_scale = 0.45
 
 [node name="Right" type="Node2D" parent="." unique_id=1988404520]
 

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c617syikbjxhq"]
+
+[ext_resource type="Script" uid="uid://b44xe8iyqn3rs" path="res://script/frontview.gd" id="1_o0b6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjbe2"]
+size = Vector2(112.41936, 800.8598)
+
+[node name="Node2D" type="Node2D" unique_id=1893278605]
+script = ExtResource("1_o0b6s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=404091619]
+position = Vector2(539.0001, 379)
+scale = Vector2(0.48198202, 0.48198202)
+zoom = Vector2(2, 2)
+
+[node name="CamLeft" type="Area2D" parent="Camera2D" unique_id=1464513113]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CamLeft" unique_id=1500653362]
+position = Vector2(-541.514, 18.672918)
+shape = SubResource("RectangleShape2D_cjbe2")
+
+[node name="CamRight" type="Area2D" parent="Camera2D" unique_id=162620321]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CamRight" unique_id=1928748589]
+position = Vector2(541.70496, 0)
+shape = SubResource("RectangleShape2D_cjbe2")
+
+[connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
