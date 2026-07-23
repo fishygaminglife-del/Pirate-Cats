@@ -728,7 +728,7 @@ func _on_b_2_button_up() -> void:
 			a1[1] = b2[1]
 			b2[0] = $Empty
 			b2[1] = "E"
-			a1[0].position = a2_pos
+			a1[0].position = a1_pos
 		else :
 			b2[0].position = b2_pos
 	elif b2[0].get_node("MoveablePanel").get_global_rect().intersects($Row3.get_global_rect()):
@@ -899,13 +899,13 @@ func _on_b_4_button_up() -> void:
 			a2[1] = b4[1]
 			b4[0] = $Empty
 			b4[1] = "E"
-			a2[0].position = a2_pos
+			a2[0].p7osition = a2_pos
 		elif a1[0] == $Empty:
 			a1[0] = b4[0]
 			a1[1] = b4[1]
 			b4[0] = $Empty
 			b4[1] = "E"
-			a1[0].position = a4_pos
+			a1[0].position = a1_pos
 		else:
 			b4[0].position = b4_pos
 	elif b4[0].get_node("MoveablePanel").get_global_rect().intersects($Row3.get_global_rect()):
@@ -1099,7 +1099,7 @@ func _on_c_2_button_up() -> void:
 		elif b3[0] == $Empty:
 			b3[0] = c2[0]
 			b3[1] = c2[1]
-			c1[0] = $Empty
+			c2[0] = $Empty
 			c2[1] = "E"
 			b3[0].position = b3_pos
 		elif b2[0] == $Empty :
@@ -1450,7 +1450,7 @@ func _on_d_2_button_up() -> void:
 		elif b3[0] == $Empty:
 			b3[0] = d2[0]
 			b3[1] = d2[1]
-			b1[0] = $Empty
+			d2[0] = $Empty
 			d2[1] = "E"
 			b3[0].position = b3_pos
 		elif b2[0] == $Empty:
@@ -1664,7 +1664,7 @@ func _on_d_4_button_up() -> void:
 		elif c1[0] == $Empty:
 			c1[0] = d4[0]
 			c1[1] = d4[1]
-			d1[0] = $Empty
+			d4[0] = $Empty
 			d4[1] = "E"
 			c1[0].position = c1_pos
 		else:
