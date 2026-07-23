@@ -13,25 +13,12 @@
 [node name="Node2D" type="Node2D" unique_id=1660431141]
 script = ExtResource("1_tqbhr")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1128738182]
-zoom = Vector2(2, 2)
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=989820102]
 offset_left = -296.0
 offset_top = -172.0
 offset_right = 298.0
 offset_bottom = 175.0
 color = Color(0.3672866, 0.1955975, 0.015459116, 1)
-
-[node name="Label2" type="Label" parent="." unique_id=1999060696]
-visible = false
-offset_left = -53.0
-offset_top = -169.0
-offset_right = 54.0
-offset_bottom = -136.0
-theme_override_fonts/font = ExtResource("2_7u8rw")
-theme_override_font_sizes/font_size = 32
-text = "Round 2"
 
 [node name="Round1" type="Node2D" parent="." unique_id=234737567]
 
@@ -76,73 +63,183 @@ offset_bottom = 148.0
 
 [node name="Round1Label" type="Label" parent="Round1" unique_id=191215273]
 offset_left = -53.0
-offset_top = -169.0
+offset_top = -162.0
 offset_right = 54.0
-offset_bottom = -136.0
+offset_bottom = -129.0
 theme_override_fonts/font = ExtResource("2_7u8rw")
 theme_override_font_sizes/font_size = 32
 text = "Round 1"
 
 [node name="Round2" type="Node2D" parent="." unique_id=1635029893]
-position = Vector2(-915, -16)
+position = Vector2(-816, 383)
 
-[node name="Dirt3" type="Sprite2D" parent="Round2" unique_id=1082707864]
+[node name="Dirt1" type="Sprite2D" parent="Round2" unique_id=1082707864]
+modulate = Color(1, 0.43917835, 1, 1)
 position = Vector2(-193, 101)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_7u8rw")
 
-[node name="Dirt4" type="Sprite2D" parent="Round2" unique_id=845256369]
+[node name="T1" type="Button" parent="Round2" unique_id=323436180]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -231.0
+offset_top = 77.0
+offset_right = -154.0
+offset_bottom = 128.0
+
+[node name="Dirt2" type="Sprite2D" parent="Round2" unique_id=845256369]
+self_modulate = Color(0.44796598, 0.6629296, 1, 1)
 position = Vector2(164, -88)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_upuj2")
 
-[node name="Dirt8" type="Sprite2D" parent="Round2" unique_id=1511621950]
+[node name="T2" type="Button" parent="Round2" unique_id=460673752]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 94.0
+offset_top = -144.0
+offset_right = 242.0
+offset_bottom = -30.0
+
+[node name="Dirt3" type="Sprite2D" parent="Round2" unique_id=1511621950]
+self_modulate = Color(0.7585879, 1, 1, 1)
 position = Vector2(-157, -69)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_3oxr4")
 
-[node name="Dirt9" type="Sprite2D" parent="Round2" unique_id=2010300431]
+[node name="T3" type="Button" parent="Round2" unique_id=410405897]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -216.0
+offset_top = -121.0
+offset_right = -95.0
+offset_bottom = -18.0
+
+[node name="Dirt4" type="Sprite2D" parent="Round2" unique_id=2010300431]
+modulate = Color(0.06300025, 0.22972608, 0.20051426, 1)
 position = Vector2(-21, 73)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_m5id3")
 
-[node name="Dirt11" type="Sprite2D" parent="Round2" unique_id=2053489066]
+[node name="T4" type="Button" parent="Round2" unique_id=511157462]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -73.0
+offset_top = 24.0
+offset_right = 33.0
+offset_bottom = 114.0
+
+[node name="Dirt5" type="Sprite2D" parent="Round2" unique_id=2053489066]
+modulate = Color(0.6304005, 0.35129896, 0.049467184, 1)
 position = Vector2(162, 72)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_3ntdx")
 
-[node name="Round3" type="Node2D" parent="." unique_id=1532766360]
-position = Vector2(-915, -16)
+[node name="T5" type="Button" parent="Round2" unique_id=537203072]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 69.0
+offset_top = 24.0
+offset_right = 258.0
+offset_bottom = 123.0
 
-[node name="Dirt2" type="Sprite2D" parent="Round3" unique_id=529531495]
+[node name="Round2Label" type="Label" parent="Round2" unique_id=1999060696]
+offset_left = -53.0
+offset_top = -160.0
+offset_right = 59.0
+offset_bottom = -127.0
+theme_override_fonts/font = ExtResource("2_7u8rw")
+theme_override_font_sizes/font_size = 32
+text = "Round 2"
+
+[node name="Round3" type="Node2D" parent="." unique_id=1532766360]
+position = Vector2(-816, 383)
+
+[node name="Dirt1" type="Sprite2D" parent="Round3" unique_id=529531495]
+modulate = Color(0.8902031, 0.5153751, 0.135874, 1)
 position = Vector2(215, -88)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_l3acn")
 
-[node name="Dirt10" type="Sprite2D" parent="Round3" unique_id=757181410]
+[node name="E1" type="Button" parent="Round3" unique_id=469407291]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 175.0
+offset_top = -113.0
+offset_right = 260.0
+offset_bottom = -57.0
+
+[node name="Dirt2" type="Sprite2D" parent="Round3" unique_id=757181410]
+modulate = Color(1, 1, 0.6253981, 1)
 position = Vector2(-181, -70)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_n17ph")
 
-[node name="Dirt5" type="Sprite2D" parent="Round3" unique_id=1252659897]
+[node name="E2" type="Button" parent="Round3" unique_id=1905321156]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -240.0
+offset_top = -124.0
+offset_right = -117.0
+offset_bottom = -11.0
+
+[node name="Dirt3" type="Sprite2D" parent="Round3" unique_id=1252659897]
+modulate = Color(1, 0.735357, 1, 1)
 position = Vector2(-193, 101)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_7u8rw")
 
-[node name="Dirt6" type="Sprite2D" parent="Round3" unique_id=1947375609]
+[node name="E3" type="Button" parent="Round3" unique_id=2042444815]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -239.0
+offset_top = 70.0
+offset_right = -150.0
+offset_bottom = 135.0
+
+[node name="Dirt4" type="Sprite2D" parent="Round3" unique_id=1947375609]
+modulate = Color(0.4834036, 1, 0.62131935, 1)
 position = Vector2(22, -108)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_upuj2")
 
-[node name="Dirt12" type="Sprite2D" parent="Round3" unique_id=1614869198]
+[node name="E4" type="Button" parent="Round3" unique_id=919403750]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -64.0
+offset_top = -161.0
+offset_right = 120.0
+offset_bottom = -46.0
+
+[node name="Dirt5" type="Sprite2D" parent="Round3" unique_id=1614869198]
+modulate = Color(0.44744408, 0.3355917, 0.09340591, 1)
 position = Vector2(43, 113)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_m5id3")
 
-[node name="Dirt13" type="Sprite2D" parent="Round3" unique_id=1921010271]
+[node name="E5" type="Button" parent="Round3" unique_id=410535868]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -16.0
+offset_top = 80.0
+offset_right = 103.0
+offset_bottom = 156.0
+
+[node name="Dirt6" type="Sprite2D" parent="Round3" unique_id=1921010271]
+modulate = Color(0.5793735, 0.5220287, 1, 1)
 position = Vector2(193, 34)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_3ntdx")
+
+[node name="E6" type="Button" parent="Round3" unique_id=2125068506]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 96.0
+offset_top = -17.0
+offset_right = 285.0
+offset_bottom = 82.0
+
+[node name="Round3Label" type="Label" parent="Round3" unique_id=400984784]
+modulate = Color(0, 0, 0, 1)
+offset_left = -53.0
+offset_top = -160.0
+offset_right = 59.0
+offset_bottom = -127.0
+theme_override_fonts/font = ExtResource("2_7u8rw")
+theme_override_font_sizes/font_size = 32
+text = "Round 3"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1128738182]
+zoom = Vector2(2, 2)
 
 [connection signal="mouse_entered" from="Round1/O1" to="." method="_on_o_1_mouse_entered"]
 [connection signal="mouse_exited" from="Round1/O1" to="." method="_on_o_1_mouse_exited"]
@@ -150,3 +247,25 @@ texture = ExtResource("5_3ntdx")
 [connection signal="mouse_exited" from="Round1/O2" to="." method="_on_o_2_mouse_exited"]
 [connection signal="mouse_entered" from="Round1/O3" to="." method="_on_o_3_mouse_entered"]
 [connection signal="mouse_exited" from="Round1/O3" to="." method="_on_o_3_mouse_exited"]
+[connection signal="mouse_entered" from="Round2/T1" to="." method="_on_t_1_mouse_entered"]
+[connection signal="mouse_exited" from="Round2/T1" to="." method="_on_t_1_mouse_exited"]
+[connection signal="mouse_entered" from="Round2/T2" to="." method="_on_t_2_mouse_entered"]
+[connection signal="mouse_exited" from="Round2/T2" to="." method="_on_t_2_mouse_exited"]
+[connection signal="mouse_entered" from="Round2/T3" to="." method="_on_t_3_mouse_entered"]
+[connection signal="mouse_exited" from="Round2/T3" to="." method="_on_t_3_mouse_exited"]
+[connection signal="mouse_entered" from="Round2/T4" to="." method="_on_t_4_mouse_entered"]
+[connection signal="mouse_exited" from="Round2/T4" to="." method="_on_t_4_mouse_exited"]
+[connection signal="mouse_entered" from="Round2/T5" to="." method="_on_t_5_mouse_entered"]
+[connection signal="mouse_exited" from="Round2/T5" to="." method="_on_t_5_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E1" to="." method="_on_e_1_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E1" to="." method="_on_e_1_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E2" to="." method="_on_e_2_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E2" to="." method="_on_e_2_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E3" to="." method="_on_e_3_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E3" to="." method="_on_e_3_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E4" to="." method="_on_e_4_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E4" to="." method="_on_e_4_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E5" to="." method="_on_e_5_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E5" to="." method="_on_e_5_mouse_exited"]
+[connection signal="mouse_entered" from="Round3/E6" to="." method="_on_e_6_mouse_entered"]
+[connection signal="mouse_exited" from="Round3/E6" to="." method="_on_e_6_mouse_exited"]

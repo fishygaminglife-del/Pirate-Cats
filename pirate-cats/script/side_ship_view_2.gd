@@ -59,3 +59,8 @@ func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int
 		Global.leftcam = true
 		Global.rightcam = false
 		get_tree().change_scene_to_file("res://scene/Backship.tscn")
+
+
+func _on_scrubber_mg_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		get_tree().change_scene_to_file("res://Scrubbing MG.tscn")
