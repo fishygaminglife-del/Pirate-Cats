@@ -109,17 +109,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kpj8"]
 size = Vector2(94, 43.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w173s"]
-size = Vector2(168, 42)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
 size = Vector2(57, 324)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48q5p"]
-size = Vector2(119, 162.5)
+size = Vector2(75.5, 104.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vp247"]
-size = Vector2(230, 183)
+size = Vector2(85, 84.5)
 
 [node name="Node2D" type="Node2D" unique_id=866134312]
 script = ExtResource("1_i2e2r")
@@ -160,9 +157,8 @@ shape = SubResource("RectangleShape2D_0kpj8")
 
 [node name="Cook" type="Area2D" parent="." unique_id=1907389259]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cook" unique_id=1886875496]
-position = Vector2(976, 331)
-shape = SubResource("RectangleShape2D_w173s")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cook" unique_id=1919547148]
+polygon = PackedVector2Array(891, 327, 921, 333, 930, 350, 972, 358, 1060, 352, 1066, 336, 1036, 330, 1002, 317, 899, 312)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1476215314]
 position = Vector2(615, 322)
@@ -183,7 +179,7 @@ shape = SubResource("RectangleShape2D_ldxs4")
 [node name="FishingMG" type="Area2D" parent="." unique_id=457048676]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingMG" unique_id=2095353628]
-position = Vector2(202.5, 335)
+position = Vector2(244.75, 352.125)
 shape = SubResource("RectangleShape2D_48q5p")
 
 [node name="CaptainMG" type="Area2D" parent="." unique_id=786668237]
@@ -195,7 +191,7 @@ shape = SubResource("RectangleShape2D_48q5p")
 [node name="CookingMG" type="Area2D" parent="." unique_id=1149133300]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CookingMG" unique_id=1203685176]
-position = Vector2(978, 315.5)
+position = Vector2(877.5, 379.25)
 shape = SubResource("RectangleShape2D_vp247")
 
 [node name="Captains Room" type="Area2D" parent="." unique_id=135304425]

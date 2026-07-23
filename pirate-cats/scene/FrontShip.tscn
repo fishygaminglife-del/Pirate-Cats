@@ -67,9 +67,9 @@ size = Vector2(132, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upddb"]
 size = Vector2(149, 137.5)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2isa1"]
-radius = 25.681702
-height = 68.17175
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldxs4"]
+radius = 47.974243
+height = 139.42395
 
 [node name="Node2D" type="Node2D" unique_id=1126025007]
 script = ExtResource("1_qkhsu")
@@ -108,9 +108,14 @@ sprite_frames = SubResource("SpriteFrames_qkhsu")
 speed_scale = 0.5
 
 [node name="Cookie" type="Sprite2D" parent="." unique_id=664180941]
-position = Vector2(659, 596)
+position = Vector2(661.00006, 586.00006)
 scale = Vector2(0.36111087, 0.36111084)
 texture = ExtResource("5_lmnjg")
+
+[node name="Bird" type="Sprite2D" parent="." unique_id=1311761132]
+position = Vector2(723.5938, 519.6714)
+scale = Vector2(0.30338514, 0.30338514)
+texture = ExtResource("6_upddb")
 
 [node name="FontainPlay" type="Area2D" parent="." unique_id=912808511]
 position = Vector2(17, 14)
@@ -131,15 +136,9 @@ position = Vector2(64, 245.00003)
 rotation = 0.003634634
 scale = Vector2(0.72985613, 0.72985613)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParrotMG" unique_id=652378537]
-position = Vector2(816, 477)
-scale = Vector2(1.2849599, -0.7041048)
-shape = SubResource("CapsuleShape2D_2isa1")
-
-[node name="Bird" type="Sprite2D" parent="." unique_id=1311761132]
-position = Vector2(723.5938, 519.6714)
-scale = Vector2(0.30338514, 0.30338514)
-texture = ExtResource("6_upddb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParrotMG" unique_id=1636985178]
+position = Vector2(898.7957, 372.15207)
+shape = SubResource("CapsuleShape2D_ldxs4")
 
 [node name="SideView1" type="Area2D" parent="." unique_id=233564388]
 position = Vector2(2077, 5)

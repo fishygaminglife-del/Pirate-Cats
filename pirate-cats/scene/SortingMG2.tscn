@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://bf5nxhrapcc74"]
+
+[ext_resource type="Script" uid="uid://772m6rf56xlw" path="res://script/sorting_mg_2.gd" id="1_1r0uv"]
+[ext_resource type="Texture2D" uid="uid://cx3i7y4i6nh2g" path="res://assets/PowderMG.png" id="1_iaft1"]
+[ext_resource type="Texture2D" uid="uid://c1wobkips054y" path="res://assets/cannon hollow.png" id="2_1r0uv"]
+[ext_resource type="Texture2D" uid="uid://2wuctke70gyw" path="res://assets/coconut.png" id="3_6khpf"]
+[ext_resource type="Texture2D" uid="uid://c74b8q6hvhmoa" path="res://assets/cannon ball MG.png" id="4_4seih"]
+[ext_resource type="Texture2D" uid="uid://d18ppidmgpcqu" path="res://assets/water balloon.png" id="5_y80cs"]
+
+[node name="Node2D" type="Node2D" unique_id=982176327]
+script = ExtResource("1_1r0uv")
+
+[node name="PowderMg" type="Sprite2D" parent="." unique_id=704141882]
+position = Vector2(566, 345)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iaft1")
+
+[node name="CannonHollow1" type="Sprite2D" parent="." unique_id=1915906942]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(497, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1r0uv")
+
+[node name="CannonHollow2" type="Sprite2D" parent="." unique_id=1765862162]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(772, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1r0uv")
+
+[node name="CannonHollow3" type="Sprite2D" parent="." unique_id=1299606709]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(633, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1r0uv")
+
+[node name="CannonHollow4" type="Sprite2D" parent="." unique_id=567083726]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(359, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1r0uv")
+
+[node name="Moveables" type="Node2D" parent="." unique_id=316006701]
+position = Vector2(316, -23)
+
+[node name="Coconut1" type="Sprite2D" parent="Moveables" unique_id=1237210835]
+position = Vector2(184, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6khpf")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut1" unique_id=708827651]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="Coconut2" type="Sprite2D" parent="Moveables" unique_id=1464489097]
+position = Vector2(184, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6khpf")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut2" unique_id=1747035288]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="Coconut3" type="Sprite2D" parent="Moveables" unique_id=1899067652]
+position = Vector2(184, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6khpf")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut3" unique_id=991217898]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="Coconut4" type="Sprite2D" parent="Moveables" unique_id=2143733567]
+position = Vector2(45, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6khpf")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut4" unique_id=1614695170]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="CannonBall1" type="Sprite2D" parent="Moveables" unique_id=138218047]
+position = Vector2(321, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4seih")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall1" unique_id=13570453]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="CannonBall2" type="Sprite2D" parent="Moveables" unique_id=1115597327]
+position = Vector2(184, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4seih")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall2" unique_id=1772651355]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="CannonBall3" type="Sprite2D" parent="Moveables" unique_id=52734036]
+position = Vector2(45, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4seih")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall3" unique_id=779645104]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="CannonBall4" type="Sprite2D" parent="Moveables" unique_id=2066245207]
+position = Vector2(320, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_4seih")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall4" unique_id=2021963414]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="WaterBalloon1" type="Sprite2D" parent="Moveables" unique_id=682499716]
+position = Vector2(321, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y80cs")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon1" unique_id=1358928556]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon2" type="Sprite2D" parent="Moveables" unique_id=437776409]
+position = Vector2(320, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y80cs")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon2" unique_id=1183200922]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon3" type="Sprite2D" parent="Moveables" unique_id=346917206]
+position = Vector2(45, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y80cs")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon3" unique_id=566290190]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon4" type="Sprite2D" parent="Moveables" unique_id=1649233433]
+position = Vector2(45, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y80cs")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon4" unique_id=9677398]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="Row1" type="Panel" parent="." unique_id=1338722564]
+visible = false
+offset_left = 308.0
+offset_top = 225.0
+offset_right = 412.0
+offset_bottom = 497.0
+
+[node name="Row2" type="Panel" parent="." unique_id=2074198429]
+visible = false
+offset_left = 446.0
+offset_top = 226.0
+offset_right = 549.0
+offset_bottom = 497.0
+
+[node name="Row3" type="Panel" parent="." unique_id=322531933]
+visible = false
+offset_left = 583.0
+offset_top = 226.0
+offset_right = 687.0
+offset_bottom = 497.0
+
+[node name="Row4" type="Panel" parent="." unique_id=756282521]
+visible = false
+offset_left = 720.0
+offset_top = 226.0
+offset_right = 824.0
+offset_bottom = 497.0
+
+[node name="Buttons" type="Node2D" parent="." unique_id=65706152]
+
+[node name="A1" type="Button" parent="Buttons" unique_id=1782518052]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 228.0
+offset_right = 456.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A2" type="Button" parent="Buttons" unique_id=549762513]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 287.0
+offset_right = 456.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A3" type="Button" parent="Buttons" unique_id=40659227]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 346.0
+offset_right = 456.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A4" type="Button" parent="Buttons" unique_id=1842151470]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 407.0
+offset_right = 456.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B1" type="Button" parent="Buttons" unique_id=1022254201]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 228.0
+offset_right = 594.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B2" type="Button" parent="Buttons" unique_id=870958083]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 287.0
+offset_right = 594.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B3" type="Button" parent="Buttons" unique_id=2022602169]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 346.0
+offset_right = 594.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B4" type="Button" parent="Buttons" unique_id=1107499050]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 407.0
+offset_right = 594.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C1" type="Button" parent="Buttons" unique_id=1685468538]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 228.0
+offset_right = 731.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C2" type="Button" parent="Buttons" unique_id=398364422]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 287.0
+offset_right = 731.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C3" type="Button" parent="Buttons" unique_id=1145619194]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 346.0
+offset_right = 731.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C4" type="Button" parent="Buttons" unique_id=244404063]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 407.0
+offset_right = 731.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D1" type="Button" parent="Buttons" unique_id=1384281627]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 228.0
+offset_right = 869.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D2" type="Button" parent="Buttons" unique_id=75210820]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 287.0
+offset_right = 869.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D3" type="Button" parent="Buttons" unique_id=773654048]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 346.0
+offset_right = 869.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D4" type="Button" parent="Buttons" unique_id=451681077]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 407.0
+offset_right = 869.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Empty" type="Sprite2D" parent="." unique_id=735527616]
+position = Vector2(101, 126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_y80cs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=555927108]
+position = Vector2(566, 345)
+zoom = Vector2(2, 2)

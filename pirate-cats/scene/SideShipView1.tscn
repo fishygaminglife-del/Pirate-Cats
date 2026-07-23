@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cf52x8qgvxnnl" path="res://assets/shell.png" id="6_krglq"]
 [ext_resource type="Texture2D" uid="uid://cippd77hlp4i7" path="res://assets/powder monkey.png" id="8_x4fq0"]
 [ext_resource type="Texture2D" uid="uid://dxir4o0fqpffg" path="res://assets/ship flag.png" id="9_b4svm"]
+[ext_resource type="Texture2D" uid="uid://cnrdxryoqha32" path="res://assets/shell3.png" id="10_b4svm"]
+[ext_resource type="Texture2D" uid="uid://buhyh8gypkkxu" path="res://assets/shell2.png" id="11_krglq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvh76"]
 atlas = ExtResource("2_cjbe2")
@@ -141,6 +143,10 @@ _data = {
 &"RESET": SubResource("Animation_lvh76")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldxs4"]
+radius = 56.0
+height = 150.0
+
 [node name="Node2D" type="Node2D" unique_id=2068451106]
 script = ExtResource("1_cjbe2")
 
@@ -204,6 +210,7 @@ texture = ExtResource("9_b4svm")
 [node name="CrabOut" type="Area2D" parent="." unique_id=881185874]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrabOut" unique_id=1826257465]
+visible = false
 position = Vector2(765, 461)
 shape = SubResource("RectangleShape2D_ldxs4")
 
@@ -242,6 +249,21 @@ position = Vector2(0, 10)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontShip" unique_id=2129835357]
 position = Vector2(-64, 28)
 polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
+[node name="PowderMG" type="Area2D" parent="." unique_id=674918405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowderMG" unique_id=505463974]
+position = Vector2(411, 364)
+shape = SubResource("CapsuleShape2D_ldxs4")
+
+[node name="Shell3" type="Sprite2D" parent="." unique_id=1252177657]
+position = Vector2(980, 352)
+texture = ExtResource("10_b4svm")
+
+[node name="Shell2" type="Sprite2D" parent="." unique_id=164977621]
+position = Vector2(682, 452.00003)
+scale = Vector2(0.41058356, 0.4105835)
+texture = ExtResource("11_krglq")
 
 [connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]

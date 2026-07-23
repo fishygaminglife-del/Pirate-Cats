@@ -1,31 +1,112 @@
 [gd_scene format=3 uid="uid://c617syikbjxhq"]
 
 [ext_resource type="Script" uid="uid://b44xe8iyqn3rs" path="res://script/frontview.gd" id="1_o0b6s"]
+[ext_resource type="Texture2D" uid="uid://dhxsrsjdvxold" path="res://assets/side2view download.png" id="2_njp8i"]
+[ext_resource type="Texture2D" uid="uid://3r7ctjp6srdr" path="res://assets/bubble1.png" id="3_pdb1p"]
+[ext_resource type="Texture2D" uid="uid://n1tnkk3nj41p" path="res://assets/bubble2.png" id="4_g1q8m"]
+[ext_resource type="Texture2D" uid="uid://c1ymamehqfgv6" path="res://assets/scrubber cat.png" id="4_o0b6s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mlra"]
+atlas = ExtResource("3_pdb1p")
+region = Rect2(0, 0, 197, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0jb"]
+atlas = ExtResource("4_g1q8m")
+region = Rect2(0, 0, 197, 246)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdb1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mlra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0jb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjbe2"]
 size = Vector2(112.41936, 800.8598)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldxs4"]
+size = Vector2(108, 125.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ldxs4"]
+radius = 84.0
+height = 190.0
+
 [node name="Node2D" type="Node2D" unique_id=1893278605]
 script = ExtResource("1_o0b6s")
+
+[node name="Side2ViewDownload" type="Sprite2D" parent="." unique_id=676919307]
+position = Vector2(551, 379)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_njp8i")
+
+[node name="BubbleBuket" type="AnimatedSprite2D" parent="." unique_id=2054555960]
+position = Vector2(228, 420)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_pdb1p")
+frame_progress = 0.14900272
+speed_scale = 0.5
+
+[node name="ScrubberCat" type="Sprite2D" parent="." unique_id=707711708]
+position = Vector2(885.00006, 392)
+scale = Vector2(0.40064096, 0.40064096)
+texture = ExtResource("4_o0b6s")
+
+[node name="FrontShip" type="Area2D" parent="." unique_id=1951866956]
+position = Vector2(2073, 28)
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FrontShip" unique_id=991338475]
+position = Vector2(903, 32)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
+
+[node name="BackShip" type="Area2D" parent="." unique_id=1785098675]
+position = Vector2(-4, 33)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BackShip" unique_id=1476221594]
+position = Vector2(-64, 28)
+polygon = PackedVector2Array(90, 412, 77, 420, 76, 427, 124, 450, 128, 448, 126, 441, 185, 438, 188, 434, 180, 410, 121, 410, 118, 399, 113, 397, 107, 402)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=404091619]
 position = Vector2(539.0001, 379)
 scale = Vector2(0.48198202, 0.48198202)
 zoom = Vector2(2, 2)
 
-[node name="CamLeft" type="Area2D" parent="Camera2D" unique_id=1464513113]
+[node name="move up" type="Area2D" parent="Camera2D" unique_id=1464513113]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CamLeft" unique_id=1500653362]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/move up" unique_id=1500653362]
 position = Vector2(-541.514, 18.672918)
 shape = SubResource("RectangleShape2D_cjbe2")
 
-[node name="CamRight" type="Area2D" parent="Camera2D" unique_id=162620321]
+[node name="move d own" type="Area2D" parent="Camera2D" unique_id=162620321]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/CamRight" unique_id=1928748589]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/move d own" unique_id=1928748589]
 position = Vector2(541.70496, 0)
 shape = SubResource("RectangleShape2D_cjbe2")
 
-[connection signal="mouse_entered" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/CamLeft" to="." method="_on_cam_left_mouse_exited"]
-[connection signal="mouse_entered" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_entered"]
-[connection signal="mouse_exited" from="Camera2D/CamRight" to="." method="_on_cam_right_mouse_exited"]
+[node name="BubbleBucket" type="Area2D" parent="." unique_id=1366504733]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleBucket" unique_id=599789496]
+position = Vector2(225, 421.25)
+shape = SubResource("RectangleShape2D_ldxs4")
+
+[node name="ScrubberMG" type="Area2D" parent="." unique_id=425095798]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScrubberMG" unique_id=87103275]
+position = Vector2(878, 398)
+shape = SubResource("CapsuleShape2D_ldxs4")
+
+[connection signal="input_event" from="FrontShip" to="." method="_on_front_ship_input_event"]
+[connection signal="input_event" from="BackShip" to="." method="_on_back_ship_input_event"]
+[connection signal="mouse_entered" from="Camera2D/move up" to="." method="_on_move_up_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/move up" to="." method="_on_move_up_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/move d own" to="." method="_on_move_d_own_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/move d own" to="." method="_on_move_d_own_mouse_exited"]
+[connection signal="mouse_entered" from="BubbleBucket" to="." method="_on_bubble_bucket_mouse_entered"]
+[connection signal="mouse_exited" from="BubbleBucket" to="." method="_on_bubble_bucket_mouse_exited"]

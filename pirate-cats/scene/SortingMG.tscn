@@ -1,0 +1,407 @@
+[gd_scene format=3 uid="uid://byk4np2onqdyf"]
+
+[ext_resource type="Script" uid="uid://d163skvay213m" path="res://script/sorting_mg.gd" id="1_erb4l"]
+[ext_resource type="Texture2D" uid="uid://cx3i7y4i6nh2g" path="res://assets/PowderMG.png" id="1_ykfml"]
+[ext_resource type="Texture2D" uid="uid://c1wobkips054y" path="res://assets/cannon hollow.png" id="2_erb4l"]
+[ext_resource type="Texture2D" uid="uid://c74b8q6hvhmoa" path="res://assets/cannon ball MG.png" id="3_kyxsx"]
+[ext_resource type="Texture2D" uid="uid://2wuctke70gyw" path="res://assets/coconut.png" id="4_6kpuy"]
+[ext_resource type="Texture2D" uid="uid://d18ppidmgpcqu" path="res://assets/water balloon.png" id="5_dpjho"]
+
+[node name="Node2D" type="Node2D" unique_id=843400902]
+script = ExtResource("1_erb4l")
+
+[node name="PowderMg" type="Sprite2D" parent="." unique_id=1856462441]
+position = Vector2(566, 345)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ykfml")
+
+[node name="CannonHollow1" type="Sprite2D" parent="." unique_id=548051999]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(497, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_erb4l")
+
+[node name="CannonHollow2" type="Sprite2D" parent="." unique_id=941951601]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(772, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_erb4l")
+
+[node name="CannonHollow3" type="Sprite2D" parent="." unique_id=1851210093]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(633, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_erb4l")
+
+[node name="CannonHollow4" type="Sprite2D" parent="." unique_id=2078893834]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(359, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_erb4l")
+
+[node name="Moveables" type="Node2D" parent="." unique_id=673555104]
+position = Vector2(316, -23)
+
+[node name="Coconut1" type="Sprite2D" parent="Moveables" unique_id=1597611479]
+position = Vector2(184, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6kpuy")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut1" unique_id=469324003]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="Coconut2" type="Sprite2D" parent="Moveables" unique_id=2016729377]
+position = Vector2(184, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6kpuy")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut2" unique_id=1944330391]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="Coconut3" type="Sprite2D" parent="Moveables" unique_id=1137760738]
+position = Vector2(184, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6kpuy")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut3" unique_id=422227731]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="Coconut4" type="Sprite2D" parent="Moveables" unique_id=1634601581]
+position = Vector2(45, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6kpuy")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/Coconut4" unique_id=1440944139]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="CannonBall1" type="Sprite2D" parent="Moveables" unique_id=1038677255]
+position = Vector2(321, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_kyxsx")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall1" unique_id=1924715046]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="CannonBall2" type="Sprite2D" parent="Moveables" unique_id=72822682]
+position = Vector2(184, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_kyxsx")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall2" unique_id=1298675774]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="CannonBall3" type="Sprite2D" parent="Moveables" unique_id=16292561]
+position = Vector2(45, 458)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_kyxsx")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall3" unique_id=1484769715]
+visible = false
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 46.0
+offset_bottom = 44.0
+
+[node name="CannonBall4" type="Sprite2D" parent="Moveables" unique_id=2122347913]
+position = Vector2(320, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_kyxsx")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/CannonBall4" unique_id=1351906495]
+visible = false
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 46.0
+
+[node name="WaterBalloon1" type="Sprite2D" parent="Moveables" unique_id=486661082]
+position = Vector2(321, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dpjho")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon1" unique_id=783159922]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon2" type="Sprite2D" parent="Moveables" unique_id=164232204]
+position = Vector2(320, 338)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dpjho")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon2" unique_id=1033731005]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon3" type="Sprite2D" parent="Moveables" unique_id=1195509578]
+position = Vector2(45, 398)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dpjho")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon3" unique_id=1137405175]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="WaterBalloon4" type="Sprite2D" parent="Moveables" unique_id=1345670274]
+position = Vector2(45, 278)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dpjho")
+
+[node name="MoveablePanel" type="Panel" parent="Moveables/WaterBalloon4" unique_id=1826684306]
+visible = false
+offset_left = -38.0
+offset_top = -52.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="Row1" type="Panel" parent="." unique_id=1496944185]
+visible = false
+offset_left = 308.0
+offset_top = 225.0
+offset_right = 412.0
+offset_bottom = 497.0
+
+[node name="Row2" type="Panel" parent="." unique_id=1448530339]
+visible = false
+offset_left = 446.0
+offset_top = 226.0
+offset_right = 549.0
+offset_bottom = 497.0
+
+[node name="Row3" type="Panel" parent="." unique_id=138965734]
+visible = false
+offset_left = 583.0
+offset_top = 226.0
+offset_right = 687.0
+offset_bottom = 497.0
+
+[node name="Row4" type="Panel" parent="." unique_id=43454818]
+visible = false
+offset_left = 720.0
+offset_top = 226.0
+offset_right = 824.0
+offset_bottom = 497.0
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1387444999]
+
+[node name="A1" type="Button" parent="Buttons" unique_id=346798811]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 228.0
+offset_right = 456.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A2" type="Button" parent="Buttons" unique_id=2072909878]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 287.0
+offset_right = 456.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A3" type="Button" parent="Buttons" unique_id=1017970569]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 346.0
+offset_right = 456.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="A4" type="Button" parent="Buttons" unique_id=662121064]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 328.0
+offset_top = 407.0
+offset_right = 456.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B1" type="Button" parent="Buttons" unique_id=1395541824]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 228.0
+offset_right = 594.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B2" type="Button" parent="Buttons" unique_id=917603501]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 287.0
+offset_right = 594.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B3" type="Button" parent="Buttons" unique_id=935858249]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 346.0
+offset_right = 594.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="B4" type="Button" parent="Buttons" unique_id=2042973693]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 466.0
+offset_top = 407.0
+offset_right = 594.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C1" type="Button" parent="Buttons" unique_id=811430223]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 228.0
+offset_right = 731.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C2" type="Button" parent="Buttons" unique_id=1226490054]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 287.0
+offset_right = 731.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C3" type="Button" parent="Buttons" unique_id=1575769203]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 346.0
+offset_right = 731.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="C4" type="Button" parent="Buttons" unique_id=1059104054]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 603.0
+offset_top = 407.0
+offset_right = 731.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D1" type="Button" parent="Buttons" unique_id=1287805040]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 228.0
+offset_right = 869.0
+offset_bottom = 340.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D2" type="Button" parent="Buttons" unique_id=1080730039]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 287.0
+offset_right = 869.0
+offset_bottom = 399.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D3" type="Button" parent="Buttons" unique_id=292768193]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 346.0
+offset_right = 869.0
+offset_bottom = 458.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="D4" type="Button" parent="Buttons" unique_id=1047425499]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 741.0
+offset_top = 407.0
+offset_right = 869.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Empty" type="Sprite2D" parent="." unique_id=1487113913]
+position = Vector2(101, 126)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_dpjho")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1904553917]
+position = Vector2(566, 345)
+zoom = Vector2(2, 2)
+
+[connection signal="button_down" from="Buttons/A1" to="." method="_on_a_1_button_down"]
+[connection signal="button_up" from="Buttons/A1" to="." method="_on_a_1_button_up"]
+[connection signal="button_down" from="Buttons/A2" to="." method="_on_a_2_button_down"]
+[connection signal="button_up" from="Buttons/A2" to="." method="_on_a_2_button_up"]
+[connection signal="button_down" from="Buttons/A3" to="." method="_on_a_3_button_down"]
+[connection signal="button_up" from="Buttons/A3" to="." method="_on_a_3_button_up"]
+[connection signal="button_down" from="Buttons/A4" to="." method="_on_a_4_button_down"]
+[connection signal="button_up" from="Buttons/A4" to="." method="_on_a_4_button_up"]
+[connection signal="button_down" from="Buttons/B1" to="." method="_on_b_1_button_down"]
+[connection signal="button_up" from="Buttons/B1" to="." method="_on_b_1_button_up"]
+[connection signal="button_down" from="Buttons/B2" to="." method="_on_b_2_button_down"]
+[connection signal="button_up" from="Buttons/B2" to="." method="_on_b_2_button_up"]
+[connection signal="button_down" from="Buttons/B3" to="." method="_on_b_3_button_down"]
+[connection signal="button_up" from="Buttons/B3" to="." method="_on_b_3_button_up"]
+[connection signal="button_down" from="Buttons/B4" to="." method="_on_b_4_button_down"]
+[connection signal="button_up" from="Buttons/B4" to="." method="_on_b_4_button_up"]
+[connection signal="button_down" from="Buttons/C1" to="." method="_on_c_1_button_down"]
+[connection signal="button_up" from="Buttons/C1" to="." method="_on_c_1_button_up"]
+[connection signal="button_down" from="Buttons/C2" to="." method="_on_c_2_button_down"]
+[connection signal="button_up" from="Buttons/C2" to="." method="_on_c_2_button_up"]
+[connection signal="button_down" from="Buttons/C3" to="." method="_on_c_3_button_down"]
+[connection signal="button_up" from="Buttons/C3" to="." method="_on_c_3_button_up"]
+[connection signal="button_down" from="Buttons/C4" to="." method="_on_c_4_button_down"]
+[connection signal="button_up" from="Buttons/C4" to="." method="_on_c_4_button_up"]
+[connection signal="button_down" from="Buttons/D1" to="." method="_on_d_1_button_down"]
+[connection signal="button_up" from="Buttons/D1" to="." method="_on_d_1_button_up"]
+[connection signal="button_down" from="Buttons/D2" to="." method="_on_d_2_button_down"]
+[connection signal="button_up" from="Buttons/D2" to="." method="_on_d_2_button_up"]
+[connection signal="button_down" from="Buttons/D3" to="." method="_on_d_3_button_down"]
+[connection signal="button_up" from="Buttons/D3" to="." method="_on_d_3_button_up"]
+[connection signal="button_down" from="Buttons/D4" to="." method="_on_d_4_button_down"]
+[connection signal="button_up" from="Buttons/D4" to="." method="_on_d_4_button_up"]
