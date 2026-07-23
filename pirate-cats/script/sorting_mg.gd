@@ -119,11 +119,51 @@ var draggingd4 = false
 var ofd4 = Vector2(0,0)
 var in_zoned4 = false
 #endregion
+@onready var Buttons = [$Buttons/A1, $Buttons/A2,$Buttons/A3,$Buttons/A4,$Buttons/B1,$Buttons/B2,$Buttons/B3,$Buttons/B4,$Buttons/C1,$Buttons/C2,$Buttons/C3,$Buttons/C4,$Buttons/D1,$Buttons/D2,$Buttons/D3,$Buttons/D4]
+var wb4 = false
+var cc4 = false
+var cb4 = false
+var finish = false
 
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	if a1[1] == "WB" and a2[1] == "WB" and a3[1] == "WB" and a4[1] == "WB":
+		wb4 = true
+	elif b1[1] == "WB" and b2[1] == "WB" and b3[1] == "WB" and b4[1] == "WB":
+		wb4 = true
+	elif c1[1] == "WB" and c2[1] == "WB" and c3[1] == "WB" and c4[1] == "WB":
+		wb4 = true
+	elif d1[1] == "WB" and d2[1] == "WB" and d3[1] == "WB" and d4[1] == "WB":
+		wb4 = true
+		
+	if a1[1] == "CC" and a2[1] == "CC" and a3[1] == "CC" and a4[1] == "CC":
+		cc4 = true
+	elif b1[1] == "CC" and b2[1] == "CC" and b3[1] == "CC" and b4[1] == "CC":
+		cc4 = true
+	elif c1[1] == "CC" and c2[1] == "CC" and c3[1] == "CC" and c4[1] == "CC":
+		cc4 = true
+	elif d1[1] == "CC" and d2[1] == "CC" and d3[1] == "CC" and d4[1] == "CC":
+		cc4 = true
+		
+	if a1[1] == "CB" and a2[1] == "CB" and a3[1] == "CB" and a4[1] == "CB":
+		cb4 = true
+	elif b1[1] == "CB" and b2[1] == "CB" and b3[1] == "CB" and b4[1] == "CB":
+		cb4 = true
+	elif c1[1] == "CB" and c2[1] == "CB" and c3[1] == "CB" and c4[1] == "CB":
+		cb4 = true
+	elif d1[1] == "CB" and d2[1] == "CB" and d3[1] == "CB" and d4[1] == "CB":
+		cb4 = true
+		
+	if cb4 == true and cc4 == true and wb4 == true and finish == false:
+		finish = true
+		for button in Buttons:
+			button.disabled = true
+		print("Beat The Game")
+		$"Game Beat".visible = true
+
+#region Dragging
 	if dragginga1:
 		a1[0].global_position = get_global_mouse_position() - ofa1
 	if dragginga2:
@@ -156,6 +196,10 @@ func _process(delta: float) -> void:
 		d3[0].global_position = get_global_mouse_position() - ofd3
 	if draggingd4:
 		d4[0].global_position = get_global_mouse_position() - ofd4
+#endregion
+
+
+
 
 
 #region Buttons Down
@@ -817,7 +861,7 @@ func _on_b_3_button_up() -> void:
 			a1[1] = b3[1]
 			b3[0] = $Empty
 			b3[1] = "E"
-			a1[0].position = a3_pos
+			a1[0].position = a1_pos
 		else :
 			b3[1].position = b1_pos
 	elif b3[0].get_node("MoveablePanel").get_global_rect().intersects($Row3.get_global_rect()):
@@ -1275,7 +1319,7 @@ func _on_c_4_button_up() -> void:
 		elif b3[0] == $Empty:
 			b3[0] = c4[0]
 			b3[1] = c4[1]
-			c1[0] = $Empty
+			c4[0] = $Empty
 			c4[1] = "E"
 			b3[0].position = b3_pos
 		elif b2[0] == $Empty:
@@ -1363,7 +1407,7 @@ func _on_d_1_button_up() -> void:
 		elif b3[0] == $Empty:
 			b3[0] = d1[0]
 			b3[1] = d1[1]
-			b1[0] = $Empty
+			d1[0] = $Empty
 			d1[1] = "E"
 			b3[0].position = b3_pos
 		elif b2[0] == $Empty:
@@ -1489,7 +1533,7 @@ func _on_d_2_button_up() -> void:
 		elif c1[0] == $Empty:
 			c1[0] = d2[0]
 			c1[1] = d2[1]
-			d1[0] = $Empty
+			d2[0] = $Empty
 			d2[1] = "E"
 			c1[0].position = c1_pos
 		else:
@@ -1576,7 +1620,7 @@ func _on_d_3_button_up() -> void:
 		elif c1[0] == $Empty:
 			c1[0] = d3[0]
 			c1[1] = d3[1]
-			d1[0] = $Empty
+			d3[0] = $Empty
 			d3[1] = "E"
 			c1[0].position = c1_pos
 		else:
@@ -1625,7 +1669,7 @@ func _on_d_4_button_up() -> void:
 		elif b3[0] == $Empty:
 			b3[0] = d4[0]
 			b3[1] = d4[1]
-			d1[0] = $Empty
+			d4[0] = $Empty
 			d4[1] = "E"
 			b3[0].position = b3_pos
 		elif b2[0] == $Empty:

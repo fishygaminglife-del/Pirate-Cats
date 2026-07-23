@@ -3,7 +3,10 @@ var moveleft = false
 var moveright = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if Global.rightcam == true:
+		$Camera2D.position.x = 351
+	elif Global.leftcam == true:
+		$Camera2D.position.x = 876
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -63,8 +66,11 @@ func _on_captain_mg_input_event(viewport: Node, event: InputEvent, shape_idx: in
 
 func _on_side_ship_view_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		Global.leftcam = true
+		Global.rightcam = false
+		
 		get_tree().change_scene_to_file("res://scene/SideShipView1.tscn")
-
+	
 
 func _on_captains_room_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
@@ -73,4 +79,6 @@ func _on_captains_room_input_event(viewport: Node, event: InputEvent, shape_idx:
 
 func _on_side_ship_view_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		Global.rightcam = true
+		Global.leftcam = false
 		get_tree().change_scene_to_file("res://scene/SideShipView2.tscn")

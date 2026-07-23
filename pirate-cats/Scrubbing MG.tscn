@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dqxvorujnb57v"]
+
+[ext_resource type="Script" uid="uid://c70flxhh4m2nb" path="res://script/scrubbing_mg.gd" id="1_tqbhr"]
+[ext_resource type="FontFile" uid="uid://b46q62x2dethf" path="res://fonts/Jua-Regular.ttf" id="2_7u8rw"]
+[ext_resource type="Texture2D" uid="uid://bpe8hgk3wce1v" path="res://assets/dirt2.png" id="2_l3acn"]
+[ext_resource type="Texture2D" uid="uid://dcx0ah3ektcch" path="res://assets/dirt3.png" id="3_7u8rw"]
+[ext_resource type="Texture2D" uid="uid://jcif25iqd2qc" path="res://assets/dirt4.png" id="4_upuj2"]
+[ext_resource type="Texture2D" uid="uid://bh2v05j5neps1" path="res://assets/dirt5.png" id="5_3ntdx"]
+[ext_resource type="Texture2D" uid="uid://d3d4di6t3kgqm" path="res://assets/dirt6.png" id="6_m5id3"]
+[ext_resource type="Texture2D" uid="uid://b1ouhiv0e36oy" path="res://assets/dirt7.png" id="7_n17ph"]
+[ext_resource type="Texture2D" uid="uid://c1rnsgv1re0y3" path="res://assets/dirt8.png" id="8_3oxr4"]
+
+[node name="Node2D" type="Node2D" unique_id=1660431141]
+script = ExtResource("1_tqbhr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1128738182]
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=989820102]
+offset_left = -296.0
+offset_top = -172.0
+offset_right = 298.0
+offset_bottom = 175.0
+color = Color(0.3672866, 0.1955975, 0.015459116, 1)
+
+[node name="Label2" type="Label" parent="." unique_id=1999060696]
+visible = false
+offset_left = -53.0
+offset_top = -169.0
+offset_right = 54.0
+offset_bottom = -136.0
+theme_override_fonts/font = ExtResource("2_7u8rw")
+theme_override_font_sizes/font_size = 32
+text = "Round 2"
+
+[node name="Round1" type="Node2D" parent="." unique_id=234737567]
+
+[node name="Dirt1" type="Sprite2D" parent="Round1" unique_id=61467951]
+modulate = Color(1, 0.78092533, 0, 1)
+position = Vector2(-170, -68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_m5id3")
+
+[node name="O1" type="Button" parent="Round1" unique_id=1781608514]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -211.0
+offset_top = -99.0
+offset_right = -126.0
+offset_bottom = -36.0
+
+[node name="Dirt2" type="Sprite2D" parent="Round1" unique_id=1994046561]
+modulate = Color(0.3330168, 0.53753316, 1, 1)
+position = Vector2(234, -6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_n17ph")
+
+[node name="O2" type="Button" parent="Round1" unique_id=1466614133]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 181.0
+offset_top = -57.0
+offset_right = 283.0
+offset_bottom = 42.0
+
+[node name="Dirt3" type="Sprite2D" parent="Round1" unique_id=649143603]
+modulate = Color(0.47467726, 0.9036324, 0.6883652, 1)
+position = Vector2(2, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3ntdx")
+
+[node name="O3" type="Button" parent="Round1" unique_id=194432169]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -90.0
+offset_top = 49.0
+offset_right = 99.0
+offset_bottom = 148.0
+
+[node name="Round1Label" type="Label" parent="Round1" unique_id=191215273]
+offset_left = -53.0
+offset_top = -169.0
+offset_right = 54.0
+offset_bottom = -136.0
+theme_override_fonts/font = ExtResource("2_7u8rw")
+theme_override_font_sizes/font_size = 32
+text = "Round 1"
+
+[node name="Round2" type="Node2D" parent="." unique_id=1635029893]
+position = Vector2(-915, -16)
+
+[node name="Dirt3" type="Sprite2D" parent="Round2" unique_id=1082707864]
+position = Vector2(-193, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7u8rw")
+
+[node name="Dirt4" type="Sprite2D" parent="Round2" unique_id=845256369]
+position = Vector2(164, -88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_upuj2")
+
+[node name="Dirt8" type="Sprite2D" parent="Round2" unique_id=1511621950]
+position = Vector2(-157, -69)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_3oxr4")
+
+[node name="Dirt9" type="Sprite2D" parent="Round2" unique_id=2010300431]
+position = Vector2(-21, 73)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_m5id3")
+
+[node name="Dirt11" type="Sprite2D" parent="Round2" unique_id=2053489066]
+position = Vector2(162, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3ntdx")
+
+[node name="Round3" type="Node2D" parent="." unique_id=1532766360]
+position = Vector2(-915, -16)
+
+[node name="Dirt2" type="Sprite2D" parent="Round3" unique_id=529531495]
+position = Vector2(215, -88)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_l3acn")
+
+[node name="Dirt10" type="Sprite2D" parent="Round3" unique_id=757181410]
+position = Vector2(-181, -70)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_n17ph")
+
+[node name="Dirt5" type="Sprite2D" parent="Round3" unique_id=1252659897]
+position = Vector2(-193, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_7u8rw")
+
+[node name="Dirt6" type="Sprite2D" parent="Round3" unique_id=1947375609]
+position = Vector2(22, -108)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_upuj2")
+
+[node name="Dirt12" type="Sprite2D" parent="Round3" unique_id=1614869198]
+position = Vector2(43, 113)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_m5id3")
+
+[node name="Dirt13" type="Sprite2D" parent="Round3" unique_id=1921010271]
+position = Vector2(193, 34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3ntdx")
+
+[connection signal="mouse_entered" from="Round1/O1" to="." method="_on_o_1_mouse_entered"]
+[connection signal="mouse_exited" from="Round1/O1" to="." method="_on_o_1_mouse_exited"]
+[connection signal="mouse_entered" from="Round1/O2" to="." method="_on_o_2_mouse_entered"]
+[connection signal="mouse_exited" from="Round1/O2" to="." method="_on_o_2_mouse_exited"]
+[connection signal="mouse_entered" from="Round1/O3" to="." method="_on_o_3_mouse_entered"]
+[connection signal="mouse_exited" from="Round1/O3" to="." method="_on_o_3_mouse_exited"]

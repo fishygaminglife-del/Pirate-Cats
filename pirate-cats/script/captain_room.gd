@@ -48,6 +48,8 @@ var in_zone6 = false
 var get_map = false
 
 func _ready() -> void:
+	Global.leftcam = false
+	Global.rightcam = false
 	maps = [$Camera2D/bg/Map1, $Camera2D/bg/Map2, $Camera2D/bg/Map3, $Camera2D/bg/Map4, $Camera2D/bg/Map5, $Camera2D/bg/Map6]
 	panels = [$Camera2D/bg/PH1, $Camera2D/bg/PH2, $Camera2D/bg/PH3, $Camera2D/bg/PH4, $Camera2D/bg/PH5, $Camera2D/bg/PH6]
 func _process(delta: float) -> void:

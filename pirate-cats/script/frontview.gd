@@ -1,6 +1,6 @@
 extends Node2D
-var moveleft = false
-var moveright = false
+var movedown = false
+var moveup = false
 var flag = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -9,19 +9,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if moveleft == true:
-		$Camera2D.global_position += Vector2(-150, 0) * delta
-	$Camera2D.global_position.x = clamp(
-		$Camera2D.global_position.x,
-		288,
-		813
+	if movedown == true:
+		$Camera2D.global_position += Vector2(0, 150) * delta
+	$Camera2D.global_position.y = clamp(
+		$Camera2D.global_position.y,
+		203,
+		486
 	)
-	if moveright == true:
-		$Camera2D.global_position += Vector2(150, 0) * delta
-	$Camera2D.global_position.x = clamp(
-		$Camera2D.global_position.x,
-		288,
-		813
+	if moveup == true:
+		$Camera2D.global_position += Vector2(0, -150) * delta
+	$Camera2D.global_position.y = clamp(
+		$Camera2D.global_position.y,
+		203,
+		486
 	)
 
 func _on_fontain_play_mouse_entered() -> void:
@@ -43,19 +43,19 @@ func _on_parrot_mg_input_event(viewport: Node, event: InputEvent, shape_idx: int
 
 
 func _on_move_up_mouse_entered() -> void:
-	moveleft = true
+	moveup = true
 
 
 func _on_move_up_mouse_exited() -> void:
-	moveleft = false
+	moveup = false
 
 
 func _on_move_d_own_mouse_entered() -> void:
-	moveright = true
+	movedown = true
 
 
 func _on_move_d_own_mouse_exited() -> void:
-	moveright = false
+	movedown = false
 
 
 
@@ -68,12 +68,15 @@ func _on_bubble_bucket_mouse_exited() -> void:
 	$BubbleBuket.stop()
 
 
-func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+
+func _on_side_view_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		get_tree().change_scene_to_file("res://scene/Backship.tscn")
+		Global.leftcam = true
+		Global.rightcam = false
+		get_tree().change_scene_to_file("res://scene/SideShipView1.tscn")
 
-
-
-func _on_front_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_side_view_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		get_tree().change_scene_to_file("res://scene/FrontShip.tscn")
+		Global.leftcam = false
+		Global.rightcam = true
+		get_tree().change_scene_to_file("res://scene/SideShipView2.tscn")

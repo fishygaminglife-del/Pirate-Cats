@@ -5,7 +5,10 @@ var flag = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if Global.rightcam == true:
+		$Camera2D.position.x = 288
+	elif Global.leftcam == true:
+		$Camera2D.position.x = 812
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -72,9 +75,20 @@ func _on_flag_raise_mouse_entered() -> void:
 
 func _on_back_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		Global.rightcam = true
+		Global.leftcam = false
 		get_tree().change_scene_to_file("res://scene/Backship.tscn")
 
 
 func _on_front_ship_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		Global.leftcam = true
+		Global.rightcam = false
 		get_tree().change_scene_to_file("res://scene/FrontShip.tscn")
+
+
+func _on_powder_mg_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		Global.rightcam = false
+		Global.leftcam = false
+		get_tree().change_scene_to_file("res://scene/SortingMG.tscn")

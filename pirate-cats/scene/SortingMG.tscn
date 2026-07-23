@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c74b8q6hvhmoa" path="res://assets/cannon ball MG.png" id="3_kyxsx"]
 [ext_resource type="Texture2D" uid="uid://2wuctke70gyw" path="res://assets/coconut.png" id="4_6kpuy"]
 [ext_resource type="Texture2D" uid="uid://d18ppidmgpcqu" path="res://assets/water balloon.png" id="5_dpjho"]
+[ext_resource type="FontFile" uid="uid://b46q62x2dethf" path="res://fonts/Jua-Regular.ttf" id="7_kyxsx"]
 
 [node name="Node2D" type="Node2D" unique_id=843400902]
 script = ExtResource("1_erb4l")
@@ -372,6 +373,18 @@ texture = ExtResource("5_dpjho")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1904553917]
 position = Vector2(566, 345)
 zoom = Vector2(2, 2)
+
+[node name="Game Beat" type="Label" parent="." unique_id=1254445427]
+visible = false
+offset_left = 421.0
+offset_top = 323.0
+offset_right = 876.0
+offset_bottom = 372.0
+scale = Vector2(0.6172595, 0.6172595)
+theme_override_colors/font_color = Color(0.26500943, 0.00047177763, 0.7428253, 1)
+theme_override_fonts/font = ExtResource("7_kyxsx")
+theme_override_font_sizes/font_size = 48
+text = "YOU BEAT THE GAME"
 
 [connection signal="button_down" from="Buttons/A1" to="." method="_on_a_1_button_down"]
 [connection signal="button_up" from="Buttons/A1" to="." method="_on_a_1_button_up"]
