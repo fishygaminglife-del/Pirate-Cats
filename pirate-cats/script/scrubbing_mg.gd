@@ -29,20 +29,28 @@ func _process(delta: float) -> void:
 
 func round1():
 	while $Round1/Dirt1.modulate.a > 0.0 or $Round1/Dirt2.modulate.a > 0.0 or $Round1/Dirt3.modulate.a > 0.0:
-		if O1 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 10:
-			print("dirt1")
-			$Round1/Dirt1.modulate.a = max(0.0, $Round1/Dirt1.modulate.a - 0.17)
-		if O2 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 10:
-			print('dirt2')
+		if $Round1/Dirt3.modulate.a < 0.18:
+			$Round1/Dirt3.modulate.a = 0.0
+		if O1 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 2:
+			$Round1/Dirt1.modulate.a = max(0.0, $Round1/Dirt1.modulate.a - 0.18)
+		if O2 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 2:
 			$Round1/Dirt2.modulate.a = max(0.0, $Round1/Dirt2.modulate.a - 0.25)
-		if O3 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 10:
-			print('dirt3')
+		if O3 == true and mouse_pos.distance_to(get_global_mouse_position()) >= 2:
 			$Round1/Dirt3.modulate.a = max(0.0, $Round1/Dirt3.modulate.a - 0.2)
 				
 		mouse_pos = get_global_mouse_position()
-		await get_tree().create_timer(0.5).timeout
-		round1()
+		await get_tree().create_timer(0.4).timeout
+		print($Round1/Dirt1.modulate.a)
+		print($Round1/Dirt2.modulate.a)
+		print($Round1/Dirt3.modulate.a)
+
 	$Round1.position = Vector2(-816, 383)
+	print(
+	$Round1/Dirt1.modulate.a,
+	$Round1/Dirt2.modulate.a,
+	$Round1/Dirt3.modulate.a
+	)
+	print("round2")
 	round2()
 	$Round2.position = Vector2(0, 0)
 
@@ -60,8 +68,8 @@ func round2():
 			$Round2/Dirt5.modulate.a = max(0.0, $Round2/Dirt5.modulate.a - 0.15)
 				
 		mouse_pos = get_global_mouse_position()
-		await get_tree().create_timer(0.5).timeout
-		round2()
+		await get_tree().create_timer(0.4).timeout
+
 	$Round2.position = Vector2(-816, 383)
 	round3()
 	$Round3.position = Vector2(0, 0)
@@ -81,8 +89,8 @@ func round3():
 			$Round3/Dirt6.modulate.a = max(0.0, $Round3/Dirt6.modulate.a - 0.15)
 				
 		mouse_pos = get_global_mouse_position()
-		await get_tree().create_timer(0.5).EimeouE
-		round3()
+		await get_tree().create_timer(0.4).timeout
+
 	$Round3.position = Vector2(-816, 383)
 #region Round One Mouse
 func _on_o_1_mouse_entered() -> void:
